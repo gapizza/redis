@@ -8,4 +8,4 @@ npm i -S @ehacke/redis
 
 # Documentation
 
-[Documentation](modules/_cache_.md)
+[Documentation](docs/modules/_cache_.md)
