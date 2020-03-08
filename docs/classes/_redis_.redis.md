@@ -2,8 +2,6 @@
 
 # Class: Redis
 
-**`class`** 
-
 ## Hierarchy
 
 * Redis
@@ -238,7 +236,7 @@
 
 \+ **new Redis**(...`args`: any[]): *[Redis](_redis_.redis.md)*
 
-*Defined in [redis.ts:42](https://github.com/ehacke/redis/blob/0881c54/redis.ts#L42)*
+*Defined in [redis.ts:46](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L46)*
 
 **Parameters:**
 
@@ -254,7 +252,7 @@ Name | Type | Description |
 
 • **NAME**: *string*
 
-*Defined in [redis.ts:56](https://github.com/ehacke/redis/blob/0881c54/redis.ts#L56)*
+*Defined in [redis.ts:60](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L60)*
 
 ___
 
@@ -272,7 +270,7 @@ ___
 
 • **debounced**: *object*
 
-*Defined in [redis.ts:60](https://github.com/ehacke/redis/blob/0881c54/redis.ts#L60)*
+*Defined in [redis.ts:64](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L64)*
 
 #### Type declaration:
 
@@ -284,7 +282,7 @@ ___
 
 • **redlock**: *Redlock*
 
-*Defined in [redis.ts:58](https://github.com/ehacke/redis/blob/0881c54/redis.ts#L58)*
+*Defined in [redis.ts:62](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L62)*
 
 ___
 
@@ -767,7 +765,7 @@ ___
 
 ▸ **createRedlock**(`config`: Options): *Redlock*
 
-*Defined in [redis.ts:106](https://github.com/ehacke/redis/blob/0881c54/redis.ts#L106)*
+*Defined in [redis.ts:110](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L110)*
 
 Get redlock instance
 
@@ -820,7 +818,7 @@ ___
 
 ▸ **debounce**(`callback`: Function, `key`: string, `timeoutMs`: number, `skewMs`: number): *Promise‹any›*
 
-*Defined in [redis.ts:164](https://github.com/ehacke/redis/blob/0881c54/redis.ts#L164)*
+*Defined in [redis.ts:168](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L168)*
 
 Debounce a callback using Redis and setTimeout locally
 
@@ -2782,7 +2780,7 @@ ___
 
 ▸ **lock**(`key`: string, `ttl`: number): *Promise‹Lock | null›*
 
-*Defined in [redis.ts:68](https://github.com/ehacke/redis/blob/0881c54/redis.ts#L68)*
+*Defined in [redis.ts:72](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L72)*
 
 Acquire lock in Redis
 
@@ -4623,7 +4621,7 @@ ___
 
 ▸ **scanPromise**(`options?`: ScanStreamOption): *Promise‹string[]›*
 
-*Defined in [redis.ts:115](https://github.com/ehacke/redis/blob/0881c54/redis.ts#L115)*
+*Defined in [redis.ts:119](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L119)*
 
 Wrapper for scanStream that returns a promise
 
@@ -7024,7 +7022,7 @@ ___
 
 ###  zrevrangebyscore
 
-▸ **zrevrangebyscore**(`key`: KeyType, `min`: number | string, `max`: number | string, `withScores?`: undefined | "WITHSCORES"): *Promise‹string[]›*
+▸ **zrevrangebyscore**(`key`: KeyType, `max`: number | string, `min`: number | string, `withScores?`: undefined | "WITHSCORES"): *Promise‹string[]›*
 
 *Inherited from [Redis](_redis_.redis.md).[zrevrangebyscore](_redis_.redis.md#zrevrangebyscore)*
 
@@ -7035,13 +7033,13 @@ Defined in node_modules/@types/ioredis/index.d.ts:387
 Name | Type |
 ------ | ------ |
 `key` | KeyType |
-`min` | number &#124; string |
 `max` | number &#124; string |
+`min` | number &#124; string |
 `withScores?` | undefined &#124; "WITHSCORES" |
 
 **Returns:** *Promise‹string[]›*
 
-▸ **zrevrangebyscore**(`key`: KeyType, `min`: number | string, `max`: number | string, `withScores`: "WITHSCORES", `limit`: "LIMIT", `offset`: number, `count`: number): *Promise‹string[]›*
+▸ **zrevrangebyscore**(`key`: KeyType, `max`: number | string, `min`: number | string, `withScores`: "WITHSCORES", `limit`: "LIMIT", `offset`: number, `count`: number): *Promise‹string[]›*
 
 *Inherited from [Redis](_redis_.redis.md).[zrevrangebyscore](_redis_.redis.md#zrevrangebyscore)*
 
@@ -7052,8 +7050,8 @@ Defined in node_modules/@types/ioredis/index.d.ts:393
 Name | Type |
 ------ | ------ |
 `key` | KeyType |
-`min` | number &#124; string |
 `max` | number &#124; string |
+`min` | number &#124; string |
 `withScores` | "WITHSCORES" |
 `limit` | "LIMIT" |
 `offset` | number |
@@ -7061,7 +7059,7 @@ Name | Type |
 
 **Returns:** *Promise‹string[]›*
 
-▸ **zrevrangebyscore**(`key`: KeyType, `min`: number | string, `max`: number | string, `limit`: "LIMIT", `offset`: number, `count`: number): *Promise‹string[]›*
+▸ **zrevrangebyscore**(`key`: KeyType, `max`: number | string, `min`: number | string, `limit`: "LIMIT", `offset`: number, `count`: number): *Promise‹string[]›*
 
 *Inherited from [Redis](_redis_.redis.md).[zrevrangebyscore](_redis_.redis.md#zrevrangebyscore)*
 
@@ -7072,8 +7070,8 @@ Defined in node_modules/@types/ioredis/index.d.ts:402
 Name | Type |
 ------ | ------ |
 `key` | KeyType |
-`min` | number &#124; string |
 `max` | number &#124; string |
+`min` | number &#124; string |
 `limit` | "LIMIT" |
 `offset` | number |
 `count` | number |
@@ -7150,7 +7148,7 @@ ___
 
 ▸ **zscanPromise**(`key`: KeyType, `options?`: ScanStreamOption): *Promise‹string[]›*
 
-*Defined in [redis.ts:138](https://github.com/ehacke/redis/blob/0881c54/redis.ts#L138)*
+*Defined in [redis.ts:142](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L142)*
 
 Wrapper for scanStream that returns a promise
 
@@ -7253,22 +7251,22 @@ Name | Type |
 
 ### ▪ **CONSTANTS**: *object*
 
-*Defined in [redis.ts:42](https://github.com/ehacke/redis/blob/0881c54/redis.ts#L42)*
+*Defined in [redis.ts:42](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L42)*
 
 ###  DEFAULT_SKEW_MS
 
 • **DEFAULT_SKEW_MS**: *number* = 5
 
-*Defined in [redis.ts:42](https://github.com/ehacke/redis/blob/0881c54/redis.ts#L42)*
+*Defined in [redis.ts:43](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L43)*
 
 ###  SEARCH_FIELD_TYPES
 
 • **SEARCH_FIELD_TYPES**: *[SEARCH_FIELD_TYPES](../enums/_redis_.search_field_types.md)*
 
-*Defined in [redis.ts:42](https://github.com/ehacke/redis/blob/0881c54/redis.ts#L42)*
+*Defined in [redis.ts:44](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L44)*
 
 ###  SEARCH_FIELD_TYPE_VALUES
 
 • **SEARCH_FIELD_TYPE_VALUES**: *[TAG](../enums/_redis_.search_field_types.md#tag) | [TEXT](../enums/_redis_.search_field_types.md#text) | [NUMERIC](../enums/_redis_.search_field_types.md#numeric) | [GEO](../enums/_redis_.search_field_types.md#geo)[]* = Object.values(SEARCH_FIELD_TYPES)
 
-*Defined in [redis.ts:42](https://github.com/ehacke/redis/blob/0881c54/redis.ts#L42)*
+*Defined in [redis.ts:45](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L45)*
