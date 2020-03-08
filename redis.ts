@@ -39,7 +39,11 @@ export function processMultiResults(results: (string | null | number)[][]): (str
  * @class
  */
 export class Redis extends IORedis {
-  static readonly CONSTANTS = { DEFAULT_SKEW_MS: 5, SEARCH_FIELD_TYPES, SEARCH_FIELD_TYPE_VALUES: Object.values(SEARCH_FIELD_TYPES) };
+  static readonly CONSTANTS = {
+    DEFAULT_SKEW_MS: 5,
+    SEARCH_FIELD_TYPES,
+    SEARCH_FIELD_TYPE_VALUES: Object.values(SEARCH_FIELD_TYPES),
+  };
 
   /**
    * @param {{}} args
