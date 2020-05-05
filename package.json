@@ -62,7 +62,7 @@
     "uuid": "^8.0.0"
   },
   "files": [
-    "dist/**/*.{js,ts}",
+    "dist/**/*.{js,ts,lua}",
     "docs/**/*.*"
   ],
   "homepage": "https://github.com/ehacke/redis#readme",
