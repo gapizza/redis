@@ -1,6 +1,6 @@
 [@ehacke/redis](../README.md) › ["redis"](_redis_.md)
 
-# External module: "redis"
+# Module: "redis"
 
 ## Index
 
@@ -22,7 +22,7 @@
 
 ▸ **processMultiResults**(`results`: null | string | number[][]): *null | string | number[]*
 
-*Defined in [redis.ts:21](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L21)*
+*Defined in [redis.ts:21](https://github.com/ehacke/redis/blob/07fa980/redis.ts#L21)*
 
 Process the returned array from a transaction, throwing errors if any exist
 

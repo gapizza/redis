@@ -4,6 +4,8 @@
 
 ## Index
 
-### External modules
+### Modules
 
+* ["cache"](modules/_cache_.md)
+* ["cached"](modules/_cached_.md)
 * ["redis"](modules/_redis_.md)

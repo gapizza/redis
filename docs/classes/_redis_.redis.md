@@ -18,9 +18,70 @@
 
 * [NAME](_redis_.redis.md#name)
 * [Promise](_redis_.redis.md#promise)
-* [debounced](_redis_.redis.md#debounced)
-* [redlock](_redis_.redis.md#redlock)
+* [blpop](_redis_.redis.md#blpop)
+* [brpop](_redis_.redis.md#brpop)
+* [client](_redis_.redis.md#client)
+* [cluster](_redis_.redis.md#cluster)
+* [debounced](_redis_.redis.md#readonly-debounced)
+* [debug](_redis_.redis.md#debug)
+* [del](_redis_.redis.md#del)
+* [eval](_redis_.redis.md#eval)
+* [evalsha](_redis_.redis.md#evalsha)
+* [hdel](_redis_.redis.md#hdel)
+* [hmget](_redis_.redis.md#hmget)
+* [hmset](_redis_.redis.md#hmset)
+* [hscan](_redis_.redis.md#hscan)
+* [lpush](_redis_.redis.md#lpush)
+* [lpushBuffer](_redis_.redis.md#lpushbuffer)
+* [lpushx](_redis_.redis.md#lpushx)
+* [mget](_redis_.redis.md#mget)
+* [migrate](_redis_.redis.md#migrate)
+* [mset](_redis_.redis.md#mset)
+* [msetnx](_redis_.redis.md#msetnx)
+* [object](_redis_.redis.md#object)
+* [pfadd](_redis_.redis.md#pfadd)
+* [pfcount](_redis_.redis.md#pfcount)
+* [pfmerge](_redis_.redis.md#pfmerge)
+* [psubscribe](_redis_.redis.md#psubscribe)
+* [punsubscribe](_redis_.redis.md#punsubscribe)
+* [redlock](_redis_.redis.md#readonly-redlock)
+* [restore](_redis_.redis.md#restore)
+* [rpush](_redis_.redis.md#rpush)
+* [rpushBuffer](_redis_.redis.md#rpushbuffer)
+* [rpushx](_redis_.redis.md#rpushx)
+* [sadd](_redis_.redis.md#sadd)
+* [script](_redis_.redis.md#script)
+* [sdiff](_redis_.redis.md#sdiff)
+* [sdiffstore](_redis_.redis.md#sdiffstore)
+* [sinter](_redis_.redis.md#sinter)
+* [sinterstore](_redis_.redis.md#sinterstore)
+* [sort](_redis_.redis.md#sort)
+* [srem](_redis_.redis.md#srem)
+* [sscan](_redis_.redis.md#sscan)
 * [status](_redis_.redis.md#status)
+* [subscribe](_redis_.redis.md#subscribe)
+* [sunion](_redis_.redis.md#sunion)
+* [sunionstore](_redis_.redis.md#sunionstore)
+* [unlink](_redis_.redis.md#unlink)
+* [unsubscribe](_redis_.redis.md#unsubscribe)
+* [watch](_redis_.redis.md#watch)
+* [xack](_redis_.redis.md#xack)
+* [xadd](_redis_.redis.md#xadd)
+* [xclaim](_redis_.redis.md#xclaim)
+* [xdel](_redis_.redis.md#xdel)
+* [xgroup](_redis_.redis.md#xgroup)
+* [xinfo](_redis_.redis.md#xinfo)
+* [xpending](_redis_.redis.md#xpending)
+* [xrange](_redis_.redis.md#xrange)
+* [xread](_redis_.redis.md#xread)
+* [xreadgroup](_redis_.redis.md#xreadgroup)
+* [xrevrange](_redis_.redis.md#xrevrange)
+* [xtrim](_redis_.redis.md#xtrim)
+* [zadd](_redis_.redis.md#zadd)
+* [zinterstore](_redis_.redis.md#zinterstore)
+* [zrem](_redis_.redis.md#zrem)
+* [zscan](_redis_.redis.md#zscan)
+* [zunionstore](_redis_.redis.md#zunionstore)
 
 ### Methods
 
@@ -30,30 +91,22 @@
 * [bgrewriteaof](_redis_.redis.md#bgrewriteaof)
 * [bgsave](_redis_.redis.md#bgsave)
 * [bitcount](_redis_.redis.md#bitcount)
-* [blpop](_redis_.redis.md#blpop)
-* [brpop](_redis_.redis.md#brpop)
 * [brpoplpush](_redis_.redis.md#brpoplpush)
-* [client](_redis_.redis.md#client)
-* [cluster](_redis_.redis.md#cluster)
 * [config](_redis_.redis.md#config)
 * [connect](_redis_.redis.md#connect)
 * [createBuiltinCommand](_redis_.redis.md#createbuiltincommand)
 * [createRedlock](_redis_.redis.md#createredlock)
 * [dbsize](_redis_.redis.md#dbsize)
 * [debounce](_redis_.redis.md#debounce)
-* [debug](_redis_.redis.md#debug)
 * [decr](_redis_.redis.md#decr)
 * [decrby](_redis_.redis.md#decrby)
 * [defineCommand](_redis_.redis.md#definecommand)
-* [del](_redis_.redis.md#del)
 * [discard](_redis_.redis.md#discard)
 * [disconnect](_redis_.redis.md#disconnect)
 * [dump](_redis_.redis.md#dump)
 * [duplicate](_redis_.redis.md#duplicate)
 * [echo](_redis_.redis.md#echo)
 * [emit](_redis_.redis.md#emit)
-* [eval](_redis_.redis.md#eval)
-* [evalsha](_redis_.redis.md#evalsha)
 * [eventNames](_redis_.redis.md#eventnames)
 * [exec](_redis_.redis.md#exec)
 * [exists](_redis_.redis.md#exists)
@@ -68,7 +121,6 @@
 * [getbit](_redis_.redis.md#getbit)
 * [getrange](_redis_.redis.md#getrange)
 * [getset](_redis_.redis.md#getset)
-* [hdel](_redis_.redis.md#hdel)
 * [hexists](_redis_.redis.md#hexists)
 * [hget](_redis_.redis.md#hget)
 * [hgetBuffer](_redis_.redis.md#hgetbuffer)
@@ -77,9 +129,6 @@
 * [hincrbyfloat](_redis_.redis.md#hincrbyfloat)
 * [hkeys](_redis_.redis.md#hkeys)
 * [hlen](_redis_.redis.md#hlen)
-* [hmget](_redis_.redis.md#hmget)
-* [hmset](_redis_.redis.md#hmset)
-* [hscan](_redis_.redis.md#hscan)
 * [hscanStream](_redis_.redis.md#hscanstream)
 * [hset](_redis_.redis.md#hset)
 * [hsetBuffer](_redis_.redis.md#hsetbuffer)
@@ -99,40 +148,28 @@
 * [lock](_redis_.redis.md#lock)
 * [lpop](_redis_.redis.md#lpop)
 * [lpopBuffer](_redis_.redis.md#lpopbuffer)
-* [lpush](_redis_.redis.md#lpush)
-* [lpushx](_redis_.redis.md#lpushx)
 * [lrange](_redis_.redis.md#lrange)
 * [lrangeBuffer](_redis_.redis.md#lrangebuffer)
 * [lrem](_redis_.redis.md#lrem)
 * [lset](_redis_.redis.md#lset)
 * [ltrim](_redis_.redis.md#ltrim)
-* [mget](_redis_.redis.md#mget)
-* [migrate](_redis_.redis.md#migrate)
 * [monitor](_redis_.redis.md#monitor)
 * [move](_redis_.redis.md#move)
-* [mset](_redis_.redis.md#mset)
-* [msetnx](_redis_.redis.md#msetnx)
 * [multi](_redis_.redis.md#multi)
-* [object](_redis_.redis.md#object)
 * [off](_redis_.redis.md#off)
 * [on](_redis_.redis.md#on)
 * [once](_redis_.redis.md#once)
 * [persist](_redis_.redis.md#persist)
 * [pexpire](_redis_.redis.md#pexpire)
 * [pexpireat](_redis_.redis.md#pexpireat)
-* [pfadd](_redis_.redis.md#pfadd)
-* [pfcount](_redis_.redis.md#pfcount)
-* [pfmerge](_redis_.redis.md#pfmerge)
 * [ping](_redis_.redis.md#ping)
 * [pipeline](_redis_.redis.md#pipeline)
 * [prependListener](_redis_.redis.md#prependlistener)
 * [prependOnceListener](_redis_.redis.md#prependoncelistener)
 * [psetex](_redis_.redis.md#psetex)
-* [psubscribe](_redis_.redis.md#psubscribe)
 * [pttl](_redis_.redis.md#pttl)
 * [publish](_redis_.redis.md#publish)
 * [publishBuffer](_redis_.redis.md#publishbuffer)
-* [punsubscribe](_redis_.redis.md#punsubscribe)
 * [quit](_redis_.redis.md#quit)
 * [randomkey](_redis_.redis.md#randomkey)
 * [rawListeners](_redis_.redis.md#rawlisteners)
@@ -140,22 +177,14 @@
 * [removeListener](_redis_.redis.md#removelistener)
 * [rename](_redis_.redis.md#rename)
 * [renamenx](_redis_.redis.md#renamenx)
-* [restore](_redis_.redis.md#restore)
 * [rpop](_redis_.redis.md#rpop)
 * [rpoplpush](_redis_.redis.md#rpoplpush)
 * [rpoplpushBuffer](_redis_.redis.md#rpoplpushbuffer)
-* [rpush](_redis_.redis.md#rpush)
-* [rpushBuffer](_redis_.redis.md#rpushbuffer)
-* [rpushx](_redis_.redis.md#rpushx)
-* [sadd](_redis_.redis.md#sadd)
 * [save](_redis_.redis.md#save)
 * [scan](_redis_.redis.md#scan)
 * [scanPromise](_redis_.redis.md#scanpromise)
 * [scanStream](_redis_.redis.md#scanstream)
 * [scard](_redis_.redis.md#scard)
-* [script](_redis_.redis.md#script)
-* [sdiff](_redis_.redis.md#sdiff)
-* [sdiffstore](_redis_.redis.md#sdiffstore)
 * [select](_redis_.redis.md#select)
 * [sendCommand](_redis_.redis.md#sendcommand)
 * [send_command](_redis_.redis.md#send_command)
@@ -167,68 +196,40 @@
 * [setnx](_redis_.redis.md#setnx)
 * [setrange](_redis_.redis.md#setrange)
 * [shutdown](_redis_.redis.md#shutdown)
-* [sinter](_redis_.redis.md#sinter)
-* [sinterstore](_redis_.redis.md#sinterstore)
 * [sismember](_redis_.redis.md#sismember)
 * [slaveof](_redis_.redis.md#slaveof)
 * [smembers](_redis_.redis.md#smembers)
 * [smove](_redis_.redis.md#smove)
-* [sort](_redis_.redis.md#sort)
 * [spop](_redis_.redis.md#spop)
 * [srandmember](_redis_.redis.md#srandmember)
-* [srem](_redis_.redis.md#srem)
-* [sscan](_redis_.redis.md#sscan)
 * [sscanStream](_redis_.redis.md#sscanstream)
 * [strlen](_redis_.redis.md#strlen)
-* [subscribe](_redis_.redis.md#subscribe)
 * [substr](_redis_.redis.md#substr)
-* [sunion](_redis_.redis.md#sunion)
-* [sunionstore](_redis_.redis.md#sunionstore)
 * [sync](_redis_.redis.md#sync)
 * [time](_redis_.redis.md#time)
 * [ttl](_redis_.redis.md#ttl)
 * [type](_redis_.redis.md#type)
-* [unlink](_redis_.redis.md#unlink)
-* [unsubscribe](_redis_.redis.md#unsubscribe)
 * [unwatch](_redis_.redis.md#unwatch)
-* [watch](_redis_.redis.md#watch)
-* [xack](_redis_.redis.md#xack)
-* [xadd](_redis_.redis.md#xadd)
-* [xclaim](_redis_.redis.md#xclaim)
-* [xdel](_redis_.redis.md#xdel)
-* [xgroup](_redis_.redis.md#xgroup)
-* [xinfo](_redis_.redis.md#xinfo)
 * [xlen](_redis_.redis.md#xlen)
-* [xpending](_redis_.redis.md#xpending)
-* [xrange](_redis_.redis.md#xrange)
-* [xread](_redis_.redis.md#xread)
-* [xreadgroup](_redis_.redis.md#xreadgroup)
-* [xrevrange](_redis_.redis.md#xrevrange)
-* [xtrim](_redis_.redis.md#xtrim)
-* [zadd](_redis_.redis.md#zadd)
 * [zaddBuffer](_redis_.redis.md#zaddbuffer)
 * [zcard](_redis_.redis.md#zcard)
 * [zcount](_redis_.redis.md#zcount)
 * [zincrby](_redis_.redis.md#zincrby)
-* [zinterstore](_redis_.redis.md#zinterstore)
 * [zrange](_redis_.redis.md#zrange)
 * [zrangebyscore](_redis_.redis.md#zrangebyscore)
 * [zrank](_redis_.redis.md#zrank)
-* [zrem](_redis_.redis.md#zrem)
 * [zremrangebyrank](_redis_.redis.md#zremrangebyrank)
 * [zremrangebyscore](_redis_.redis.md#zremrangebyscore)
 * [zrevrange](_redis_.redis.md#zrevrange)
 * [zrevrangebyscore](_redis_.redis.md#zrevrangebyscore)
 * [zrevrank](_redis_.redis.md#zrevrank)
-* [zscan](_redis_.redis.md#zscan)
 * [zscanPromise](_redis_.redis.md#zscanpromise)
 * [zscanStream](_redis_.redis.md#zscanstream)
 * [zscore](_redis_.redis.md#zscore)
-* [zunionstore](_redis_.redis.md#zunionstore)
 
 ### Object literals
 
-* [CONSTANTS](_redis_.redis.md#static-constants)
+* [CONSTANTS](_redis_.redis.md#static-readonly-constants)
 
 ## Constructors
 
@@ -236,7 +237,7 @@
 
 \+ **new Redis**(...`args`: any[]): *[Redis](_redis_.redis.md)*
 
-*Defined in [redis.ts:46](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L46)*
+*Defined in [redis.ts:46](https://github.com/ehacke/redis/blob/07fa980/redis.ts#L46)*
 
 **Parameters:**
 
@@ -252,7 +253,7 @@ Name | Type | Description |
 
 • **NAME**: *string*
 
-*Defined in [redis.ts:60](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L60)*
+*Defined in [redis.ts:60](https://github.com/ehacke/redis/blob/07fa980/redis.ts#L60)*
 
 ___
 
@@ -262,15 +263,55 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[Promise](_redis_.redis.md#promise)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:91
+Defined in node_modules/@types/ioredis/index.d.ts:841
 
 ___
 
-###  debounced
+###  blpop
+
+• **blpop**: *OverloadedBlockingListCommand‹KeyType, [string, string]›*
+
+*Inherited from [Redis](_redis_.redis.md).[blpop](_redis_.redis.md#blpop)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:319
+
+___
+
+###  brpop
+
+• **brpop**: *OverloadedBlockingListCommand‹KeyType, [string, string]›*
+
+*Inherited from [Redis](_redis_.redis.md).[brpop](_redis_.redis.md#brpop)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:317
+
+___
+
+###  client
+
+• **client**: *OverloadedSubCommand‹ValueType, any›*
+
+*Inherited from [Redis](_redis_.redis.md).[client](_redis_.redis.md#client)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:736
+
+___
+
+###  cluster
+
+• **cluster**: *OverloadedSubCommand‹ValueType, any›*
+
+*Inherited from [Redis](_redis_.redis.md).[cluster](_redis_.redis.md#cluster)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:725
+
+___
+
+### `Readonly` debounced
 
 • **debounced**: *object*
 
-*Defined in [redis.ts:64](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L64)*
+*Defined in [redis.ts:64](https://github.com/ehacke/redis/blob/07fa980/redis.ts#L64)*
 
 #### Type declaration:
 
@@ -278,11 +319,351 @@ ___
 
 ___
 
-###  redlock
+###  debug
+
+• **debug**: *OverloadedSubCommand‹ValueType, any›*
+
+*Inherited from [Redis](_redis_.redis.md).[debug](_redis_.redis.md#debug)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:698
+
+___
+
+###  del
+
+• **del**: *OverloadedListCommand‹KeyType, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[del](_redis_.redis.md#del)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:259
+
+___
+
+###  eval
+
+• **eval**: *OverloadedEvalCommand‹ValueType, any›*
+
+*Inherited from [Redis](_redis_.redis.md).[eval](_redis_.redis.md#eval)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:738
+
+___
+
+###  evalsha
+
+• **evalsha**: *OverloadedEvalCommand‹ValueType, any›*
+
+*Inherited from [Redis](_redis_.redis.md).[evalsha](_redis_.redis.md#evalsha)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:740
+
+___
+
+###  hdel
+
+• **hdel**: *OverloadedKeyCommand‹KeyType, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[hdel](_redis_.redis.md#hdel)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:563
+
+___
+
+###  hmget
+
+• **hmget**: *OverloadedKeyCommand‹KeyType, Array‹string | null››*
+
+*Inherited from [Redis](_redis_.redis.md).[hmget](_redis_.redis.md#hmget)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:555
+
+___
+
+###  hmset
+
+• **hmset**: *OverloadedKeyedHashCommand‹ValueType, Ok›*
+
+*Inherited from [Redis](_redis_.redis.md).[hmset](_redis_.redis.md#hmset)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:553
+
+___
+
+###  hscan
+
+• **hscan**: *OverloadedKeyCommand‹ValueType, [string, string[]]›*
+
+*Inherited from [Redis](_redis_.redis.md).[hscan](_redis_.redis.md#hscan)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:795
+
+___
+
+###  lpush
+
+• **lpush**: *OverloadedKeyCommand‹ValueType, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[lpush](_redis_.redis.md#lpush)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:292
+
+___
+
+###  lpushBuffer
+
+• **lpushBuffer**: *OverloadedKeyCommand‹Buffer, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[lpushBuffer](_redis_.redis.md#lpushbuffer)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:293
+
+___
+
+###  lpushx
+
+• **lpushx**: *OverloadedKeyCommand‹ValueType, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[lpushx](_redis_.redis.md#lpushx)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:297
+
+___
+
+###  mget
+
+• **mget**: *OverloadedListCommand‹KeyType, Array‹string | null››*
+
+*Inherited from [Redis](_redis_.redis.md).[mget](_redis_.redis.md#mget)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:287
+
+___
+
+###  migrate
+
+• **migrate**: *OverloadedListCommand‹ValueType, Ok | "NOKEY"›*
+
+*Inherited from [Redis](_redis_.redis.md).[migrate](_redis_.redis.md#migrate)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:729
+
+___
+
+###  mset
+
+• **mset**: *OverloadedHashCommand‹ValueType, Ok›*
+
+*Inherited from [Redis](_redis_.redis.md).[mset](_redis_.redis.md#mset)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:592
+
+___
+
+###  msetnx
+
+• **msetnx**: *OverloadedHashCommand‹ValueType, BooleanResponse›*
+
+*Inherited from [Redis](_redis_.redis.md).[msetnx](_redis_.redis.md#msetnx)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:593
+
+___
+
+###  object
+
+• **object**: *OverloadedListCommand‹ValueType, any›*
+
+*Inherited from [Redis](_redis_.redis.md).[object](_redis_.redis.md#object)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:734
+
+___
+
+###  pfadd
+
+• **pfadd**: *OverloadedKeyCommand‹string, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[pfadd](_redis_.redis.md#pfadd)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:801
+
+___
+
+###  pfcount
+
+• **pfcount**: *OverloadedListCommand‹KeyType, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[pfcount](_redis_.redis.md#pfcount)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:803
+
+___
+
+###  pfmerge
+
+• **pfmerge**: *OverloadedKeyCommand‹KeyType, Ok›*
+
+*Inherited from [Redis](_redis_.redis.md).[pfmerge](_redis_.redis.md#pfmerge)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:799
+
+___
+
+###  psubscribe
+
+• **psubscribe**: *OverloadedListCommand‹string, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[psubscribe](_redis_.redis.md#psubscribe)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:711
+
+___
+
+###  punsubscribe
+
+• **punsubscribe**: *OverloadedCommand‹string, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[punsubscribe](_redis_.redis.md#punsubscribe)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:713
+
+___
+
+### `Readonly` redlock
 
 • **redlock**: *Redlock*
 
-*Defined in [redis.ts:62](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L62)*
+*Defined in [redis.ts:62](https://github.com/ehacke/redis/blob/07fa980/redis.ts#L62)*
+
+___
+
+###  restore
+
+• **restore**: *OverloadedListCommand‹ValueType, Ok›*
+
+*Inherited from [Redis](_redis_.redis.md).[restore](_redis_.redis.md#restore)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:727
+
+___
+
+###  rpush
+
+• **rpush**: *OverloadedKeyCommand‹ValueType, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[rpush](_redis_.redis.md#rpush)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:289
+
+___
+
+###  rpushBuffer
+
+• **rpushBuffer**: *OverloadedKeyCommand‹Buffer, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[rpushBuffer](_redis_.redis.md#rpushbuffer)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:290
+
+___
+
+###  rpushx
+
+• **rpushx**: *OverloadedKeyCommand‹ValueType, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[rpushx](_redis_.redis.md#rpushx)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:295
+
+___
+
+###  sadd
+
+• **sadd**: *OverloadedKeyCommand‹ValueType, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[sadd](_redis_.redis.md#sadd)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:351
+
+___
+
+###  script
+
+• **script**: *OverloadedSubCommand‹ValueType, any›*
+
+*Inherited from [Redis](_redis_.redis.md).[script](_redis_.redis.md#script)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:742
+
+___
+
+###  sdiff
+
+• **sdiff**: *OverloadedListCommand‹KeyType, string[]›*
+
+*Inherited from [Redis](_redis_.redis.md).[sdiff](_redis_.redis.md#sdiff)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:382
+
+___
+
+###  sdiffstore
+
+• **sdiffstore**: *OverloadedKeyCommand‹KeyType, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[sdiffstore](_redis_.redis.md#sdiffstore)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:384
+
+___
+
+###  sinter
+
+• **sinter**: *OverloadedListCommand‹KeyType, string[]›*
+
+*Inherited from [Redis](_redis_.redis.md).[sinter](_redis_.redis.md#sinter)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:374
+
+___
+
+###  sinterstore
+
+• **sinterstore**: *OverloadedKeyCommand‹KeyType, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[sinterstore](_redis_.redis.md#sinterstore)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:376
+
+___
+
+###  sort
+
+• **sort**: *OverloadedListCommand‹KeyType | number, string[] | number›*
+
+*Inherited from [Redis](_redis_.redis.md).[sort](_redis_.redis.md#sort)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:674
+
+___
+
+###  srem
+
+• **srem**: *OverloadedKeyCommand‹ValueType, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[srem](_redis_.redis.md#srem)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:353
+
+___
+
+###  sscan
+
+• **sscan**: *OverloadedKeyCommand‹ValueType, [string, string[]]›*
+
+*Inherited from [Redis](_redis_.redis.md).[sscan](_redis_.redis.md#sscan)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:793
 
 ___
 
@@ -292,7 +673,237 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[status](_redis_.redis.md#status)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:92
+Defined in node_modules/@types/ioredis/index.d.ts:842
+
+___
+
+###  subscribe
+
+• **subscribe**: *OverloadedListCommand‹string, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[subscribe](_redis_.redis.md#subscribe)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:707
+
+___
+
+###  sunion
+
+• **sunion**: *OverloadedListCommand‹KeyType, string[]›*
+
+*Inherited from [Redis](_redis_.redis.md).[sunion](_redis_.redis.md#sunion)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:378
+
+___
+
+###  sunionstore
+
+• **sunionstore**: *OverloadedKeyCommand‹KeyType, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[sunionstore](_redis_.redis.md#sunionstore)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:380
+
+___
+
+###  unlink
+
+• **unlink**: *OverloadedListCommand‹KeyType, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[unlink](_redis_.redis.md#unlink)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:261
+
+___
+
+###  unsubscribe
+
+• **unsubscribe**: *OverloadedCommand‹string, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[unsubscribe](_redis_.redis.md#unsubscribe)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:709
+
+___
+
+###  watch
+
+• **watch**: *OverloadedListCommand‹KeyType, Ok›*
+
+*Inherited from [Redis](_redis_.redis.md).[watch](_redis_.redis.md#watch)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:720
+
+___
+
+###  xack
+
+• **xack**: *OverloadedKeyCommand‹ValueType, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[xack](_redis_.redis.md#xack)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:812
+
+___
+
+###  xadd
+
+• **xadd**: *OverloadedKeyCommand‹ValueType, string›*
+
+*Inherited from [Redis](_redis_.redis.md).[xadd](_redis_.redis.md#xadd)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:814
+
+___
+
+###  xclaim
+
+• **xclaim**: *OverloadedKeyCommand‹ValueType, Array‹[string, string[]]››*
+
+*Inherited from [Redis](_redis_.redis.md).[xclaim](_redis_.redis.md#xclaim)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:816
+
+___
+
+###  xdel
+
+• **xdel**: *OverloadedKeyCommand‹string, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[xdel](_redis_.redis.md#xdel)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:818
+
+___
+
+###  xgroup
+
+• **xgroup**: *OverloadedSubCommand‹ValueType, Ok›*
+
+*Inherited from [Redis](_redis_.redis.md).[xgroup](_redis_.redis.md#xgroup)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:820
+
+___
+
+###  xinfo
+
+• **xinfo**: *OverloadedSubCommand‹ValueType, any›*
+
+*Inherited from [Redis](_redis_.redis.md).[xinfo](_redis_.redis.md#xinfo)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:822
+
+___
+
+###  xpending
+
+• **xpending**: *OverloadedKeyCommand‹ValueType, any›*
+
+*Inherited from [Redis](_redis_.redis.md).[xpending](_redis_.redis.md#xpending)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:827
+
+___
+
+###  xrange
+
+• **xrange**: *OverloadedKeyCommand‹ValueType, Array‹[string, string[]]››*
+
+*Inherited from [Redis](_redis_.redis.md).[xrange](_redis_.redis.md#xrange)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:829
+
+___
+
+###  xread
+
+• **xread**: *OverloadedListCommand‹ValueType, Array‹[string, string[]]››*
+
+*Inherited from [Redis](_redis_.redis.md).[xread](_redis_.redis.md#xread)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:831
+
+___
+
+###  xreadgroup
+
+• **xreadgroup**: *OverloadedKeyCommand‹ValueType, Array‹[string, string[]]››*
+
+*Inherited from [Redis](_redis_.redis.md).[xreadgroup](_redis_.redis.md#xreadgroup)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:833
+
+___
+
+###  xrevrange
+
+• **xrevrange**: *OverloadedKeyCommand‹ValueType, Array‹[string, string[]]››*
+
+*Inherited from [Redis](_redis_.redis.md).[xrevrange](_redis_.redis.md#xrevrange)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:835
+
+___
+
+###  xtrim
+
+• **xtrim**: *OverloadedKeyCommand‹ValueType, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[xtrim](_redis_.redis.md#xtrim)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:837
+
+___
+
+###  zadd
+
+• **zadd**: *OverloadedKeyCommand‹KeyType | number, number | string›*
+
+*Inherited from [Redis](_redis_.redis.md).[zadd](_redis_.redis.md#zadd)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:389
+
+___
+
+###  zinterstore
+
+• **zinterstore**: *OverloadedKeyCommand‹KeyType | number, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[zinterstore](_redis_.redis.md#zinterstore)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:407
+
+___
+
+###  zrem
+
+• **zrem**: *OverloadedKeyCommand‹ValueType, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[zrem](_redis_.redis.md#zrem)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:397
+
+___
+
+###  zscan
+
+• **zscan**: *OverloadedKeyCommand‹ValueType, [string, string[]]›*
+
+*Inherited from [Redis](_redis_.redis.md).[zscan](_redis_.redis.md#zscan)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:797
+
+___
+
+###  zunionstore
+
+• **zunionstore**: *OverloadedKeyCommand‹KeyType | number, number›*
+
+*Inherited from [Redis](_redis_.redis.md).[zunionstore](_redis_.redis.md#zunionstore)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:405
 
 ## Methods
 
@@ -302,7 +913,7 @@ Defined in node_modules/@types/ioredis/index.d.ts:92
 
 *Inherited from [Redis](_redis_.redis.md).[addListener](_redis_.redis.md#addlistener)*
 
-Defined in node_modules/@types/node/globals.d.ts:547
+Defined in node_modules/@types/node/globals.d.ts:554
 
 **Parameters:**
 
@@ -324,28 +935,19 @@ ___
 
 ###  append
 
-▸ **append**(`key`: KeyType, `value`: ValueType, `callback`: function): *void*
+▸ **append**(`key`: KeyType, `value`: ValueType, `callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[append](_redis_.redis.md#append)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:171
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **value**: *ValueType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:253
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`key` | KeyType |
+`value` | ValueType |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -353,7 +955,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[append](_redis_.redis.md#append)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:172
+Defined in node_modules/@types/ioredis/index.d.ts:254
 
 **Parameters:**
 
@@ -368,26 +970,18 @@ ___
 
 ###  auth
 
-▸ **auth**(`password`: string, `callback`: function): *void*
+▸ **auth**(`password`: string, `callback`: Callback‹string›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[auth](_redis_.redis.md#auth)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:544
-
-**Parameters:**
-
-▪ **password**: *string*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:628
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`password` | string |
+`callback` | Callback‹string› |
 
 **Returns:** *void*
 
@@ -395,7 +989,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[auth](_redis_.redis.md#auth)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:545
+Defined in node_modules/@types/ioredis/index.d.ts:629
 
 **Parameters:**
 
@@ -409,24 +1003,17 @@ ___
 
 ###  bgrewriteaof
 
-▸ **bgrewriteaof**(`callback`: function): *void*
+▸ **bgrewriteaof**(`callback`: Callback‹string›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[bgrewriteaof](_redis_.redis.md#bgrewriteaof)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:560
-
-**Parameters:**
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:644
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`callback` | Callback‹string› |
 
 **Returns:** *void*
 
@@ -434,7 +1021,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[bgrewriteaof](_redis_.redis.md#bgrewriteaof)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:561
+Defined in node_modules/@types/ioredis/index.d.ts:645
 
 **Returns:** *Promise‹string›*
 
@@ -442,24 +1029,17 @@ ___
 
 ###  bgsave
 
-▸ **bgsave**(`callback`: function): *void*
+▸ **bgsave**(`callback`: Callback‹string›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[bgsave](_redis_.redis.md#bgsave)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:557
-
-**Parameters:**
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:641
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`callback` | Callback‹string› |
 
 **Returns:** *void*
 
@@ -467,7 +1047,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[bgsave](_redis_.redis.md#bgsave)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:558
+Defined in node_modules/@types/ioredis/index.d.ts:642
 
 **Returns:** *Promise‹string›*
 
@@ -475,26 +1055,18 @@ ___
 
 ###  bitcount
 
-▸ **bitcount**(`key`: KeyType, `callback`: function): *void*
+▸ **bitcount**(`key`: KeyType, `callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[bitcount](_redis_.redis.md#bitcount)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:99
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:193
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`key` | KeyType |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -502,7 +1074,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[bitcount](_redis_.redis.md#bitcount)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:100
+Defined in node_modules/@types/ioredis/index.d.ts:194
 
 **Parameters:**
 
@@ -529,7 +1101,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[bitcount](_redis_.redis.md#bitcount)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:101
+Defined in node_modules/@types/ioredis/index.d.ts:195
 
 **Parameters:**
 
@@ -543,7 +1115,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[bitcount](_redis_.redis.md#bitcount)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:102
+Defined in node_modules/@types/ioredis/index.d.ts:196
 
 **Parameters:**
 
@@ -557,68 +1129,22 @@ Name | Type |
 
 ___
 
-###  blpop
-
-▸ **blpop**(...`keys`: KeyType[]): *Promise‹[string, string]›*
-
-*Inherited from [Redis](_redis_.redis.md).[blpop](_redis_.redis.md#blpop)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:239
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`...keys` | KeyType[] |
-
-**Returns:** *Promise‹[string, string]›*
-
-___
-
-###  brpop
-
-▸ **brpop**(...`keys`: KeyType[]): *Promise‹[string, string]›*
-
-*Inherited from [Redis](_redis_.redis.md).[brpop](_redis_.redis.md#brpop)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:237
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`...keys` | KeyType[] |
-
-**Returns:** *Promise‹[string, string]›*
-
-___
-
 ###  brpoplpush
 
-▸ **brpoplpush**(`source`: string, `destination`: string, `timeout`: number, `callback`: function): *void*
+▸ **brpoplpush**(`source`: string, `destination`: string, `timeout`: number, `callback`: Callback‹string›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[brpoplpush](_redis_.redis.md#brpoplpush)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:241
-
-**Parameters:**
-
-▪ **source**: *string*
-
-▪ **destination**: *string*
-
-▪ **timeout**: *number*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:321
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`source` | string |
+`destination` | string |
+`timeout` | number |
+`callback` | Callback‹string› |
 
 **Returns:** *void*
 
@@ -626,7 +1152,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[brpoplpush](_redis_.redis.md#brpoplpush)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:247
+Defined in node_modules/@types/ioredis/index.d.ts:322
 
 **Parameters:**
 
@@ -640,78 +1166,73 @@ Name | Type |
 
 ___
 
-###  client
-
-▸ **client**(...`args`: ValueType[]): *any*
-
-*Inherited from [Redis](_redis_.redis.md).[client](_redis_.redis.md#client)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:649
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`...args` | ValueType[] |
-
-**Returns:** *any*
-
-___
-
-###  cluster
-
-▸ **cluster**(...`args`: ValueType[]): *any*
-
-*Inherited from [Redis](_redis_.redis.md).[cluster](_redis_.redis.md#cluster)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:638
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`...args` | ValueType[] |
-
-**Returns:** *any*
-
-___
-
 ###  config
 
-▸ **config**(`op`: "GET", `cfg`: any[]): *Promise‹[string, string]›*
+▸ **config**(`op`: "GET", `cfg`: string): *Promise‹string[]›*
 
 *Inherited from [Redis](_redis_.redis.md).[config](_redis_.redis.md#config)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:616
+Defined in node_modules/@types/ioredis/index.d.ts:700
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
 `op` | "GET" |
-`cfg` | any[] |
+`cfg` | string |
 
-**Returns:** *Promise‹[string, string]›*
+**Returns:** *Promise‹string[]›*
 
-▸ **config**(`op`: "REWRITE"): *Promise‹Ok›*
+▸ **config**(`op`: "GET", `cfg`: string, `callback`: Callback‹string[]›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[config](_redis_.redis.md#config)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:617
+Defined in node_modules/@types/ioredis/index.d.ts:701
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`op` | "REWRITE" |
+`op` | "GET" |
+`cfg` | string |
+`callback` | Callback‹string[]› |
+
+**Returns:** *void*
+
+▸ **config**(`op`: "REWRITE" | "RESETSTAT"): *Promise‹Ok›*
+
+*Inherited from [Redis](_redis_.redis.md).[config](_redis_.redis.md#config)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:702
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`op` | "REWRITE" &#124; "RESETSTAT" |
 
 **Returns:** *Promise‹Ok›*
+
+▸ **config**(`op`: "REWRITE" | "RESETSTAT", `callback`: Callback‹Ok›): *void*
+
+*Inherited from [Redis](_redis_.redis.md).[config](_redis_.redis.md#config)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:703
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`op` | "REWRITE" &#124; "RESETSTAT" |
+`callback` | Callback‹Ok› |
+
+**Returns:** *void*
 
 ▸ **config**(`op`: "SET", `key`: string, `value`: ValueType): *Promise‹Ok›*
 
 *Inherited from [Redis](_redis_.redis.md).[config](_redis_.redis.md#config)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:618
+Defined in node_modules/@types/ioredis/index.d.ts:704
 
 **Parameters:**
 
@@ -723,6 +1244,23 @@ Name | Type |
 
 **Returns:** *Promise‹Ok›*
 
+▸ **config**(`op`: "SET", `key`: string, `value`: ValueType, `callback`: Callback‹Ok›): *void*
+
+*Inherited from [Redis](_redis_.redis.md).[config](_redis_.redis.md#config)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:705
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`op` | "SET" |
+`key` | string |
+`value` | ValueType |
+`callback` | Callback‹Ok› |
+
+**Returns:** *void*
+
 ___
 
 ###  connect
@@ -731,7 +1269,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[connect](_redis_.redis.md#connect)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:93
+Defined in node_modules/@types/ioredis/index.d.ts:843
 
 **Parameters:**
 
@@ -749,7 +1287,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[createBuiltinCommand](_redis_.redis.md#createbuiltincommand)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:47
+Defined in node_modules/@types/ioredis/index.d.ts:48
 
 **Parameters:**
 
@@ -765,7 +1303,7 @@ ___
 
 ▸ **createRedlock**(`config`: Options): *Redlock*
 
-*Defined in [redis.ts:110](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L110)*
+*Defined in [redis.ts:110](https://github.com/ehacke/redis/blob/07fa980/redis.ts#L110)*
 
 Get redlock instance
 
@@ -783,24 +1321,17 @@ ___
 
 ###  dbsize
 
-▸ **dbsize**(`callback`: function): *void*
+▸ **dbsize**(`callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[dbsize](_redis_.redis.md#dbsize)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:541
-
-**Parameters:**
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:625
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -808,7 +1339,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[dbsize](_redis_.redis.md#dbsize)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:542
+Defined in node_modules/@types/ioredis/index.d.ts:626
 
 **Returns:** *Promise‹number›*
 
@@ -818,7 +1349,7 @@ ___
 
 ▸ **debounce**(`callback`: Function, `key`: string, `timeoutMs`: number, `skewMs`: number): *Promise‹any›*
 
-*Defined in [redis.ts:168](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L168)*
+*Defined in [redis.ts:168](https://github.com/ehacke/redis/blob/07fa980/redis.ts#L168)*
 
 Debounce a callback using Redis and setTimeout locally
 
@@ -835,46 +1366,20 @@ Name | Type | Default |
 
 ___
 
-###  debug
-
-▸ **debug**(...`args`: ValueType[]): *Promise‹any›*
-
-*Inherited from [Redis](_redis_.redis.md).[debug](_redis_.redis.md#debug)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:614
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`...args` | ValueType[] |
-
-**Returns:** *Promise‹any›*
-
-___
-
 ###  decr
 
-▸ **decr**(`key`: KeyType, `callback`: function): *void*
+▸ **decr**(`key`: KeyType, `callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[decr](_redis_.redis.md#decr)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:202
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:284
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`key` | KeyType |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -882,7 +1387,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[decr](_redis_.redis.md#decr)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:203
+Defined in node_modules/@types/ioredis/index.d.ts:285
 
 **Parameters:**
 
@@ -896,28 +1401,19 @@ ___
 
 ###  decrby
 
-▸ **decrby**(`key`: KeyType, `decrement`: number, `callback`: function): *void*
+▸ **decrby**(`key`: KeyType, `decrement`: number, `callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[decrby](_redis_.redis.md#decrby)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:493
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **decrement**: *number*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:586
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`key` | KeyType |
+`decrement` | number |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -925,7 +1421,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[decrby](_redis_.redis.md#decrby)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:494
+Defined in node_modules/@types/ioredis/index.d.ts:587
 
 **Parameters:**
 
@@ -944,7 +1440,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[defineCommand](_redis_.redis.md#definecommand)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:48
+Defined in node_modules/@types/ioredis/index.d.ts:49
 
 **Parameters:**
 
@@ -961,54 +1457,29 @@ Name | Type |
 
 ___
 
-###  del
-
-▸ **del**(...`keys`: KeyType[]): *Promise‹number›*
-
-*Inherited from [Redis](_redis_.redis.md).[del](_redis_.redis.md#del)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:177
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`...keys` | KeyType[] |
-
-**Returns:** *Promise‹number›*
-
-___
-
 ###  discard
 
-▸ **discard**(`callback`: function): *void*
+▸ **discard**(`callback`: Callback‹Ok›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[discard](_redis_.redis.md#discard)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:578
-
-**Parameters:**
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:662
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`callback` | Callback‹Ok› |
 
 **Returns:** *void*
 
-▸ **discard**(): *Promise‹string›*
+▸ **discard**(): *Promise‹Ok›*
 
 *Inherited from [Redis](_redis_.redis.md).[discard](_redis_.redis.md#discard)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:579
+Defined in node_modules/@types/ioredis/index.d.ts:663
 
-**Returns:** *Promise‹string›*
+**Returns:** *Promise‹Ok›*
 
 ___
 
@@ -1018,7 +1489,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[disconnect](_redis_.redis.md#disconnect)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:94
+Defined in node_modules/@types/ioredis/index.d.ts:844
 
 **Returns:** *void*
 
@@ -1026,26 +1497,18 @@ ___
 
 ###  dump
 
-▸ **dump**(`key`: KeyType, `callback`: function): *void*
+▸ **dump**(`key`: KeyType, `callback`: Callback‹string›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[dump](_redis_.redis.md#dump)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:644
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:731
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`key` | KeyType |
+`callback` | Callback‹string› |
 
 **Returns:** *void*
 
@@ -1053,7 +1516,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[dump](_redis_.redis.md#dump)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:645
+Defined in node_modules/@types/ioredis/index.d.ts:732
 
 **Parameters:**
 
@@ -1071,7 +1534,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[duplicate](_redis_.redis.md#duplicate)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:95
+Defined in node_modules/@types/ioredis/index.d.ts:845
 
 **Returns:** *Redis*
 
@@ -1079,26 +1542,18 @@ ___
 
 ###  echo
 
-▸ **echo**(`message`: string, `callback`: function): *void*
+▸ **echo**(`message`: string, `callback`: Callback‹string›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[echo](_redis_.redis.md#echo)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:551
-
-**Parameters:**
-
-▪ **message**: *string*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:635
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`message` | string |
+`callback` | Callback‹string› |
 
 **Returns:** *void*
 
@@ -1106,7 +1561,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[echo](_redis_.redis.md#echo)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:552
+Defined in node_modules/@types/ioredis/index.d.ts:636
 
 **Parameters:**
 
@@ -1124,7 +1579,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[emit](_redis_.redis.md#emit)*
 
-Defined in node_modules/@types/node/globals.d.ts:557
+Defined in node_modules/@types/node/globals.d.ts:564
 
 **Parameters:**
 
@@ -1137,68 +1592,13 @@ Name | Type |
 
 ___
 
-###  eval
-
-▸ **eval**(`script`: string, `numKeys`: number, ...`args`: ValueType[]): *any*
-
-*Inherited from [Redis](_redis_.redis.md).[eval](_redis_.redis.md#eval)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:651
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`script` | string |
-`numKeys` | number |
-`...args` | ValueType[] |
-
-**Returns:** *any*
-
-▸ **eval**(`args`: ValueType[], `callback?`: undefined | function): *any*
-
-*Inherited from [Redis](_redis_.redis.md).[eval](_redis_.redis.md#eval)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:655
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`args` | ValueType[] |
-`callback?` | undefined &#124; function |
-
-**Returns:** *any*
-
-___
-
-###  evalsha
-
-▸ **evalsha**(`scriptSha`: string, `numKeys`: string, ...`args`: ValueType[]): *any*
-
-*Inherited from [Redis](_redis_.redis.md).[evalsha](_redis_.redis.md#evalsha)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:657
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`scriptSha` | string |
-`numKeys` | string |
-`...args` | ValueType[] |
-
-**Returns:** *any*
-
-___
-
 ###  eventNames
 
 ▸ **eventNames**(): *Array‹string | symbol›*
 
 *Inherited from [Redis](_redis_.redis.md).[eventNames](_redis_.redis.md#eventnames)*
 
-Defined in node_modules/@types/node/globals.d.ts:562
+Defined in node_modules/@types/node/globals.d.ts:569
 
 **Returns:** *Array‹string | symbol›*
 
@@ -1206,24 +1606,17 @@ ___
 
 ###  exec
 
-▸ **exec**(`callback`: function): *void*
+▸ **exec**(`callback`: Callback‹Array‹[Error | null, string]››): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[exec](_redis_.redis.md#exec)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:575
-
-**Parameters:**
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: Array‹[Error | null, string]›): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:659
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | Array‹[Error &#124; null, string]› |
+`callback` | Callback‹Array‹[Error &#124; null, string]›› |
 
 **Returns:** *void*
 
@@ -1231,7 +1624,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[exec](_redis_.redis.md#exec)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:576
+Defined in node_modules/@types/ioredis/index.d.ts:660
 
 **Returns:** *Promise‹Array‹[Error | null, string]››*
 
@@ -1243,7 +1636,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[exists](_redis_.redis.md#exists)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:181
+Defined in node_modules/@types/ioredis/index.d.ts:263
 
 **Parameters:**
 
@@ -1253,26 +1646,18 @@ Name | Type |
 
 **Returns:** *Promise‹number›*
 
-▸ **exists**(`key`: KeyType, `callback`: function): *void*
+▸ **exists**(`key`: KeyType, `callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[exists](_redis_.redis.md#exists)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:182
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:264
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`key` | KeyType |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -1280,28 +1665,19 @@ ___
 
 ###  expire
 
-▸ **expire**(`key`: KeyType, `seconds`: number, `callback`: function): *void*
+▸ **expire**(`key`: KeyType, `seconds`: number, `callback`: Callback‹BooleanResponse›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[expire](_redis_.redis.md#expire)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:522
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **seconds**: *number*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: BooleanResponse): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:610
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | BooleanResponse |
+`key` | KeyType |
+`seconds` | number |
+`callback` | Callback‹BooleanResponse› |
 
 **Returns:** *void*
 
@@ -1309,7 +1685,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[expire](_redis_.redis.md#expire)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:523
+Defined in node_modules/@types/ioredis/index.d.ts:611
 
 **Parameters:**
 
@@ -1324,28 +1700,19 @@ ___
 
 ###  expireat
 
-▸ **expireat**(`key`: KeyType, `timestamp`: number, `callback`: function): *void*
+▸ **expireat**(`key`: KeyType, `timestamp`: number, `callback`: Callback‹BooleanResponse›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[expireat](_redis_.redis.md#expireat)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:528
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **timestamp**: *number*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: BooleanResponse): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:616
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | BooleanResponse |
+`key` | KeyType |
+`timestamp` | number |
+`callback` | Callback‹BooleanResponse› |
 
 **Returns:** *void*
 
@@ -1353,7 +1720,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[expireat](_redis_.redis.md#expireat)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:529
+Defined in node_modules/@types/ioredis/index.d.ts:617
 
 **Parameters:**
 
@@ -1368,92 +1735,70 @@ ___
 
 ###  flushall
 
-▸ **flushall**(`callback`: function): *void*
+▸ **flushall**(`callback`: Callback‹Ok›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[flushall](_redis_.redis.md#flushall)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:587
-
-**Parameters:**
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:671
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`callback` | Callback‹Ok› |
 
 **Returns:** *void*
 
-▸ **flushall**(): *Promise‹string›*
+▸ **flushall**(): *Promise‹Ok›*
 
 *Inherited from [Redis](_redis_.redis.md).[flushall](_redis_.redis.md#flushall)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:588
+Defined in node_modules/@types/ioredis/index.d.ts:672
 
-**Returns:** *Promise‹string›*
+**Returns:** *Promise‹Ok›*
 
 ___
 
 ###  flushdb
 
-▸ **flushdb**(`callback`: function): *void*
+▸ **flushdb**(`callback`: Callback‹Ok›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[flushdb](_redis_.redis.md#flushdb)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:584
-
-**Parameters:**
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:668
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`callback` | Callback‹Ok› |
 
 **Returns:** *void*
 
-▸ **flushdb**(): *Promise‹string›*
+▸ **flushdb**(): *Promise‹Ok›*
 
 *Inherited from [Redis](_redis_.redis.md).[flushdb](_redis_.redis.md#flushdb)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:585
+Defined in node_modules/@types/ioredis/index.d.ts:669
 
-**Returns:** *Promise‹string›*
+**Returns:** *Promise‹Ok›*
 
 ___
 
 ###  get
 
-▸ **get**(`key`: KeyType, `callback`: function): *void*
+▸ **get**(`key`: KeyType, `callback`: Callback‹string | null›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[get](_redis_.redis.md#get)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:104
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string | null): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:198
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string &#124; null |
+`key` | KeyType |
+`callback` | Callback‹string &#124; null› |
 
 **Returns:** *void*
 
@@ -1461,7 +1806,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[get](_redis_.redis.md#get)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:105
+Defined in node_modules/@types/ioredis/index.d.ts:199
 
 **Parameters:**
 
@@ -1475,26 +1820,18 @@ ___
 
 ###  getBuffer
 
-▸ **getBuffer**(`key`: KeyType, `callback`: function): *void*
+▸ **getBuffer**(`key`: KeyType, `callback`: Callback‹Buffer›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[getBuffer](_redis_.redis.md#getbuffer)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:107
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: Buffer): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:201
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | Buffer |
+`key` | KeyType |
+`callback` | Callback‹Buffer› |
 
 **Returns:** *void*
 
@@ -1502,7 +1839,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[getBuffer](_redis_.redis.md#getbuffer)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:108
+Defined in node_modules/@types/ioredis/index.d.ts:202
 
 **Parameters:**
 
@@ -1520,7 +1857,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[getBuiltinCommands](_redis_.redis.md#getbuiltincommands)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:46
+Defined in node_modules/@types/ioredis/index.d.ts:47
 
 **Returns:** *string[]*
 
@@ -1532,7 +1869,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[getMaxListeners](_redis_.redis.md#getmaxlisteners)*
 
-Defined in node_modules/@types/node/globals.d.ts:554
+Defined in node_modules/@types/node/globals.d.ts:561
 
 **Returns:** *number*
 
@@ -1540,28 +1877,19 @@ ___
 
 ###  getbit
 
-▸ **getbit**(`key`: KeyType, `offset`: number, `callback`: function): *void*
+▸ **getbit**(`key`: KeyType, `offset`: number, `callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[getbit](_redis_.redis.md#getbit)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:187
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **offset**: *number*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:269
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`key` | KeyType |
+`offset` | number |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -1569,7 +1897,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[getbit](_redis_.redis.md#getbit)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:188
+Defined in node_modules/@types/ioredis/index.d.ts:270
 
 **Parameters:**
 
@@ -1584,30 +1912,20 @@ ___
 
 ###  getrange
 
-▸ **getrange**(`key`: KeyType, `start`: number, `end`: number, `callback`: function): *void*
+▸ **getrange**(`key`: KeyType, `start`: number, `end`: number, `callback`: Callback‹string›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[getrange](_redis_.redis.md#getrange)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:193
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **start**: *number*
-
-▪ **end**: *number*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:275
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`key` | KeyType |
+`start` | number |
+`end` | number |
+`callback` | Callback‹string› |
 
 **Returns:** *void*
 
@@ -1615,7 +1933,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[getrange](_redis_.redis.md#getrange)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:194
+Defined in node_modules/@types/ioredis/index.d.ts:276
 
 **Parameters:**
 
@@ -1631,28 +1949,19 @@ ___
 
 ###  getset
 
-▸ **getset**(`key`: KeyType, `value`: ValueType, `callback`: function): *void*
+▸ **getset**(`key`: KeyType, `value`: ValueType, `callback`: Callback‹string | null›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[getset](_redis_.redis.md#getset)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:496
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **value**: *ValueType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string | null): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:589
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string &#124; null |
+`key` | KeyType |
+`value` | ValueType |
+`callback` | Callback‹string &#124; null› |
 
 **Returns:** *void*
 
@@ -1660,7 +1969,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[getset](_redis_.redis.md#getset)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:497
+Defined in node_modules/@types/ioredis/index.d.ts:590
 
 **Parameters:**
 
@@ -1673,49 +1982,21 @@ Name | Type |
 
 ___
 
-###  hdel
+###  hexists
 
-▸ **hdel**(`key`: KeyType, ...`fields`: string[]): *Promise‹number›*
+▸ **hexists**(`key`: KeyType, `field`: string, `callback`: Callback‹BooleanResponse›): *void*
 
-*Inherited from [Redis](_redis_.redis.md).[hdel](_redis_.redis.md#hdel)*
+*Inherited from [Redis](_redis_.redis.md).[hexists](_redis_.redis.md#hexists)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:470
+Defined in node_modules/@types/ioredis/index.d.ts:577
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
 `key` | KeyType |
-`...fields` | string[] |
-
-**Returns:** *Promise‹number›*
-
-___
-
-###  hexists
-
-▸ **hexists**(`key`: KeyType, `field`: string, `callback`: function): *void*
-
-*Inherited from [Redis](_redis_.redis.md).[hexists](_redis_.redis.md#hexists)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:484
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **field**: *string*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: BooleanResponse): *void*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`err` | Error |
-`res` | BooleanResponse |
+`field` | string |
+`callback` | Callback‹BooleanResponse› |
 
 **Returns:** *void*
 
@@ -1723,7 +2004,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[hexists](_redis_.redis.md#hexists)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:485
+Defined in node_modules/@types/ioredis/index.d.ts:578
 
 **Parameters:**
 
@@ -1738,28 +2019,19 @@ ___
 
 ###  hget
 
-▸ **hget**(`key`: KeyType, `field`: string, `callback`: function): *void*
+▸ **hget**(`key`: KeyType, `field`: string, `callback`: Callback‹string | null›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[hget](_redis_.redis.md#hget)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:449
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **field**: *string*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string | null): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:548
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string &#124; null |
+`key` | KeyType |
+`field` | string |
+`callback` | Callback‹string &#124; null› |
 
 **Returns:** *void*
 
@@ -1767,7 +2039,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[hget](_redis_.redis.md#hget)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:450
+Defined in node_modules/@types/ioredis/index.d.ts:549
 
 **Parameters:**
 
@@ -1782,28 +2054,19 @@ ___
 
 ###  hgetBuffer
 
-▸ **hgetBuffer**(`key`: KeyType, `field`: string, `callback`: function): *void*
+▸ **hgetBuffer**(`key`: KeyType, `field`: string, `callback`: Callback‹Buffer›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[hgetBuffer](_redis_.redis.md#hgetbuffer)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:451
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **field**: *string*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: Buffer): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:550
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | Buffer |
+`key` | KeyType |
+`field` | string |
+`callback` | Callback‹Buffer› |
 
 **Returns:** *void*
 
@@ -1811,7 +2074,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[hgetBuffer](_redis_.redis.md#hgetbuffer)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:452
+Defined in node_modules/@types/ioredis/index.d.ts:551
 
 **Parameters:**
 
@@ -1826,26 +2089,18 @@ ___
 
 ###  hgetall
 
-▸ **hgetall**(`key`: KeyType, `callback`: function): *void*
+▸ **hgetall**(`key`: KeyType, `callback`: Callback‹Record‹string, string››): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[hgetall](_redis_.redis.md#hgetall)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:481
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: Record‹string, string›): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:574
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | Record‹string, string› |
+`key` | KeyType |
+`callback` | Callback‹Record‹string, string›› |
 
 **Returns:** *void*
 
@@ -1853,7 +2108,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[hgetall](_redis_.redis.md#hgetall)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:482
+Defined in node_modules/@types/ioredis/index.d.ts:575
 
 **Parameters:**
 
@@ -1867,30 +2122,20 @@ ___
 
 ###  hincrby
 
-▸ **hincrby**(`key`: KeyType, `field`: string, `increment`: number, `callback`: function): *void*
+▸ **hincrby**(`key`: KeyType, `field`: string, `increment`: number, `callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[hincrby](_redis_.redis.md#hincrby)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:464
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **field**: *string*
-
-▪ **increment**: *number*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:557
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`key` | KeyType |
+`field` | string |
+`increment` | number |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -1898,7 +2143,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[hincrby](_redis_.redis.md#hincrby)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:465
+Defined in node_modules/@types/ioredis/index.d.ts:558
 
 **Parameters:**
 
@@ -1914,30 +2159,20 @@ ___
 
 ###  hincrbyfloat
 
-▸ **hincrbyfloat**(`key`: KeyType, `field`: string, `increment`: number, `callback`: function): *void*
+▸ **hincrbyfloat**(`key`: KeyType, `field`: string, `increment`: number, `callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[hincrbyfloat](_redis_.redis.md#hincrbyfloat)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:467
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **field**: *string*
-
-▪ **increment**: *number*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:560
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`key` | KeyType |
+`field` | string |
+`increment` | number |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -1945,7 +2180,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[hincrbyfloat](_redis_.redis.md#hincrbyfloat)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:468
+Defined in node_modules/@types/ioredis/index.d.ts:561
 
 **Parameters:**
 
@@ -1961,26 +2196,18 @@ ___
 
 ###  hkeys
 
-▸ **hkeys**(`key`: KeyType, `callback`: function): *void*
+▸ **hkeys**(`key`: KeyType, `callback`: Callback‹string[]›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[hkeys](_redis_.redis.md#hkeys)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:475
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string[]): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:568
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string[] |
+`key` | KeyType |
+`callback` | Callback‹string[]› |
 
 **Returns:** *void*
 
@@ -1988,7 +2215,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[hkeys](_redis_.redis.md#hkeys)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:476
+Defined in node_modules/@types/ioredis/index.d.ts:569
 
 **Parameters:**
 
@@ -2002,26 +2229,18 @@ ___
 
 ###  hlen
 
-▸ **hlen**(`key`: KeyType, `callback`: function): *void*
+▸ **hlen**(`key`: KeyType, `callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[hlen](_redis_.redis.md#hlen)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:472
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:565
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`key` | KeyType |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -2029,7 +2248,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[hlen](_redis_.redis.md#hlen)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:473
+Defined in node_modules/@types/ioredis/index.d.ts:566
 
 **Parameters:**
 
@@ -2041,111 +2260,13 @@ Name | Type |
 
 ___
 
-###  hmget
-
-▸ **hmget**(`key`: KeyType, ...`fields`: string[]): *Promise‹Array‹string | null››*
-
-*Inherited from [Redis](_redis_.redis.md).[hmget](_redis_.redis.md#hmget)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:462
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | KeyType |
-`...fields` | string[] |
-
-**Returns:** *Promise‹Array‹string | null››*
-
-___
-
-###  hmset
-
-▸ **hmset**(`key`: KeyType, ...`args`: ValueType[]): *Promise‹BooleanResponse›*
-
-*Inherited from [Redis](_redis_.redis.md).[hmset](_redis_.redis.md#hmset)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:454
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | KeyType |
-`...args` | ValueType[] |
-
-**Returns:** *Promise‹BooleanResponse›*
-
-▸ **hmset**(`key`: KeyType, `data`: object | Map‹string, ValueType›, `callback`: function): *void*
-
-*Inherited from [Redis](_redis_.redis.md).[hmset](_redis_.redis.md#hmset)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:455
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **data**: *object | Map‹string, ValueType›*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: BooleanResponse): *void*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`err` | Error |
-`res` | BooleanResponse |
-
-**Returns:** *void*
-
-▸ **hmset**(`key`: KeyType, `data`: object | Map‹string, ValueType›): *Promise‹BooleanResponse›*
-
-*Inherited from [Redis](_redis_.redis.md).[hmset](_redis_.redis.md#hmset)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:460
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | KeyType |
-`data` | object &#124; Map‹string, ValueType› |
-
-**Returns:** *Promise‹BooleanResponse›*
-
-___
-
-###  hscan
-
-▸ **hscan**(`key`: KeyType, `cursor`: number, ...`args`: ValueType[]): *Promise‹[string, string[]]›*
-
-*Inherited from [Redis](_redis_.redis.md).[hscan](_redis_.redis.md#hscan)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:686
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | KeyType |
-`cursor` | number |
-`...args` | ValueType[] |
-
-**Returns:** *Promise‹[string, string[]]›*
-
-___
-
 ###  hscanStream
 
 ▸ **hscanStream**(`key`: KeyType, `options?`: ScanStreamOption): *Readable*
 
 *Inherited from [Redis](_redis_.redis.md).[hscanStream](_redis_.redis.md#hscanstream)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:700
+Defined in node_modules/@types/ioredis/index.d.ts:809
 
 **Parameters:**
 
@@ -2160,30 +2281,20 @@ ___
 
 ###  hset
 
-▸ **hset**(`key`: KeyType, `field`: string, `value`: ValueType, `callback`: function): *void*
+▸ **hset**(`key`: KeyType, `field`: string, `value`: ValueType, `callback`: Callback‹BooleanResponse›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[hset](_redis_.redis.md#hset)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:431
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **field**: *string*
-
-▪ **value**: *ValueType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: BooleanResponse): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:540
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | BooleanResponse |
+`key` | KeyType |
+`field` | string |
+`value` | ValueType |
+`callback` | Callback‹BooleanResponse› |
 
 **Returns:** *void*
 
@@ -2191,7 +2302,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[hset](_redis_.redis.md#hset)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:432
+Defined in node_modules/@types/ioredis/index.d.ts:541
 
 **Parameters:**
 
@@ -2207,30 +2318,20 @@ ___
 
 ###  hsetBuffer
 
-▸ **hsetBuffer**(`key`: KeyType, `field`: string, `value`: ValueType, `callback`: function): *void*
+▸ **hsetBuffer**(`key`: KeyType, `field`: string, `value`: ValueType, `callback`: Callback‹BooleanResponse›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[hsetBuffer](_redis_.redis.md#hsetbuffer)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:433
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **field**: *string*
-
-▪ **value**: *ValueType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: BooleanResponse): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:542
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | BooleanResponse |
+`key` | KeyType |
+`field` | string |
+`value` | ValueType |
+`callback` | Callback‹BooleanResponse› |
 
 **Returns:** *void*
 
@@ -2238,7 +2339,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[hsetBuffer](_redis_.redis.md#hsetbuffer)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:439
+Defined in node_modules/@types/ioredis/index.d.ts:543
 
 **Parameters:**
 
@@ -2254,30 +2355,20 @@ ___
 
 ###  hsetnx
 
-▸ **hsetnx**(`key`: KeyType, `field`: string, `value`: ValueType, `callback`: function): *void*
+▸ **hsetnx**(`key`: KeyType, `field`: string, `value`: ValueType, `callback`: Callback‹BooleanResponse›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[hsetnx](_redis_.redis.md#hsetnx)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:441
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **field**: *string*
-
-▪ **value**: *ValueType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: BooleanResponse): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:545
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | BooleanResponse |
+`key` | KeyType |
+`field` | string |
+`value` | ValueType |
+`callback` | Callback‹BooleanResponse› |
 
 **Returns:** *void*
 
@@ -2285,7 +2376,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[hsetnx](_redis_.redis.md#hsetnx)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:447
+Defined in node_modules/@types/ioredis/index.d.ts:546
 
 **Parameters:**
 
@@ -2301,26 +2392,18 @@ ___
 
 ###  hvals
 
-▸ **hvals**(`key`: KeyType, `callback`: function): *void*
+▸ **hvals**(`key`: KeyType, `callback`: Callback‹string[]›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[hvals](_redis_.redis.md#hvals)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:478
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string[]): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:571
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string[] |
+`key` | KeyType |
+`callback` | Callback‹string[]› |
 
 **Returns:** *void*
 
@@ -2328,7 +2411,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[hvals](_redis_.redis.md#hvals)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:479
+Defined in node_modules/@types/ioredis/index.d.ts:572
 
 **Parameters:**
 
@@ -2342,26 +2425,18 @@ ___
 
 ###  incr
 
-▸ **incr**(`key`: KeyType, `callback`: function): *void*
+▸ **incr**(`key`: KeyType, `callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[incr](_redis_.redis.md#incr)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:199
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:281
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`key` | KeyType |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -2369,7 +2444,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[incr](_redis_.redis.md#incr)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:200
+Defined in node_modules/@types/ioredis/index.d.ts:282
 
 **Parameters:**
 
@@ -2383,28 +2458,19 @@ ___
 
 ###  incrby
 
-▸ **incrby**(`key`: KeyType, `increment`: number, `callback`: function): *void*
+▸ **incrby**(`key`: KeyType, `increment`: number, `callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[incrby](_redis_.redis.md#incrby)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:487
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **increment**: *number*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:580
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`key` | KeyType |
+`increment` | number |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -2412,7 +2478,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[incrby](_redis_.redis.md#incrby)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:488
+Defined in node_modules/@types/ioredis/index.d.ts:581
 
 **Parameters:**
 
@@ -2427,28 +2493,19 @@ ___
 
 ###  incrbyfloat
 
-▸ **incrbyfloat**(`key`: KeyType, `increment`: number, `callback`: function): *void*
+▸ **incrbyfloat**(`key`: KeyType, `increment`: number, `callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[incrbyfloat](_redis_.redis.md#incrbyfloat)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:490
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **increment**: *number*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:583
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`key` | KeyType |
+`increment` | number |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -2456,7 +2513,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[incrbyfloat](_redis_.redis.md#incrbyfloat)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:491
+Defined in node_modules/@types/ioredis/index.d.ts:584
 
 **Parameters:**
 
@@ -2471,47 +2528,32 @@ ___
 
 ###  info
 
-▸ **info**(`callback`: function): *void*
+▸ **info**(`callback`: Callback‹string›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[info](_redis_.redis.md#info)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:592
-
-**Parameters:**
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:676
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`callback` | Callback‹string› |
 
 **Returns:** *void*
 
-▸ **info**(`section`: string, `callback`: function): *void*
+▸ **info**(`section`: string, `callback`: Callback‹string›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[info](_redis_.redis.md#info)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:593
-
-**Parameters:**
-
-▪ **section**: *string*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:677
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`section` | string |
+`callback` | Callback‹string› |
 
 **Returns:** *void*
 
@@ -2519,7 +2561,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[info](_redis_.redis.md#info)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:594
+Defined in node_modules/@types/ioredis/index.d.ts:678
 
 **Parameters:**
 
@@ -2533,26 +2575,18 @@ ___
 
 ###  keys
 
-▸ **keys**(`pattern`: string, `callback`: function): *void*
+▸ **keys**(`pattern`: string, `callback`: Callback‹string[]›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[keys](_redis_.redis.md#keys)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:538
-
-**Parameters:**
-
-▪ **pattern**: *string*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string[]): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:622
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string[] |
+`pattern` | string |
+`callback` | Callback‹string[]› |
 
 **Returns:** *void*
 
@@ -2560,7 +2594,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[keys](_redis_.redis.md#keys)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:539
+Defined in node_modules/@types/ioredis/index.d.ts:623
 
 **Parameters:**
 
@@ -2574,24 +2608,17 @@ ___
 
 ###  lastsave
 
-▸ **lastsave**(`callback`: function): *void*
+▸ **lastsave**(`callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[lastsave](_redis_.redis.md#lastsave)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:566
-
-**Parameters:**
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:650
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -2599,7 +2626,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[lastsave](_redis_.redis.md#lastsave)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:567
+Defined in node_modules/@types/ioredis/index.d.ts:651
 
 **Returns:** *Promise‹number›*
 
@@ -2607,28 +2634,19 @@ ___
 
 ###  lindex
 
-▸ **lindex**(`key`: KeyType, `index`: number, `callback`: function): *void*
+▸ **lindex**(`key`: KeyType, `index`: number, `callback`: Callback‹string›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[lindex](_redis_.redis.md#lindex)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:252
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **index**: *number*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:327
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`key` | KeyType |
+`index` | number |
+`callback` | Callback‹string› |
 
 **Returns:** *void*
 
@@ -2636,7 +2654,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[lindex](_redis_.redis.md#lindex)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:253
+Defined in node_modules/@types/ioredis/index.d.ts:328
 
 **Parameters:**
 
@@ -2651,32 +2669,21 @@ ___
 
 ###  linsert
 
-▸ **linsert**(`key`: KeyType, `direction`: "BEFORE" | "AFTER", `pivot`: string, `value`: ValueType, `callback`: function): *void*
+▸ **linsert**(`key`: KeyType, `direction`: "BEFORE" | "AFTER", `pivot`: string, `value`: ValueType, `callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[linsert](_redis_.redis.md#linsert)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:219
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **direction**: *"BEFORE" | "AFTER"*
-
-▪ **pivot**: *string*
-
-▪ **value**: *ValueType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:299
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`key` | KeyType |
+`direction` | "BEFORE" &#124; "AFTER" |
+`pivot` | string |
+`value` | ValueType |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -2684,7 +2691,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[linsert](_redis_.redis.md#linsert)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:226
+Defined in node_modules/@types/ioredis/index.d.ts:306
 
 **Parameters:**
 
@@ -2705,7 +2712,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[listenerCount](_redis_.redis.md#listenercount)*
 
-Defined in node_modules/@types/node/globals.d.ts:558
+Defined in node_modules/@types/node/globals.d.ts:565
 
 **Parameters:**
 
@@ -2723,7 +2730,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[listeners](_redis_.redis.md#listeners)*
 
-Defined in node_modules/@types/node/globals.d.ts:555
+Defined in node_modules/@types/node/globals.d.ts:562
 
 **Parameters:**
 
@@ -2737,26 +2744,18 @@ ___
 
 ###  llen
 
-▸ **llen**(`key`: KeyType, `callback`: function): *void*
+▸ **llen**(`key`: KeyType, `callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[llen](_redis_.redis.md#llen)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:249
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:324
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`key` | KeyType |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -2764,7 +2763,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[llen](_redis_.redis.md#llen)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:250
+Defined in node_modules/@types/ioredis/index.d.ts:325
 
 **Parameters:**
 
@@ -2780,7 +2779,7 @@ ___
 
 ▸ **lock**(`key`: string, `ttl`: number): *Promise‹Lock | null›*
 
-*Defined in [redis.ts:72](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L72)*
+*Defined in [redis.ts:72](https://github.com/ehacke/redis/blob/07fa980/redis.ts#L72)*
 
 Acquire lock in Redis
 
@@ -2797,26 +2796,18 @@ ___
 
 ###  lpop
 
-▸ **lpop**(`key`: KeyType, `callback`: function): *void*
+▸ **lpop**(`key`: KeyType, `callback`: Callback‹string›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[lpop](_redis_.redis.md#lpop)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:231
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:311
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`key` | KeyType |
+`callback` | Callback‹string› |
 
 **Returns:** *void*
 
@@ -2824,7 +2815,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[lpop](_redis_.redis.md#lpop)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:232
+Defined in node_modules/@types/ioredis/index.d.ts:312
 
 **Parameters:**
 
@@ -2838,26 +2829,18 @@ ___
 
 ###  lpopBuffer
 
-▸ **lpopBuffer**(`key`: KeyType, `callback`: function): *void*
+▸ **lpopBuffer**(`key`: KeyType, `callback`: Callback‹Buffer›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[lpopBuffer](_redis_.redis.md#lpopbuffer)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:234
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: Buffer): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:314
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | Buffer |
+`key` | KeyType |
+`callback` | Callback‹Buffer› |
 
 **Returns:** *void*
 
@@ -2865,7 +2848,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[lpopBuffer](_redis_.redis.md#lpopbuffer)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:235
+Defined in node_modules/@types/ioredis/index.d.ts:315
 
 **Parameters:**
 
@@ -2877,95 +2860,22 @@ Name | Type |
 
 ___
 
-###  lpush
-
-▸ **lpush**(`key`: KeyType, ...`values`: ValueType[]): *Promise‹number›*
-
-*Inherited from [Redis](_redis_.redis.md).[lpush](_redis_.redis.md#lpush)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:211
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | KeyType |
-`...values` | ValueType[] |
-
-**Returns:** *Promise‹number›*
-
-___
-
-###  lpushx
-
-▸ **lpushx**(`key`: KeyType, `value`: ValueType, `callback`: function): *void*
-
-*Inherited from [Redis](_redis_.redis.md).[lpushx](_redis_.redis.md#lpushx)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:216
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **value**: *ValueType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`err` | Error |
-`res` | number |
-
-**Returns:** *void*
-
-▸ **lpushx**(`key`: KeyType, `value`: ValueType): *Promise‹number›*
-
-*Inherited from [Redis](_redis_.redis.md).[lpushx](_redis_.redis.md#lpushx)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:217
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | KeyType |
-`value` | ValueType |
-
-**Returns:** *Promise‹number›*
-
-___
-
 ###  lrange
 
-▸ **lrange**(`key`: KeyType, `start`: number, `stop`: number, `callback`: function): *void*
+▸ **lrange**(`key`: KeyType, `start`: number, `stop`: number, `callback`: Callback‹string[]›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[lrange](_redis_.redis.md#lrange)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:258
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **start**: *number*
-
-▪ **stop**: *number*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string[]): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:333
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string[] |
+`key` | KeyType |
+`start` | number |
+`stop` | number |
+`callback` | Callback‹string[]› |
 
 **Returns:** *void*
 
@@ -2973,7 +2883,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[lrange](_redis_.redis.md#lrange)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:259
+Defined in node_modules/@types/ioredis/index.d.ts:334
 
 **Parameters:**
 
@@ -2989,30 +2899,20 @@ ___
 
 ###  lrangeBuffer
 
-▸ **lrangeBuffer**(`key`: KeyType, `start`: number, `stop`: number, `callback`: function): *void*
+▸ **lrangeBuffer**(`key`: KeyType, `start`: number, `stop`: number, `callback`: Callback‹Buffer[]›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[lrangeBuffer](_redis_.redis.md#lrangebuffer)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:261
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **start**: *number*
-
-▪ **stop**: *number*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: Buffer[]): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:336
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | Buffer[] |
+`key` | KeyType |
+`start` | number |
+`stop` | number |
+`callback` | Callback‹Buffer[]› |
 
 **Returns:** *void*
 
@@ -3020,7 +2920,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[lrangeBuffer](_redis_.redis.md#lrangebuffer)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:262
+Defined in node_modules/@types/ioredis/index.d.ts:337
 
 **Parameters:**
 
@@ -3036,30 +2936,20 @@ ___
 
 ###  lrem
 
-▸ **lrem**(`key`: KeyType, `count`: number, `value`: ValueType, `callback`: function): *void*
+▸ **lrem**(`key`: KeyType, `count`: number, `value`: ValueType, `callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[lrem](_redis_.redis.md#lrem)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:267
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **count**: *number*
-
-▪ **value**: *ValueType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:342
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`key` | KeyType |
+`count` | number |
+`value` | ValueType |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -3067,7 +2957,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[lrem](_redis_.redis.md#lrem)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:268
+Defined in node_modules/@types/ioredis/index.d.ts:343
 
 **Parameters:**
 
@@ -3083,30 +2973,20 @@ ___
 
 ###  lset
 
-▸ **lset**(`key`: KeyType, `index`: number, `value`: ValueType, `callback`: function): *void*
+▸ **lset**(`key`: KeyType, `index`: number, `value`: ValueType, `callback`: Callback‹Ok›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[lset](_redis_.redis.md#lset)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:255
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **index**: *number*
-
-▪ **value**: *ValueType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: Ok): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:330
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | Ok |
+`key` | KeyType |
+`index` | number |
+`value` | ValueType |
+`callback` | Callback‹Ok› |
 
 **Returns:** *void*
 
@@ -3114,7 +2994,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[lset](_redis_.redis.md#lset)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:256
+Defined in node_modules/@types/ioredis/index.d.ts:331
 
 **Parameters:**
 
@@ -3130,30 +3010,20 @@ ___
 
 ###  ltrim
 
-▸ **ltrim**(`key`: KeyType, `start`: number, `stop`: number, `callback`: function): *void*
+▸ **ltrim**(`key`: KeyType, `start`: number, `stop`: number, `callback`: Callback‹Ok›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[ltrim](_redis_.redis.md#ltrim)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:264
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **start**: *number*
-
-▪ **stop**: *number*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: Ok): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:339
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | Ok |
+`key` | KeyType |
+`start` | number |
+`stop` | number |
+`callback` | Callback‹Ok› |
 
 **Returns:** *void*
 
@@ -3161,7 +3031,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[ltrim](_redis_.redis.md#ltrim)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:265
+Defined in node_modules/@types/ioredis/index.d.ts:340
 
 **Parameters:**
 
@@ -3175,62 +3045,19 @@ Name | Type |
 
 ___
 
-###  mget
-
-▸ **mget**(...`keys`: KeyType[]): *Promise‹Array‹string | null››*
-
-*Inherited from [Redis](_redis_.redis.md).[mget](_redis_.redis.md#mget)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:205
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`...keys` | KeyType[] |
-
-**Returns:** *Promise‹Array‹string | null››*
-
-___
-
-###  migrate
-
-▸ **migrate**(...`args`: ValueType[]): *Promise‹Ok | "NOKEY"›*
-
-*Inherited from [Redis](_redis_.redis.md).[migrate](_redis_.redis.md#migrate)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:642
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`...args` | ValueType[] |
-
-**Returns:** *Promise‹Ok | "NOKEY"›*
-
-___
-
 ###  monitor
 
-▸ **monitor**(`callback`: function): *void*
+▸ **monitor**(`callback`: Callback‹EventEmitter›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[monitor](_redis_.redis.md#monitor)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:599
-
-**Parameters:**
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: EventEmitter): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:683
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | EventEmitter |
+`callback` | Callback‹EventEmitter› |
 
 **Returns:** *void*
 
@@ -3238,7 +3065,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[monitor](_redis_.redis.md#monitor)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:600
+Defined in node_modules/@types/ioredis/index.d.ts:684
 
 **Returns:** *Promise‹EventEmitter›*
 
@@ -3246,28 +3073,19 @@ ___
 
 ###  move
 
-▸ **move**(`key`: KeyType, `db`: string, `callback`: function): *void*
+▸ **move**(`key`: KeyType, `db`: string, `callback`: Callback‹BooleanResponse›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[move](_redis_.redis.md#move)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:513
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **db**: *string*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: BooleanResponse): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:601
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | BooleanResponse |
+`key` | KeyType |
+`db` | string |
+`callback` | Callback‹BooleanResponse› |
 
 **Returns:** *void*
 
@@ -3275,7 +3093,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[move](_redis_.redis.md#move)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:514
+Defined in node_modules/@types/ioredis/index.d.ts:602
 
 **Parameters:**
 
@@ -3288,123 +3106,13 @@ Name | Type |
 
 ___
 
-###  mset
-
-▸ **mset**(...`args`: ValueType[]): *Promise‹Ok›*
-
-*Inherited from [Redis](_redis_.redis.md).[mset](_redis_.redis.md#mset)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:499
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`...args` | ValueType[] |
-
-**Returns:** *Promise‹Ok›*
-
-▸ **mset**(`data`: object | Map‹string, ValueType›, `callback`: function): *void*
-
-*Inherited from [Redis](_redis_.redis.md).[mset](_redis_.redis.md#mset)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:500
-
-**Parameters:**
-
-▪ **data**: *object | Map‹string, ValueType›*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: Ok): *void*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`err` | Error |
-`res` | Ok |
-
-**Returns:** *void*
-
-▸ **mset**(`data`: object | Map‹string, ValueType›): *Promise‹Ok›*
-
-*Inherited from [Redis](_redis_.redis.md).[mset](_redis_.redis.md#mset)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:501
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`data` | object &#124; Map‹string, ValueType› |
-
-**Returns:** *Promise‹Ok›*
-
-___
-
-###  msetnx
-
-▸ **msetnx**(...`args`: ValueType[]): *Promise‹number›*
-
-*Inherited from [Redis](_redis_.redis.md).[msetnx](_redis_.redis.md#msetnx)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:503
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`...args` | ValueType[] |
-
-**Returns:** *Promise‹number›*
-
-▸ **msetnx**(`data`: object | Map‹string, ValueType›, `callback`: function): *void*
-
-*Inherited from [Redis](_redis_.redis.md).[msetnx](_redis_.redis.md#msetnx)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:504
-
-**Parameters:**
-
-▪ **data**: *object | Map‹string, ValueType›*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: BooleanResponse): *void*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`err` | Error |
-`res` | BooleanResponse |
-
-**Returns:** *void*
-
-▸ **msetnx**(`data`: object | Map‹string, ValueType›): *Promise‹BooleanResponse›*
-
-*Inherited from [Redis](_redis_.redis.md).[msetnx](_redis_.redis.md#msetnx)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:505
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`data` | object &#124; Map‹string, ValueType› |
-
-**Returns:** *Promise‹BooleanResponse›*
-
-___
-
 ###  multi
 
 ▸ **multi**(`commands?`: string[][], `options?`: MultiOptions): *Pipeline*
 
 *Inherited from [Redis](_redis_.redis.md).[multi](_redis_.redis.md#multi)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:572
+Defined in node_modules/@types/ioredis/index.d.ts:656
 
 **Parameters:**
 
@@ -3415,11 +3123,11 @@ Name | Type |
 
 **Returns:** *Pipeline*
 
-▸ **multi**(`options`: object): *Promise‹string›*
+▸ **multi**(`options`: object): *Promise‹Ok›*
 
 *Inherited from [Redis](_redis_.redis.md).[multi](_redis_.redis.md#multi)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:573
+Defined in node_modules/@types/ioredis/index.d.ts:657
 
 **Parameters:**
 
@@ -3429,26 +3137,7 @@ Name | Type |
 ------ | ------ |
 `pipeline` | false |
 
-**Returns:** *Promise‹string›*
-
-___
-
-###  object
-
-▸ **object**(`subcommand`: string, ...`args`: ValueType[]): *Promise‹any›*
-
-*Inherited from [Redis](_redis_.redis.md).[object](_redis_.redis.md#object)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:647
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`subcommand` | string |
-`...args` | ValueType[] |
-
-**Returns:** *Promise‹any›*
+**Returns:** *Promise‹Ok›*
 
 ___
 
@@ -3458,7 +3147,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[off](_redis_.redis.md#off)*
 
-Defined in node_modules/@types/node/globals.d.ts:551
+Defined in node_modules/@types/node/globals.d.ts:558
 
 **Parameters:**
 
@@ -3484,7 +3173,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[on](_redis_.redis.md#on)*
 
-Defined in node_modules/@types/node/globals.d.ts:548
+Defined in node_modules/@types/node/globals.d.ts:555
 
 **Parameters:**
 
@@ -3510,7 +3199,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[once](_redis_.redis.md#once)*
 
-Defined in node_modules/@types/node/globals.d.ts:549
+Defined in node_modules/@types/node/globals.d.ts:556
 
 **Parameters:**
 
@@ -3532,26 +3221,18 @@ ___
 
 ###  persist
 
-▸ **persist**(`key`: KeyType, `callback`: function): *void*
+▸ **persist**(`key`: KeyType, `callback`: Callback‹BooleanResponse›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[persist](_redis_.redis.md#persist)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:608
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: BooleanResponse): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:692
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | BooleanResponse |
+`key` | KeyType |
+`callback` | Callback‹BooleanResponse› |
 
 **Returns:** *void*
 
@@ -3559,7 +3240,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[persist](_redis_.redis.md#persist)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:609
+Defined in node_modules/@types/ioredis/index.d.ts:693
 
 **Parameters:**
 
@@ -3573,28 +3254,19 @@ ___
 
 ###  pexpire
 
-▸ **pexpire**(`key`: KeyType, `milliseconds`: number, `callback`: function): *void*
+▸ **pexpire**(`key`: KeyType, `milliseconds`: number, `callback`: Callback‹BooleanResponse›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[pexpire](_redis_.redis.md#pexpire)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:525
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **milliseconds**: *number*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: BooleanResponse): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:613
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | BooleanResponse |
+`key` | KeyType |
+`milliseconds` | number |
+`callback` | Callback‹BooleanResponse› |
 
 **Returns:** *void*
 
@@ -3602,7 +3274,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[pexpire](_redis_.redis.md#pexpire)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:526
+Defined in node_modules/@types/ioredis/index.d.ts:614
 
 **Parameters:**
 
@@ -3617,28 +3289,19 @@ ___
 
 ###  pexpireat
 
-▸ **pexpireat**(`key`: KeyType, `millisecondsTimestamp`: number, `callback`: function): *void*
+▸ **pexpireat**(`key`: KeyType, `millisecondsTimestamp`: number, `callback`: Callback‹BooleanResponse›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[pexpireat](_redis_.redis.md#pexpireat)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:531
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **millisecondsTimestamp**: *number*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: BooleanResponse): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:619
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | BooleanResponse |
+`key` | KeyType |
+`millisecondsTimestamp` | number |
+`callback` | Callback‹BooleanResponse› |
 
 **Returns:** *void*
 
@@ -3646,7 +3309,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[pexpireat](_redis_.redis.md#pexpireat)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:536
+Defined in node_modules/@types/ioredis/index.d.ts:620
 
 **Parameters:**
 
@@ -3659,105 +3322,34 @@ Name | Type |
 
 ___
 
-###  pfadd
-
-▸ **pfadd**(`key`: KeyType, ...`elements`: string[]): *Promise‹number›*
-
-*Inherited from [Redis](_redis_.redis.md).[pfadd](_redis_.redis.md#pfadd)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:692
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | KeyType |
-`...elements` | string[] |
-
-**Returns:** *Promise‹number›*
-
-___
-
-###  pfcount
-
-▸ **pfcount**(...`keys`: KeyType[]): *Promise‹number›*
-
-*Inherited from [Redis](_redis_.redis.md).[pfcount](_redis_.redis.md#pfcount)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:694
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`...keys` | KeyType[] |
-
-**Returns:** *Promise‹number›*
-
-___
-
-###  pfmerge
-
-▸ **pfmerge**(`destkey`: KeyType, ...`sourcekeys`: KeyType[]): *Promise‹Ok›*
-
-*Inherited from [Redis](_redis_.redis.md).[pfmerge](_redis_.redis.md#pfmerge)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:690
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`destkey` | KeyType |
-`...sourcekeys` | KeyType[] |
-
-**Returns:** *Promise‹Ok›*
-
-___
-
 ###  ping
 
-▸ **ping**(`callback`: function): *void*
+▸ **ping**(`callback`: Callback‹string›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[ping](_redis_.redis.md#ping)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:547
-
-**Parameters:**
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:631
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`callback` | Callback‹string› |
 
 **Returns:** *void*
 
-▸ **ping**(`message`: string, `callback`: function): *void*
+▸ **ping**(`message`: string, `callback`: Callback‹string›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[ping](_redis_.redis.md#ping)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:548
-
-**Parameters:**
-
-▪ **message**: *string*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:632
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`message` | string |
+`callback` | Callback‹string› |
 
 **Returns:** *void*
 
@@ -3765,7 +3357,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[ping](_redis_.redis.md#ping)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:549
+Defined in node_modules/@types/ioredis/index.d.ts:633
 
 **Parameters:**
 
@@ -3783,7 +3375,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[pipeline](_redis_.redis.md#pipeline)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:696
+Defined in node_modules/@types/ioredis/index.d.ts:805
 
 **Parameters:**
 
@@ -3801,7 +3393,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[prependListener](_redis_.redis.md#prependlistener)*
 
-Defined in node_modules/@types/node/globals.d.ts:560
+Defined in node_modules/@types/node/globals.d.ts:567
 
 **Parameters:**
 
@@ -3827,7 +3419,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[prependOnceListener](_redis_.redis.md#prependoncelistener)*
 
-Defined in node_modules/@types/node/globals.d.ts:561
+Defined in node_modules/@types/node/globals.d.ts:568
 
 **Parameters:**
 
@@ -3849,30 +3441,20 @@ ___
 
 ###  psetex
 
-▸ **psetex**(`key`: KeyType, `milliseconds`: number, `value`: ValueType, `callback`: function): *void*
+▸ **psetex**(`key`: KeyType, `milliseconds`: number, `value`: ValueType, `callback`: Callback‹Ok›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[psetex](_redis_.redis.md#psetex)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:168
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **milliseconds**: *number*
-
-▪ **value**: *ValueType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: Ok): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:250
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | Ok |
+`key` | KeyType |
+`milliseconds` | number |
+`value` | ValueType |
+`callback` | Callback‹Ok› |
 
 **Returns:** *void*
 
@@ -3880,7 +3462,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[psetex](_redis_.redis.md#psetex)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:169
+Defined in node_modules/@types/ioredis/index.d.ts:251
 
 **Parameters:**
 
@@ -3894,46 +3476,20 @@ Name | Type |
 
 ___
 
-###  psubscribe
-
-▸ **psubscribe**(...`patterns`: string[]): *Promise‹number›*
-
-*Inherited from [Redis](_redis_.redis.md).[psubscribe](_redis_.redis.md#psubscribe)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:624
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`...patterns` | string[] |
-
-**Returns:** *Promise‹number›*
-
-___
-
 ###  pttl
 
-▸ **pttl**(`key`: KeyType, `callback`: function): *void*
+▸ **pttl**(`key`: KeyType, `callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[pttl](_redis_.redis.md#pttl)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:605
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:689
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`key` | KeyType |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -3941,7 +3497,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[pttl](_redis_.redis.md#pttl)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:606
+Defined in node_modules/@types/ioredis/index.d.ts:690
 
 **Parameters:**
 
@@ -3955,28 +3511,19 @@ ___
 
 ###  publish
 
-▸ **publish**(`channel`: string, `message`: string, `callback`: function): *void*
+▸ **publish**(`channel`: string, `message`: string, `callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[publish](_redis_.redis.md#publish)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:628
-
-**Parameters:**
-
-▪ **channel**: *string*
-
-▪ **message**: *string*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:715
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`channel` | string |
+`message` | string |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -3984,7 +3531,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[publish](_redis_.redis.md#publish)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:629
+Defined in node_modules/@types/ioredis/index.d.ts:716
 
 **Parameters:**
 
@@ -4003,7 +3550,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[publishBuffer](_redis_.redis.md#publishbuffer)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:631
+Defined in node_modules/@types/ioredis/index.d.ts:718
 
 **Parameters:**
 
@@ -4016,77 +3563,45 @@ Name | Type |
 
 ___
 
-###  punsubscribe
-
-▸ **punsubscribe**(...`patterns`: string[]): *Promise‹number›*
-
-*Inherited from [Redis](_redis_.redis.md).[punsubscribe](_redis_.redis.md#punsubscribe)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:626
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`...patterns` | string[] |
-
-**Returns:** *Promise‹number›*
-
-___
-
 ###  quit
 
-▸ **quit**(`callback`: function): *void*
+▸ **quit**(`callback`: Callback‹Ok›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[quit](_redis_.redis.md#quit)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:661
-
-**Parameters:**
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:744
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`callback` | Callback‹Ok› |
 
 **Returns:** *void*
 
-▸ **quit**(): *Promise‹string›*
+▸ **quit**(): *Promise‹Ok›*
 
 *Inherited from [Redis](_redis_.redis.md).[quit](_redis_.redis.md#quit)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:662
+Defined in node_modules/@types/ioredis/index.d.ts:745
 
-**Returns:** *Promise‹string›*
+**Returns:** *Promise‹Ok›*
 
 ___
 
 ###  randomkey
 
-▸ **randomkey**(`callback`: function): *void*
+▸ **randomkey**(`callback`: Callback‹string›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[randomkey](_redis_.redis.md#randomkey)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:507
-
-**Parameters:**
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:595
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`callback` | Callback‹string› |
 
 **Returns:** *void*
 
@@ -4094,7 +3609,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[randomkey](_redis_.redis.md#randomkey)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:508
+Defined in node_modules/@types/ioredis/index.d.ts:596
 
 **Returns:** *Promise‹string›*
 
@@ -4106,7 +3621,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[rawListeners](_redis_.redis.md#rawlisteners)*
 
-Defined in node_modules/@types/node/globals.d.ts:556
+Defined in node_modules/@types/node/globals.d.ts:563
 
 **Parameters:**
 
@@ -4124,7 +3639,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[removeAllListeners](_redis_.redis.md#removealllisteners)*
 
-Defined in node_modules/@types/node/globals.d.ts:552
+Defined in node_modules/@types/node/globals.d.ts:559
 
 **Parameters:**
 
@@ -4142,7 +3657,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[removeListener](_redis_.redis.md#removelistener)*
 
-Defined in node_modules/@types/node/globals.d.ts:550
+Defined in node_modules/@types/node/globals.d.ts:557
 
 **Parameters:**
 
@@ -4164,28 +3679,19 @@ ___
 
 ###  rename
 
-▸ **rename**(`key`: KeyType, `newkey`: KeyType, `callback`: function): *void*
+▸ **rename**(`key`: KeyType, `newkey`: KeyType, `callback`: Callback‹Ok›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[rename](_redis_.redis.md#rename)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:516
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **newkey**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: Ok): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:604
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | Ok |
+`key` | KeyType |
+`newkey` | KeyType |
+`callback` | Callback‹Ok› |
 
 **Returns:** *void*
 
@@ -4193,7 +3699,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[rename](_redis_.redis.md#rename)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:517
+Defined in node_modules/@types/ioredis/index.d.ts:605
 
 **Parameters:**
 
@@ -4208,28 +3714,19 @@ ___
 
 ###  renamenx
 
-▸ **renamenx**(`key`: KeyType, `newkey`: KeyType, `callback`: function): *void*
+▸ **renamenx**(`key`: KeyType, `newkey`: KeyType, `callback`: Callback‹BooleanResponse›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[renamenx](_redis_.redis.md#renamenx)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:519
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **newkey**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: BooleanResponse): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:607
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | BooleanResponse |
+`key` | KeyType |
+`newkey` | KeyType |
+`callback` | Callback‹BooleanResponse› |
 
 **Returns:** *void*
 
@@ -4237,7 +3734,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[renamenx](_redis_.redis.md#renamenx)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:520
+Defined in node_modules/@types/ioredis/index.d.ts:608
 
 **Parameters:**
 
@@ -4250,46 +3747,20 @@ Name | Type |
 
 ___
 
-###  restore
-
-▸ **restore**(...`args`: ValueType[]): *Promise‹Ok›*
-
-*Inherited from [Redis](_redis_.redis.md).[restore](_redis_.redis.md#restore)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:640
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`...args` | ValueType[] |
-
-**Returns:** *Promise‹Ok›*
-
-___
-
 ###  rpop
 
-▸ **rpop**(`key`: KeyType, `callback`: function): *void*
+▸ **rpop**(`key`: KeyType, `callback`: Callback‹string›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[rpop](_redis_.redis.md#rpop)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:228
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:308
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`key` | KeyType |
+`callback` | Callback‹string› |
 
 **Returns:** *void*
 
@@ -4297,7 +3768,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[rpop](_redis_.redis.md#rpop)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:229
+Defined in node_modules/@types/ioredis/index.d.ts:309
 
 **Parameters:**
 
@@ -4311,28 +3782,19 @@ ___
 
 ###  rpoplpush
 
-▸ **rpoplpush**(`source`: string, `destination`: string, `callback`: function): *void*
+▸ **rpoplpush**(`source`: string, `destination`: string, `callback`: Callback‹string›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[rpoplpush](_redis_.redis.md#rpoplpush)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:270
-
-**Parameters:**
-
-▪ **source**: *string*
-
-▪ **destination**: *string*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:345
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`source` | string |
+`destination` | string |
+`callback` | Callback‹string› |
 
 **Returns:** *void*
 
@@ -4340,7 +3802,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[rpoplpush](_redis_.redis.md#rpoplpush)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:271
+Defined in node_modules/@types/ioredis/index.d.ts:346
 
 **Parameters:**
 
@@ -4355,28 +3817,19 @@ ___
 
 ###  rpoplpushBuffer
 
-▸ **rpoplpushBuffer**(`source`: string, `destination`: string, `callback`: function): *void*
+▸ **rpoplpushBuffer**(`source`: string, `destination`: string, `callback`: Callback‹Buffer›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[rpoplpushBuffer](_redis_.redis.md#rpoplpushbuffer)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:273
-
-**Parameters:**
-
-▪ **source**: *string*
-
-▪ **destination**: *string*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: Buffer): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:348
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | Buffer |
+`source` | string |
+`destination` | string |
+`callback` | Callback‹Buffer› |
 
 **Returns:** *void*
 
@@ -4384,7 +3837,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[rpoplpushBuffer](_redis_.redis.md#rpoplpushbuffer)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:274
+Defined in node_modules/@types/ioredis/index.d.ts:349
 
 **Parameters:**
 
@@ -4397,127 +3850,19 @@ Name | Type |
 
 ___
 
-###  rpush
-
-▸ **rpush**(`key`: KeyType, ...`values`: ValueType[]): *Promise‹number›*
-
-*Inherited from [Redis](_redis_.redis.md).[rpush](_redis_.redis.md#rpush)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:207
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | KeyType |
-`...values` | ValueType[] |
-
-**Returns:** *Promise‹number›*
-
-___
-
-###  rpushBuffer
-
-▸ **rpushBuffer**(`key`: string, ...`values`: Buffer[]): *Promise‹number›*
-
-*Inherited from [Redis](_redis_.redis.md).[rpushBuffer](_redis_.redis.md#rpushbuffer)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:209
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | string |
-`...values` | Buffer[] |
-
-**Returns:** *Promise‹number›*
-
-___
-
-###  rpushx
-
-▸ **rpushx**(`key`: KeyType, `value`: ValueType, `callback`: function): *void*
-
-*Inherited from [Redis](_redis_.redis.md).[rpushx](_redis_.redis.md#rpushx)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:213
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **value**: *ValueType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`err` | Error |
-`res` | number |
-
-**Returns:** *void*
-
-▸ **rpushx**(`key`: KeyType, `value`: ValueType): *Promise‹number›*
-
-*Inherited from [Redis](_redis_.redis.md).[rpushx](_redis_.redis.md#rpushx)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:214
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | KeyType |
-`value` | ValueType |
-
-**Returns:** *Promise‹number›*
-
-___
-
-###  sadd
-
-▸ **sadd**(`key`: KeyType, ...`members`: ValueType[]): *Promise‹number›*
-
-*Inherited from [Redis](_redis_.redis.md).[sadd](_redis_.redis.md#sadd)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:276
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | KeyType |
-`...members` | ValueType[] |
-
-**Returns:** *Promise‹number›*
-
-___
-
 ###  save
 
-▸ **save**(`callback`: function): *void*
+▸ **save**(`callback`: Callback‹string›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[save](_redis_.redis.md#save)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:554
-
-**Parameters:**
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:638
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`callback` | Callback‹string› |
 
 **Returns:** *void*
 
@@ -4525,7 +3870,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[save](_redis_.redis.md#save)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:555
+Defined in node_modules/@types/ioredis/index.d.ts:639
 
 **Returns:** *Promise‹string›*
 
@@ -4533,25 +3878,11 @@ ___
 
 ###  scan
 
-▸ **scan**(`cursor`: number | string): *Promise‹[string, string[]]›*
-
-*Inherited from [Redis](_redis_.redis.md).[scan](_redis_.redis.md#scan)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:664
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`cursor` | number &#124; string |
-
-**Returns:** *Promise‹[string, string[]]›*
-
 ▸ **scan**(`cursor`: number | string, `matchOption`: "match" | "MATCH", `pattern`: string): *Promise‹[string, string[]]›*
 
 *Inherited from [Redis](_redis_.redis.md).[scan](_redis_.redis.md#scan)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:666
+Defined in node_modules/@types/ioredis/index.d.ts:747
 
 **Parameters:**
 
@@ -4562,12 +3893,29 @@ Name | Type |
 `pattern` | string |
 
 **Returns:** *Promise‹[string, string[]]›*
+
+▸ **scan**(`cursor`: number | string, `matchOption`: "match" | "MATCH", `pattern`: string, `callback`: Callback‹[string, string[]]›): *void*
+
+*Inherited from [Redis](_redis_.redis.md).[scan](_redis_.redis.md#scan)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:748
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`cursor` | number &#124; string |
+`matchOption` | "match" &#124; "MATCH" |
+`pattern` | string |
+`callback` | Callback‹[string, string[]]› |
+
+**Returns:** *void*
 
 ▸ **scan**(`cursor`: number | string, `countOption`: "count" | "COUNT", `count`: number): *Promise‹[string, string[]]›*
 
 *Inherited from [Redis](_redis_.redis.md).[scan](_redis_.redis.md#scan)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:667
+Defined in node_modules/@types/ioredis/index.d.ts:754
 
 **Parameters:**
 
@@ -4578,12 +3926,29 @@ Name | Type |
 `count` | number |
 
 **Returns:** *Promise‹[string, string[]]›*
+
+▸ **scan**(`cursor`: number | string, `countOption`: "count" | "COUNT", `count`: number, `callback`: Callback‹[string, string[]]›): *void*
+
+*Inherited from [Redis](_redis_.redis.md).[scan](_redis_.redis.md#scan)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:755
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`cursor` | number &#124; string |
+`countOption` | "count" &#124; "COUNT" |
+`count` | number |
+`callback` | Callback‹[string, string[]]› |
+
+**Returns:** *void*
 
 ▸ **scan**(`cursor`: number | string, `matchOption`: "match" | "MATCH", `pattern`: string, `countOption`: "count" | "COUNT", `count`: number): *Promise‹[string, string[]]›*
 
 *Inherited from [Redis](_redis_.redis.md).[scan](_redis_.redis.md#scan)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:669
+Defined in node_modules/@types/ioredis/index.d.ts:762
 
 **Parameters:**
 
@@ -4596,12 +3961,31 @@ Name | Type |
 `count` | number |
 
 **Returns:** *Promise‹[string, string[]]›*
+
+▸ **scan**(`cursor`: number | string, `matchOption`: "match" | "MATCH", `pattern`: string, `countOption`: "count" | "COUNT", `count`: number, `callback`: Callback‹[string, string[]]›): *void*
+
+*Inherited from [Redis](_redis_.redis.md).[scan](_redis_.redis.md#scan)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:769
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`cursor` | number &#124; string |
+`matchOption` | "match" &#124; "MATCH" |
+`pattern` | string |
+`countOption` | "count" &#124; "COUNT" |
+`count` | number |
+`callback` | Callback‹[string, string[]]› |
+
+**Returns:** *void*
 
 ▸ **scan**(`cursor`: number | string, `countOption`: "count" | "COUNT", `count`: number, `matchOption`: "match" | "MATCH", `pattern`: string): *Promise‹[string, string[]]›*
 
 *Inherited from [Redis](_redis_.redis.md).[scan](_redis_.redis.md#scan)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:676
+Defined in node_modules/@types/ioredis/index.d.ts:777
 
 **Parameters:**
 
@@ -4614,6 +3998,25 @@ Name | Type |
 `pattern` | string |
 
 **Returns:** *Promise‹[string, string[]]›*
+
+▸ **scan**(`cursor`: number | string, `countOption`: "count" | "COUNT", `count`: number, `matchOption`: "match" | "MATCH", `pattern`: string, `callback`: Callback‹[string, string[]]›): *void*
+
+*Inherited from [Redis](_redis_.redis.md).[scan](_redis_.redis.md#scan)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:784
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`cursor` | number &#124; string |
+`countOption` | "count" &#124; "COUNT" |
+`count` | number |
+`matchOption` | "match" &#124; "MATCH" |
+`pattern` | string |
+`callback` | Callback‹[string, string[]]› |
+
+**Returns:** *void*
 
 ___
 
@@ -4621,7 +4024,7 @@ ___
 
 ▸ **scanPromise**(`options?`: ScanStreamOption): *Promise‹string[]›*
 
-*Defined in [redis.ts:119](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L119)*
+*Defined in [redis.ts:119](https://github.com/ehacke/redis/blob/07fa980/redis.ts#L119)*
 
 Wrapper for scanStream that returns a promise
 
@@ -4641,7 +4044,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[scanStream](_redis_.redis.md#scanstream)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:698
+Defined in node_modules/@types/ioredis/index.d.ts:807
 
 **Parameters:**
 
@@ -4655,26 +4058,18 @@ ___
 
 ###  scard
 
-▸ **scard**(`key`: KeyType, `callback`: function): *void*
+▸ **scard**(`key`: KeyType, `callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[scard](_redis_.redis.md#scard)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:291
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:361
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`key` | KeyType |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -4682,7 +4077,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[scard](_redis_.redis.md#scard)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:292
+Defined in node_modules/@types/ioredis/index.d.ts:362
 
 **Parameters:**
 
@@ -4694,91 +4089,28 @@ Name | Type |
 
 ___
 
-###  script
-
-▸ **script**(...`args`: ValueType[]): *any*
-
-*Inherited from [Redis](_redis_.redis.md).[script](_redis_.redis.md#script)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:659
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`...args` | ValueType[] |
-
-**Returns:** *any*
-
-___
-
-###  sdiff
-
-▸ **sdiff**(...`keys`: KeyType[]): *Promise‹string[]›*
-
-*Inherited from [Redis](_redis_.redis.md).[sdiff](_redis_.redis.md#sdiff)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:312
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`...keys` | KeyType[] |
-
-**Returns:** *Promise‹string[]›*
-
-___
-
-###  sdiffstore
-
-▸ **sdiffstore**(`destination`: string, ...`keys`: KeyType[]): *Promise‹number›*
-
-*Inherited from [Redis](_redis_.redis.md).[sdiffstore](_redis_.redis.md#sdiffstore)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:314
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`destination` | string |
-`...keys` | KeyType[] |
-
-**Returns:** *Promise‹number›*
-
-___
-
 ###  select
 
-▸ **select**(`index`: number, `callback`: function): *void*
+▸ **select**(`index`: number, `callback`: Callback‹Ok›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[select](_redis_.redis.md#select)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:510
-
-**Parameters:**
-
-▪ **index**: *number*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:598
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`index` | number |
+`callback` | Callback‹Ok› |
 
 **Returns:** *void*
 
-▸ **select**(`index`: number): *Promise‹string›*
+▸ **select**(`index`: number): *Promise‹Ok›*
 
 *Inherited from [Redis](_redis_.redis.md).[select](_redis_.redis.md#select)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:511
+Defined in node_modules/@types/ioredis/index.d.ts:599
 
 **Parameters:**
 
@@ -4786,7 +4118,7 @@ Name | Type |
 ------ | ------ |
 `index` | number |
 
-**Returns:** *Promise‹string›*
+**Returns:** *Promise‹Ok›*
 
 ___
 
@@ -4796,7 +4128,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[sendCommand](_redis_.redis.md#sendcommand)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:55
+Defined in node_modules/@types/ioredis/index.d.ts:56
 
 **Returns:** *void*
 
@@ -4808,7 +4140,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[send_command](_redis_.redis.md#send_command)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:97
+Defined in node_modules/@types/ioredis/index.d.ts:847
 
 **Parameters:**
 
@@ -4823,11 +4155,11 @@ ___
 
 ###  set
 
-▸ **set**(`key`: KeyType, `value`: ValueType, `expiryMode?`: string | any[], `time?`: number | string, `setMode?`: number | string): *Promise‹string›*
+▸ **set**(`key`: KeyType, `value`: ValueType, `expiryMode?`: string | any[], `time?`: number | string, `setMode?`: number | string): *Promise‹Ok›*
 
 *Inherited from [Redis](_redis_.redis.md).[set](_redis_.redis.md#set)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:110
+Defined in node_modules/@types/ioredis/index.d.ts:204
 
 **Parameters:**
 
@@ -4839,117 +4171,75 @@ Name | Type |
 `time?` | number &#124; string |
 `setMode?` | number &#124; string |
 
-**Returns:** *Promise‹string›*
+**Returns:** *Promise‹Ok›*
 
-▸ **set**(`key`: KeyType, `value`: ValueType, `callback`: function): *void*
+▸ **set**(`key`: KeyType, `value`: ValueType, `callback`: Callback‹Ok›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[set](_redis_.redis.md#set)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:118
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **value**: *ValueType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:212
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`key` | KeyType |
+`value` | ValueType |
+`callback` | Callback‹Ok› |
 
 **Returns:** *void*
 
-▸ **set**(`key`: KeyType, `value`: ValueType, `setMode`: string | any[], `callback`: function): *void*
+▸ **set**(`key`: KeyType, `value`: ValueType, `setMode`: string | any[], `callback`: Callback‹Ok›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[set](_redis_.redis.md#set)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:119
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **value**: *ValueType*
-
-▪ **setMode**: *string | any[]*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:213
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`key` | KeyType |
+`value` | ValueType |
+`setMode` | string &#124; any[] |
+`callback` | Callback‹Ok› |
 
 **Returns:** *void*
 
-▸ **set**(`key`: KeyType, `value`: ValueType, `expiryMode`: string, `time`: number | string, `callback`: function): *void*
+▸ **set**(`key`: KeyType, `value`: ValueType, `expiryMode`: string, `time`: number | string, `callback`: Callback‹Ok›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[set](_redis_.redis.md#set)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:120
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **value**: *ValueType*
-
-▪ **expiryMode**: *string*
-
-▪ **time**: *number | string*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:214
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`key` | KeyType |
+`value` | ValueType |
+`expiryMode` | string |
+`time` | number &#124; string |
+`callback` | Callback‹Ok› |
 
 **Returns:** *void*
 
-▸ **set**(`key`: KeyType, `value`: ValueType, `expiryMode`: string, `time`: number | string, `setMode`: number | string, `callback`: function): *void*
+▸ **set**(`key`: KeyType, `value`: ValueType, `expiryMode`: string, `time`: number | string, `setMode`: number | string, `callback`: Callback‹Ok›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[set](_redis_.redis.md#set)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:127
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **value**: *ValueType*
-
-▪ **expiryMode**: *string*
-
-▪ **time**: *number | string*
-
-▪ **setMode**: *number | string*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:215
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`key` | KeyType |
+`value` | ValueType |
+`expiryMode` | string |
+`time` | number &#124; string |
+`setMode` | number &#124; string |
+`callback` | Callback‹Ok› |
 
 **Returns:** *void*
 
@@ -4961,7 +4251,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[setBuffer](_redis_.redis.md#setbuffer)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:136
+Defined in node_modules/@types/ioredis/index.d.ts:224
 
 **Parameters:**
 
@@ -4975,115 +4265,73 @@ Name | Type |
 
 **Returns:** *Promise‹Buffer›*
 
-▸ **setBuffer**(`key`: KeyType, `value`: ValueType, `callback`: function): *void*
+▸ **setBuffer**(`key`: KeyType, `value`: ValueType, `callback`: Callback‹Buffer›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[setBuffer](_redis_.redis.md#setbuffer)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:144
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **value**: *ValueType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: Buffer): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:232
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | Buffer |
+`key` | KeyType |
+`value` | ValueType |
+`callback` | Callback‹Buffer› |
 
 **Returns:** *void*
 
-▸ **setBuffer**(`key`: KeyType, `value`: ValueType, `setMode`: string, `callback`: function): *void*
+▸ **setBuffer**(`key`: KeyType, `value`: ValueType, `setMode`: string, `callback`: Callback‹Buffer›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[setBuffer](_redis_.redis.md#setbuffer)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:145
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **value**: *ValueType*
-
-▪ **setMode**: *string*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: Buffer): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:233
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | Buffer |
+`key` | KeyType |
+`value` | ValueType |
+`setMode` | string |
+`callback` | Callback‹Buffer› |
 
 **Returns:** *void*
 
-▸ **setBuffer**(`key`: KeyType, `value`: ValueType, `expiryMode`: string, `time`: number, `callback`: function): *void*
+▸ **setBuffer**(`key`: KeyType, `value`: ValueType, `expiryMode`: string, `time`: number, `callback`: Callback‹Buffer›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[setBuffer](_redis_.redis.md#setbuffer)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:146
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **value**: *ValueType*
-
-▪ **expiryMode**: *string*
-
-▪ **time**: *number*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: Buffer): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:234
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | Buffer |
+`key` | KeyType |
+`value` | ValueType |
+`expiryMode` | string |
+`time` | number |
+`callback` | Callback‹Buffer› |
 
 **Returns:** *void*
 
-▸ **setBuffer**(`key`: KeyType, `value`: ValueType, `expiryMode`: string, `time`: number | string, `setMode`: number | string, `callback`: function): *void*
+▸ **setBuffer**(`key`: KeyType, `value`: ValueType, `expiryMode`: string, `time`: number | string, `setMode`: number | string, `callback`: Callback‹Buffer›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[setBuffer](_redis_.redis.md#setbuffer)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:153
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **value**: *ValueType*
-
-▪ **expiryMode**: *string*
-
-▪ **time**: *number | string*
-
-▪ **setMode**: *number | string*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: Buffer): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:235
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | Buffer |
+`key` | KeyType |
+`value` | ValueType |
+`expiryMode` | string |
+`time` | number &#124; string |
+`setMode` | number &#124; string |
+`callback` | Callback‹Buffer› |
 
 **Returns:** *void*
 
@@ -5095,7 +4343,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[setMaxListeners](_redis_.redis.md#setmaxlisteners)*
 
-Defined in node_modules/@types/node/globals.d.ts:553
+Defined in node_modules/@types/node/globals.d.ts:560
 
 **Parameters:**
 
@@ -5109,30 +4357,20 @@ ___
 
 ###  setbit
 
-▸ **setbit**(`key`: KeyType, `offset`: number, `value`: ValueType, `callback`: function): *void*
+▸ **setbit**(`key`: KeyType, `offset`: number, `value`: ValueType, `callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[setbit](_redis_.redis.md#setbit)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:184
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **offset**: *number*
-
-▪ **value**: *ValueType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:266
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`key` | KeyType |
+`offset` | number |
+`value` | ValueType |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -5140,7 +4378,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[setbit](_redis_.redis.md#setbit)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:185
+Defined in node_modules/@types/ioredis/index.d.ts:267
 
 **Parameters:**
 
@@ -5156,30 +4394,20 @@ ___
 
 ###  setex
 
-▸ **setex**(`key`: KeyType, `seconds`: number, `value`: ValueType, `callback`: function): *void*
+▸ **setex**(`key`: KeyType, `seconds`: number, `value`: ValueType, `callback`: Callback‹Ok›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[setex](_redis_.redis.md#setex)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:165
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **seconds**: *number*
-
-▪ **value**: *ValueType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: Ok): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:247
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | Ok |
+`key` | KeyType |
+`seconds` | number |
+`value` | ValueType |
+`callback` | Callback‹Ok› |
 
 **Returns:** *void*
 
@@ -5187,7 +4415,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[setex](_redis_.redis.md#setex)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:166
+Defined in node_modules/@types/ioredis/index.d.ts:248
 
 **Parameters:**
 
@@ -5203,28 +4431,19 @@ ___
 
 ###  setnx
 
-▸ **setnx**(`key`: KeyType, `value`: ValueType, `callback`: function): *void*
+▸ **setnx**(`key`: KeyType, `value`: ValueType, `callback`: Callback‹BooleanResponse›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[setnx](_redis_.redis.md#setnx)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:162
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **value**: *ValueType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: BooleanResponse): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:244
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | BooleanResponse |
+`key` | KeyType |
+`value` | ValueType |
+`callback` | Callback‹BooleanResponse› |
 
 **Returns:** *void*
 
@@ -5232,7 +4451,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[setnx](_redis_.redis.md#setnx)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:163
+Defined in node_modules/@types/ioredis/index.d.ts:245
 
 **Parameters:**
 
@@ -5247,30 +4466,20 @@ ___
 
 ###  setrange
 
-▸ **setrange**(`key`: KeyType, `offset`: number, `value`: ValueType, `callback`: function): *void*
+▸ **setrange**(`key`: KeyType, `offset`: number, `value`: ValueType, `callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[setrange](_redis_.redis.md#setrange)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:190
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **offset**: *number*
-
-▪ **value**: *ValueType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:272
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`key` | KeyType |
+`offset` | number |
+`value` | ValueType |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -5278,7 +4487,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[setrange](_redis_.redis.md#setrange)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:191
+Defined in node_modules/@types/ioredis/index.d.ts:273
 
 **Parameters:**
 
@@ -5294,26 +4503,18 @@ ___
 
 ###  shutdown
 
-▸ **shutdown**(`save`: "SAVE" | "NOSAVE", `callback`: function): *void*
+▸ **shutdown**(`save`: "SAVE" | "NOSAVE", `callback`: Callback‹never›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[shutdown](_redis_.redis.md#shutdown)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:563
-
-**Parameters:**
-
-▪ **save**: *"SAVE" | "NOSAVE"*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: never): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:647
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | never |
+`save` | "SAVE" &#124; "NOSAVE" |
+`callback` | Callback‹never› |
 
 **Returns:** *void*
 
@@ -5321,7 +4522,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[shutdown](_redis_.redis.md#shutdown)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:564
+Defined in node_modules/@types/ioredis/index.d.ts:648
 
 **Parameters:**
 
@@ -5333,67 +4534,21 @@ Name | Type |
 
 ___
 
-###  sinter
-
-▸ **sinter**(...`keys`: KeyType[]): *Promise‹string[]›*
-
-*Inherited from [Redis](_redis_.redis.md).[sinter](_redis_.redis.md#sinter)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:304
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`...keys` | KeyType[] |
-
-**Returns:** *Promise‹string[]›*
-
-___
-
-###  sinterstore
-
-▸ **sinterstore**(`destination`: string, ...`keys`: KeyType[]): *Promise‹number›*
-
-*Inherited from [Redis](_redis_.redis.md).[sinterstore](_redis_.redis.md#sinterstore)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:306
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`destination` | string |
-`...keys` | KeyType[] |
-
-**Returns:** *Promise‹number›*
-
-___
-
 ###  sismember
 
-▸ **sismember**(`key`: KeyType, `member`: string, `callback`: function): *void*
+▸ **sismember**(`key`: KeyType, `member`: string, `callback`: Callback‹BooleanResponse›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[sismember](_redis_.redis.md#sismember)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:288
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **member**: *string*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: BooleanResponse): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:358
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | BooleanResponse |
+`key` | KeyType |
+`member` | string |
+`callback` | Callback‹BooleanResponse› |
 
 **Returns:** *void*
 
@@ -5401,7 +4556,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[sismember](_redis_.redis.md#sismember)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:289
+Defined in node_modules/@types/ioredis/index.d.ts:359
 
 **Parameters:**
 
@@ -5416,28 +4571,19 @@ ___
 
 ###  slaveof
 
-▸ **slaveof**(`host`: string, `port`: number, `callback`: function): *void*
+▸ **slaveof**(`host`: string, `port`: number, `callback`: Callback‹string›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[slaveof](_redis_.redis.md#slaveof)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:611
-
-**Parameters:**
-
-▪ **host**: *string*
-
-▪ **port**: *number*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:695
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`host` | string |
+`port` | number |
+`callback` | Callback‹string› |
 
 **Returns:** *void*
 
@@ -5445,7 +4591,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[slaveof](_redis_.redis.md#slaveof)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:612
+Defined in node_modules/@types/ioredis/index.d.ts:696
 
 **Parameters:**
 
@@ -5460,26 +4606,18 @@ ___
 
 ###  smembers
 
-▸ **smembers**(`key`: KeyType, `callback`: function): *void*
+▸ **smembers**(`key`: KeyType, `callback`: Callback‹string[]›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[smembers](_redis_.redis.md#smembers)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:316
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string[]): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:386
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string[] |
+`key` | KeyType |
+`callback` | Callback‹string[]› |
 
 **Returns:** *void*
 
@@ -5487,7 +4625,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[smembers](_redis_.redis.md#smembers)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:317
+Defined in node_modules/@types/ioredis/index.d.ts:387
 
 **Parameters:**
 
@@ -5501,30 +4639,20 @@ ___
 
 ###  smove
 
-▸ **smove**(`source`: string, `destination`: string, `member`: string, `callback`: function): *void*
+▸ **smove**(`source`: string, `destination`: string, `member`: string, `callback`: Callback‹BooleanResponse›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[smove](_redis_.redis.md#smove)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:280
-
-**Parameters:**
-
-▪ **source**: *string*
-
-▪ **destination**: *string*
-
-▪ **member**: *string*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: BooleanResponse): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:355
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | BooleanResponse |
+`source` | string |
+`destination` | string |
+`member` | string |
+`callback` | Callback‹BooleanResponse› |
 
 **Returns:** *void*
 
@@ -5532,7 +4660,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[smove](_redis_.redis.md#smove)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:286
+Defined in node_modules/@types/ioredis/index.d.ts:356
 
 **Parameters:**
 
@@ -5546,47 +4674,20 @@ Name | Type |
 
 ___
 
-###  sort
+###  spop
 
-▸ **sort**(`key`: KeyType, ...`args`: string[]): *Promise‹string[] | number›*
+▸ **spop**(`key`: KeyType, `callback`: Callback‹string | null›): *void*
 
-*Inherited from [Redis](_redis_.redis.md).[sort](_redis_.redis.md#sort)*
+*Inherited from [Redis](_redis_.redis.md).[spop](_redis_.redis.md#spop)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:590
+Defined in node_modules/@types/ioredis/index.d.ts:364
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
 `key` | KeyType |
-`...args` | string[] |
-
-**Returns:** *Promise‹string[] | number›*
-
-___
-
-###  spop
-
-▸ **spop**(`key`: KeyType, `callback`: function): *void*
-
-*Inherited from [Redis](_redis_.redis.md).[spop](_redis_.redis.md#spop)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:294
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string | null): *void*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`err` | Error |
-`res` | string &#124; null |
+`callback` | Callback‹string &#124; null› |
 
 **Returns:** *void*
 
@@ -5594,7 +4695,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[spop](_redis_.redis.md#spop)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:295
+Defined in node_modules/@types/ioredis/index.d.ts:365
 
 **Parameters:**
 
@@ -5604,28 +4705,19 @@ Name | Type |
 
 **Returns:** *Promise‹string | null›*
 
-▸ **spop**(`key`: KeyType, `count`: number, `callback`: function): *void*
+▸ **spop**(`key`: KeyType, `count`: number, `callback`: Callback‹string[]›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[spop](_redis_.redis.md#spop)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:296
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **count**: *number*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string[]): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:366
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string[] |
+`key` | KeyType |
+`count` | number |
+`callback` | Callback‹string[]› |
 
 **Returns:** *void*
 
@@ -5633,7 +4725,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[spop](_redis_.redis.md#spop)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:297
+Defined in node_modules/@types/ioredis/index.d.ts:367
 
 **Parameters:**
 
@@ -5648,26 +4740,18 @@ ___
 
 ###  srandmember
 
-▸ **srandmember**(`key`: KeyType, `callback`: function): *void*
+▸ **srandmember**(`key`: KeyType, `callback`: Callback‹string | null›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[srandmember](_redis_.redis.md#srandmember)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:299
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string | null): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:369
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string &#124; null |
+`key` | KeyType |
+`callback` | Callback‹string &#124; null› |
 
 **Returns:** *void*
 
@@ -5675,7 +4759,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[srandmember](_redis_.redis.md#srandmember)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:300
+Defined in node_modules/@types/ioredis/index.d.ts:370
 
 **Parameters:**
 
@@ -5685,28 +4769,19 @@ Name | Type |
 
 **Returns:** *Promise‹string | null›*
 
-▸ **srandmember**(`key`: KeyType, `count`: number, `callback`: function): *void*
+▸ **srandmember**(`key`: KeyType, `count`: number, `callback`: Callback‹string[]›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[srandmember](_redis_.redis.md#srandmember)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:301
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **count**: *number*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string[]): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:371
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string[] |
+`key` | KeyType |
+`count` | number |
+`callback` | Callback‹string[]› |
 
 **Returns:** *void*
 
@@ -5714,7 +4789,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[srandmember](_redis_.redis.md#srandmember)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:302
+Defined in node_modules/@types/ioredis/index.d.ts:372
 
 **Parameters:**
 
@@ -5727,52 +4802,13 @@ Name | Type |
 
 ___
 
-###  srem
-
-▸ **srem**(`key`: KeyType, ...`members`: ValueType[]): *Promise‹number›*
-
-*Inherited from [Redis](_redis_.redis.md).[srem](_redis_.redis.md#srem)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:278
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | KeyType |
-`...members` | ValueType[] |
-
-**Returns:** *Promise‹number›*
-
-___
-
-###  sscan
-
-▸ **sscan**(`key`: KeyType, `cursor`: number, ...`args`: ValueType[]): *Promise‹[string, string[]]›*
-
-*Inherited from [Redis](_redis_.redis.md).[sscan](_redis_.redis.md#sscan)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:684
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | KeyType |
-`cursor` | number |
-`...args` | ValueType[] |
-
-**Returns:** *Promise‹[string, string[]]›*
-
-___
-
 ###  sscanStream
 
 ▸ **sscanStream**(`key`: KeyType, `options?`: ScanStreamOption): *Readable*
 
 *Inherited from [Redis](_redis_.redis.md).[sscanStream](_redis_.redis.md#sscanstream)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:699
+Defined in node_modules/@types/ioredis/index.d.ts:808
 
 **Parameters:**
 
@@ -5787,26 +4823,18 @@ ___
 
 ###  strlen
 
-▸ **strlen**(`key`: KeyType, `callback`: function): *void*
+▸ **strlen**(`key`: KeyType, `callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[strlen](_redis_.redis.md#strlen)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:174
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:256
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`key` | KeyType |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -5814,7 +4842,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[strlen](_redis_.redis.md#strlen)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:175
+Defined in node_modules/@types/ioredis/index.d.ts:257
 
 **Parameters:**
 
@@ -5826,50 +4854,22 @@ Name | Type |
 
 ___
 
-###  subscribe
-
-▸ **subscribe**(...`channels`: string[]): *Promise‹number›*
-
-*Inherited from [Redis](_redis_.redis.md).[subscribe](_redis_.redis.md#subscribe)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:620
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`...channels` | string[] |
-
-**Returns:** *Promise‹number›*
-
-___
-
 ###  substr
 
-▸ **substr**(`key`: KeyType, `start`: number, `end`: number, `callback`: function): *void*
+▸ **substr**(`key`: KeyType, `start`: number, `end`: number, `callback`: Callback‹string›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[substr](_redis_.redis.md#substr)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:196
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **start**: *number*
-
-▪ **end**: *number*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:278
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`key` | KeyType |
+`start` | number |
+`end` | number |
+`callback` | Callback‹string› |
 
 **Returns:** *void*
 
@@ -5877,7 +4877,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[substr](_redis_.redis.md#substr)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:197
+Defined in node_modules/@types/ioredis/index.d.ts:279
 
 **Parameters:**
 
@@ -5891,63 +4891,19 @@ Name | Type |
 
 ___
 
-###  sunion
-
-▸ **sunion**(...`keys`: KeyType[]): *Promise‹string[]›*
-
-*Inherited from [Redis](_redis_.redis.md).[sunion](_redis_.redis.md#sunion)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:308
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`...keys` | KeyType[] |
-
-**Returns:** *Promise‹string[]›*
-
-___
-
-###  sunionstore
-
-▸ **sunionstore**(`destination`: string, ...`keys`: KeyType[]): *Promise‹number›*
-
-*Inherited from [Redis](_redis_.redis.md).[sunionstore](_redis_.redis.md#sunionstore)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:310
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`destination` | string |
-`...keys` | KeyType[] |
-
-**Returns:** *Promise‹number›*
-
-___
-
 ###  sync
 
-▸ **sync**(`callback`: function): *void*
+▸ **sync**(`callback`: Callback‹any›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[sync](_redis_.redis.md#sync)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:581
-
-**Parameters:**
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: any): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:665
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | any |
+`callback` | Callback‹any› |
 
 **Returns:** *void*
 
@@ -5955,7 +4911,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[sync](_redis_.redis.md#sync)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:582
+Defined in node_modules/@types/ioredis/index.d.ts:666
 
 **Returns:** *Promise‹any›*
 
@@ -5963,24 +4919,17 @@ ___
 
 ###  time
 
-▸ **time**(`callback`: function): *void*
+▸ **time**(`callback`: Callback‹[string, string]›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[time](_redis_.redis.md#time)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:596
-
-**Parameters:**
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: [string, string]): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:680
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | [string, string] |
+`callback` | Callback‹[string, string]› |
 
 **Returns:** *void*
 
@@ -5988,7 +4937,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[time](_redis_.redis.md#time)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:597
+Defined in node_modules/@types/ioredis/index.d.ts:681
 
 **Returns:** *Promise‹[string, string]›*
 
@@ -5996,26 +4945,18 @@ ___
 
 ###  ttl
 
-▸ **ttl**(`key`: KeyType, `callback`: function): *void*
+▸ **ttl**(`key`: KeyType, `callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[ttl](_redis_.redis.md#ttl)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:602
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:686
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`key` | KeyType |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -6023,7 +4964,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[ttl](_redis_.redis.md#ttl)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:603
+Defined in node_modules/@types/ioredis/index.d.ts:687
 
 **Parameters:**
 
@@ -6037,26 +4978,18 @@ ___
 
 ###  type
 
-▸ **type**(`key`: KeyType, `callback`: function): *void*
+▸ **type**(`key`: KeyType, `callback`: Callback‹string›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[type](_redis_.redis.md#type)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:569
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:653
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`key` | KeyType |
+`callback` | Callback‹string› |
 
 **Returns:** *void*
 
@@ -6064,7 +4997,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[type](_redis_.redis.md#type)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:570
+Defined in node_modules/@types/ioredis/index.d.ts:654
 
 **Parameters:**
 
@@ -6076,62 +5009,19 @@ Name | Type |
 
 ___
 
-###  unlink
-
-▸ **unlink**(...`keys`: KeyType[]): *Promise‹number›*
-
-*Inherited from [Redis](_redis_.redis.md).[unlink](_redis_.redis.md#unlink)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:179
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`...keys` | KeyType[] |
-
-**Returns:** *Promise‹number›*
-
-___
-
-###  unsubscribe
-
-▸ **unsubscribe**(...`channels`: string[]): *Promise‹number›*
-
-*Inherited from [Redis](_redis_.redis.md).[unsubscribe](_redis_.redis.md#unsubscribe)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:622
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`...channels` | string[] |
-
-**Returns:** *Promise‹number›*
-
-___
-
 ###  unwatch
 
-▸ **unwatch**(`callback`: function): *void*
+▸ **unwatch**(`callback`: Callback‹string›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[unwatch](_redis_.redis.md#unwatch)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:635
-
-**Parameters:**
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:722
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`callback` | Callback‹string› |
 
 **Returns:** *void*
 
@@ -6139,179 +5029,9 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[unwatch](_redis_.redis.md#unwatch)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:636
-
-**Returns:** *Promise‹string›*
-
-___
-
-###  watch
-
-▸ **watch**(...`keys`: KeyType[]): *Promise‹Ok›*
-
-*Inherited from [Redis](_redis_.redis.md).[watch](_redis_.redis.md#watch)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:633
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`...keys` | KeyType[] |
-
-**Returns:** *Promise‹Ok›*
-
-___
-
-###  xack
-
-▸ **xack**(`key`: KeyType, `group`: string, ...`ids`: string[]): *Promise‹number›*
-
-*Inherited from [Redis](_redis_.redis.md).[xack](_redis_.redis.md#xack)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:703
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | KeyType |
-`group` | string |
-`...ids` | string[] |
-
-**Returns:** *Promise‹number›*
-
-___
-
-###  xadd
-
-▸ **xadd**(`key`: KeyType, `id`: string, ...`args`: string[]): *Promise‹string›*
-
-*Inherited from [Redis](_redis_.redis.md).[xadd](_redis_.redis.md#xadd)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:705
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | KeyType |
-`id` | string |
-`...args` | string[] |
-
-**Returns:** *Promise‹string›*
-
-▸ **xadd**(`key`: KeyType, `maxLenOption`: "MAXLEN" | "maxlen", `count`: number, ...`args`: string[]): *Promise‹string›*
-
-*Inherited from [Redis](_redis_.redis.md).[xadd](_redis_.redis.md#xadd)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:706
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | KeyType |
-`maxLenOption` | "MAXLEN" &#124; "maxlen" |
-`count` | number |
-`...args` | string[] |
-
-**Returns:** *Promise‹string›*
-
-▸ **xadd**(`key`: KeyType, `maxLenOption`: "MAXLEN" | "maxlen", `approximate`: "~", `count`: number, ...`args`: string[]): *Promise‹string›*
-
-*Inherited from [Redis](_redis_.redis.md).[xadd](_redis_.redis.md#xadd)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:707
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | KeyType |
-`maxLenOption` | "MAXLEN" &#124; "maxlen" |
-`approximate` | "~" |
-`count` | number |
-`...args` | string[] |
-
-**Returns:** *Promise‹string›*
-
-___
-
-###  xclaim
-
-▸ **xclaim**(`key`: KeyType, `group`: string, `consumer`: string, `minIdleTime`: number, ...`args`: ValueType[]): *Promise‹Array‹[string, string[]]››*
-
-*Inherited from [Redis](_redis_.redis.md).[xclaim](_redis_.redis.md#xclaim)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:715
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | KeyType |
-`group` | string |
-`consumer` | string |
-`minIdleTime` | number |
-`...args` | ValueType[] |
-
-**Returns:** *Promise‹Array‹[string, string[]]››*
-
-___
-
-###  xdel
-
-▸ **xdel**(`key`: KeyType, ...`ids`: string[]): *Promise‹number›*
-
-*Inherited from [Redis](_redis_.redis.md).[xdel](_redis_.redis.md#xdel)*
-
 Defined in node_modules/@types/ioredis/index.d.ts:723
 
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | KeyType |
-`...ids` | string[] |
-
-**Returns:** *Promise‹number›*
-
-___
-
-###  xgroup
-
-▸ **xgroup**(...`args`: ValueType[]): *Promise‹Ok›*
-
-*Inherited from [Redis](_redis_.redis.md).[xgroup](_redis_.redis.md#xgroup)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:725
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`...args` | ValueType[] |
-
-**Returns:** *Promise‹Ok›*
-
-___
-
-###  xinfo
-
-▸ **xinfo**(...`args`: ValueType[]): *Promise‹any›*
-
-*Inherited from [Redis](_redis_.redis.md).[xinfo](_redis_.redis.md#xinfo)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:727
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`...args` | ValueType[] |
-
-**Returns:** *Promise‹any›*
+**Returns:** *Promise‹string›*
 
 ___
 
@@ -6321,7 +5041,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[xlen](_redis_.redis.md#xlen)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:729
+Defined in node_modules/@types/ioredis/index.d.ts:824
 
 **Parameters:**
 
@@ -6331,155 +5051,47 @@ Name | Type |
 
 **Returns:** *Promise‹number›*
 
-___
+▸ **xlen**(`key`: KeyType, `callback`: Callback‹number›): *void*
 
-###  xpending
+*Inherited from [Redis](_redis_.redis.md).[xlen](_redis_.redis.md#xlen)*
 
-▸ **xpending**(`key`: KeyType, `group`: string, ...`args`: ValueType[]): *Promise‹any›*
-
-*Inherited from [Redis](_redis_.redis.md).[xpending](_redis_.redis.md#xpending)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:731
+Defined in node_modules/@types/ioredis/index.d.ts:825
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
 `key` | KeyType |
-`group` | string |
-`...args` | ValueType[] |
+`callback` | Callback‹number› |
 
-**Returns:** *Promise‹any›*
-
-___
-
-###  xrange
-
-▸ **xrange**(`key`: KeyType, `start`: string, `end`: string, ...`args`: ValueType[]): *Promise‹Array‹[string, string[]]››*
-
-*Inherited from [Redis](_redis_.redis.md).[xrange](_redis_.redis.md#xrange)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:733
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | KeyType |
-`start` | string |
-`end` | string |
-`...args` | ValueType[] |
-
-**Returns:** *Promise‹Array‹[string, string[]]››*
-
-___
-
-###  xread
-
-▸ **xread**(...`args`: ValueType[]): *Array‹[string, string[]]›*
-
-*Inherited from [Redis](_redis_.redis.md).[xread](_redis_.redis.md#xread)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:735
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`...args` | ValueType[] |
-
-**Returns:** *Array‹[string, string[]]›*
-
-___
-
-###  xreadgroup
-
-▸ **xreadgroup**(`groupOption`: "GROUP" | "group", `group`: string, `consumer`: string, ...`args`: ValueType[]): *any*
-
-*Inherited from [Redis](_redis_.redis.md).[xreadgroup](_redis_.redis.md#xreadgroup)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:737
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`groupOption` | "GROUP" &#124; "group" |
-`group` | string |
-`consumer` | string |
-`...args` | ValueType[] |
-
-**Returns:** *any*
-
-___
-
-###  xrevrange
-
-▸ **xrevrange**(`key`: KeyType, `end`: string, `start`: string, ...`args`: ValueType[]): *Promise‹Array‹[string, string[]]››*
-
-*Inherited from [Redis](_redis_.redis.md).[xrevrange](_redis_.redis.md#xrevrange)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:739
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | KeyType |
-`end` | string |
-`start` | string |
-`...args` | ValueType[] |
-
-**Returns:** *Promise‹Array‹[string, string[]]››*
-
-___
-
-###  xtrim
-
-▸ **xtrim**(`key`: KeyType, `maxLenOption`: "MAXLEN" | "maxlen", ...`args`: ValueType[]): *Promise‹number›*
-
-*Inherited from [Redis](_redis_.redis.md).[xtrim](_redis_.redis.md#xtrim)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:741
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | KeyType |
-`maxLenOption` | "MAXLEN" &#124; "maxlen" |
-`...args` | ValueType[] |
-
-**Returns:** *Promise‹number›*
-
-___
-
-###  zadd
-
-▸ **zadd**(`key`: KeyType, ...`args`: string[]): *Promise‹number | string›*
-
-*Inherited from [Redis](_redis_.redis.md).[zadd](_redis_.redis.md#zadd)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:319
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | KeyType |
-`...args` | string[] |
-
-**Returns:** *Promise‹number | string›*
+**Returns:** *void*
 
 ___
 
 ###  zaddBuffer
 
+▸ **zaddBuffer**(`key`: KeyType, `score1`: number, `member1`: Buffer, `callback`: Callback‹string | number›): *void*
+
+*Inherited from [Redis](_redis_.redis.md).[zaddBuffer](_redis_.redis.md#zaddbuffer)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:391
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`key` | KeyType |
+`score1` | number |
+`member1` | Buffer |
+`callback` | Callback‹string &#124; number› |
+
+**Returns:** *void*
+
 ▸ **zaddBuffer**(`key`: KeyType, `score1`: number, `member1`: Buffer): *Promise‹string | number›*
 
 *Inherited from [Redis](_redis_.redis.md).[zaddBuffer](_redis_.redis.md#zaddbuffer)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:321
+Defined in node_modules/@types/ioredis/index.d.ts:392
 
 **Parameters:**
 
@@ -6495,26 +5107,18 @@ ___
 
 ###  zcard
 
-▸ **zcard**(`key`: KeyType, `callback`: function): *void*
+▸ **zcard**(`key`: KeyType, `callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[zcard](_redis_.redis.md#zcard)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:419
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:528
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`key` | KeyType |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -6522,7 +5126,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[zcard](_redis_.redis.md#zcard)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:420
+Defined in node_modules/@types/ioredis/index.d.ts:529
 
 **Parameters:**
 
@@ -6536,30 +5140,20 @@ ___
 
 ###  zcount
 
-▸ **zcount**(`key`: KeyType, `min`: number | string, `max`: number | string, `callback`: function): *void*
+▸ **zcount**(`key`: KeyType, `min`: number | string, `max`: number | string, `callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[zcount](_redis_.redis.md#zcount)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:411
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **min**: *number | string*
-
-▪ **max**: *number | string*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:525
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`key` | KeyType |
+`min` | number &#124; string |
+`max` | number &#124; string |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -6567,7 +5161,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[zcount](_redis_.redis.md#zcount)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:417
+Defined in node_modules/@types/ioredis/index.d.ts:526
 
 **Parameters:**
 
@@ -6583,30 +5177,20 @@ ___
 
 ###  zincrby
 
-▸ **zincrby**(`key`: KeyType, `increment`: number, `member`: string, `callback`: function): *void*
+▸ **zincrby**(`key`: KeyType, `increment`: number, `member`: string, `callback`: Callback‹string›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[zincrby](_redis_.redis.md#zincrby)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:323
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **increment**: *number*
-
-▪ **member**: *string*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:394
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`key` | KeyType |
+`increment` | number |
+`member` | string |
+`callback` | Callback‹string› |
 
 **Returns:** *void*
 
@@ -6614,7 +5198,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[zincrby](_redis_.redis.md#zincrby)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:324
+Defined in node_modules/@types/ioredis/index.d.ts:395
 
 **Parameters:**
 
@@ -6628,82 +5212,40 @@ Name | Type |
 
 ___
 
-###  zinterstore
-
-▸ **zinterstore**(`destination`: string, `numkeys`: number, `key`: KeyType, ...`args`: string[]): *Promise‹number›*
-
-*Inherited from [Redis](_redis_.redis.md).[zinterstore](_redis_.redis.md#zinterstore)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:341
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`destination` | string |
-`numkeys` | number |
-`key` | KeyType |
-`...args` | string[] |
-
-**Returns:** *Promise‹number›*
-
-___
-
 ###  zrange
 
-▸ **zrange**(`key`: KeyType, `start`: number, `stop`: number, `callback`: function): *void*
+▸ **zrange**(`key`: KeyType, `start`: number, `stop`: number, `callback`: Callback‹string[]›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[zrange](_redis_.redis.md#zrange)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:343
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **start**: *number*
-
-▪ **stop**: *number*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string[]): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:409
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string[] |
+`key` | KeyType |
+`start` | number |
+`stop` | number |
+`callback` | Callback‹string[]› |
 
 **Returns:** *void*
 
-▸ **zrange**(`key`: KeyType, `start`: number, `stop`: number, `withScores`: "WITHSCORES", `callback`: function): *void*
+▸ **zrange**(`key`: KeyType, `start`: number, `stop`: number, `withScores`: "WITHSCORES", `callback`: Callback‹string[]›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[zrange](_redis_.redis.md#zrange)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:344
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **start**: *number*
-
-▪ **stop**: *number*
-
-▪ **withScores**: *"WITHSCORES"*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string[]): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:410
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string[] |
+`key` | KeyType |
+`start` | number |
+`stop` | number |
+`withScores` | "WITHSCORES" |
+`callback` | Callback‹string[]› |
 
 **Returns:** *void*
 
@@ -6711,7 +5253,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[zrange](_redis_.redis.md#zrange)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:351
+Defined in node_modules/@types/ioredis/index.d.ts:411
 
 **Parameters:**
 
@@ -6732,7 +5274,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[zrangebyscore](_redis_.redis.md#zrangebyscore)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:363
+Defined in node_modules/@types/ioredis/index.d.ts:423
 
 **Parameters:**
 
@@ -6749,7 +5291,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[zrangebyscore](_redis_.redis.md#zrangebyscore)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:369
+Defined in node_modules/@types/ioredis/index.d.ts:429
 
 **Parameters:**
 
@@ -6769,7 +5311,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[zrangebyscore](_redis_.redis.md#zrangebyscore)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:378
+Defined in node_modules/@types/ioredis/index.d.ts:438
 
 **Parameters:**
 
@@ -6784,32 +5326,99 @@ Name | Type |
 
 **Returns:** *Promise‹string[]›*
 
-___
+▸ **zrangebyscore**(`key`: KeyType, `min`: number | string, `max`: number | string, `callback`: Callback‹string[]›): *void*
 
-###  zrank
+*Inherited from [Redis](_redis_.redis.md).[zrangebyscore](_redis_.redis.md#zrangebyscore)*
 
-▸ **zrank**(`key`: KeyType, `member`: string, `callback`: function): *void*
-
-*Inherited from [Redis](_redis_.redis.md).[zrank](_redis_.redis.md#zrank)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:425
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **member**: *string*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number | null): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:446
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number &#124; null |
+`key` | KeyType |
+`min` | number &#124; string |
+`max` | number &#124; string |
+`callback` | Callback‹string[]› |
+
+**Returns:** *void*
+
+▸ **zrangebyscore**(`key`: KeyType, `min`: number | string, `max`: number | string, `withScores`: "WITHSCORES", `callback`: Callback‹string[]›): *void*
+
+*Inherited from [Redis](_redis_.redis.md).[zrangebyscore](_redis_.redis.md#zrangebyscore)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:447
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`key` | KeyType |
+`min` | number &#124; string |
+`max` | number &#124; string |
+`withScores` | "WITHSCORES" |
+`callback` | Callback‹string[]› |
+
+**Returns:** *void*
+
+▸ **zrangebyscore**(`key`: KeyType, `min`: number | string, `max`: number | string, `withScores`: "WITHSCORES", `limit`: "LIMIT", `offset`: number, `count`: number, `callback`: Callback‹string[]›): *void*
+
+*Inherited from [Redis](_redis_.redis.md).[zrangebyscore](_redis_.redis.md#zrangebyscore)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:454
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`key` | KeyType |
+`min` | number &#124; string |
+`max` | number &#124; string |
+`withScores` | "WITHSCORES" |
+`limit` | "LIMIT" |
+`offset` | number |
+`count` | number |
+`callback` | Callback‹string[]› |
+
+**Returns:** *void*
+
+▸ **zrangebyscore**(`key`: KeyType, `min`: number | string, `max`: number | string, `limit`: "LIMIT", `offset`: number, `count`: number, `callback`: Callback‹string[]›): *void*
+
+*Inherited from [Redis](_redis_.redis.md).[zrangebyscore](_redis_.redis.md#zrangebyscore)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:464
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`key` | KeyType |
+`min` | number &#124; string |
+`max` | number &#124; string |
+`limit` | "LIMIT" |
+`offset` | number |
+`count` | number |
+`callback` | Callback‹string[]› |
+
+**Returns:** *void*
+
+___
+
+###  zrank
+
+▸ **zrank**(`key`: KeyType, `member`: string, `callback`: Callback‹number | null›): *void*
+
+*Inherited from [Redis](_redis_.redis.md).[zrank](_redis_.redis.md#zrank)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:534
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`key` | KeyType |
+`member` | string |
+`callback` | Callback‹number &#124; null› |
 
 **Returns:** *void*
 
@@ -6817,7 +5426,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[zrank](_redis_.redis.md#zrank)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:426
+Defined in node_modules/@types/ioredis/index.d.ts:535
 
 **Parameters:**
 
@@ -6830,51 +5439,22 @@ Name | Type |
 
 ___
 
-###  zrem
+###  zremrangebyrank
 
-▸ **zrem**(`key`: KeyType, ...`members`: ValueType[]): *Promise‹number›*
+▸ **zremrangebyrank**(`key`: KeyType, `start`: number, `stop`: number, `callback`: Callback‹number›): *void*
 
-*Inherited from [Redis](_redis_.redis.md).[zrem](_redis_.redis.md#zrem)*
+*Inherited from [Redis](_redis_.redis.md).[zremrangebyrank](_redis_.redis.md#zremrangebyrank)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:326
+Defined in node_modules/@types/ioredis/index.d.ts:402
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
 `key` | KeyType |
-`...members` | ValueType[] |
-
-**Returns:** *Promise‹number›*
-
-___
-
-###  zremrangebyrank
-
-▸ **zremrangebyrank**(`key`: KeyType, `start`: number, `stop`: number, `callback`: function): *void*
-
-*Inherited from [Redis](_redis_.redis.md).[zremrangebyrank](_redis_.redis.md#zremrangebyrank)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:336
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **start**: *number*
-
-▪ **stop**: *number*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`err` | Error |
-`res` | number |
+`start` | number |
+`stop` | number |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -6882,7 +5462,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[zremrangebyrank](_redis_.redis.md#zremrangebyrank)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:337
+Defined in node_modules/@types/ioredis/index.d.ts:403
 
 **Parameters:**
 
@@ -6898,30 +5478,20 @@ ___
 
 ###  zremrangebyscore
 
-▸ **zremrangebyscore**(`key`: KeyType, `min`: number | string, `max`: number | string, `callback`: function): *void*
+▸ **zremrangebyscore**(`key`: KeyType, `min`: number | string, `max`: number | string, `callback`: Callback‹number›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[zremrangebyscore](_redis_.redis.md#zremrangebyscore)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:328
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **min**: *number | string*
-
-▪ **max**: *number | string*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:399
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number |
+`key` | KeyType |
+`min` | number &#124; string |
+`max` | number &#124; string |
+`callback` | Callback‹number› |
 
 **Returns:** *void*
 
@@ -6929,7 +5499,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[zremrangebyscore](_redis_.redis.md#zremrangebyscore)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:334
+Defined in node_modules/@types/ioredis/index.d.ts:400
 
 **Parameters:**
 
@@ -6945,59 +5515,38 @@ ___
 
 ###  zrevrange
 
-▸ **zrevrange**(`key`: KeyType, `start`: number, `stop`: number, `callback`: function): *void*
+▸ **zrevrange**(`key`: KeyType, `start`: number, `stop`: number, `callback`: Callback‹string[]›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[zrevrange](_redis_.redis.md#zrevrange)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:353
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **start**: *number*
-
-▪ **stop**: *number*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string[]): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:413
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string[] |
+`key` | KeyType |
+`start` | number |
+`stop` | number |
+`callback` | Callback‹string[]› |
 
 **Returns:** *void*
 
-▸ **zrevrange**(`key`: KeyType, `start`: number, `stop`: number, `withScores`: "WITHSCORES", `callback`: function): *void*
+▸ **zrevrange**(`key`: KeyType, `start`: number, `stop`: number, `withScores`: "WITHSCORES", `callback`: Callback‹string[]›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[zrevrange](_redis_.redis.md#zrevrange)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:354
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **start**: *number*
-
-▪ **stop**: *number*
-
-▪ **withScores**: *"WITHSCORES"*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string[]): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:414
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string[] |
+`key` | KeyType |
+`start` | number |
+`stop` | number |
+`withScores` | "WITHSCORES" |
+`callback` | Callback‹string[]› |
 
 **Returns:** *void*
 
@@ -7005,7 +5554,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[zrevrange](_redis_.redis.md#zrevrange)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:361
+Defined in node_modules/@types/ioredis/index.d.ts:421
 
 **Parameters:**
 
@@ -7026,7 +5575,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[zrevrangebyscore](_redis_.redis.md#zrevrangebyscore)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:387
+Defined in node_modules/@types/ioredis/index.d.ts:474
 
 **Parameters:**
 
@@ -7043,7 +5592,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[zrevrangebyscore](_redis_.redis.md#zrevrangebyscore)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:393
+Defined in node_modules/@types/ioredis/index.d.ts:480
 
 **Parameters:**
 
@@ -7063,7 +5612,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[zrevrangebyscore](_redis_.redis.md#zrevrangebyscore)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:402
+Defined in node_modules/@types/ioredis/index.d.ts:489
 
 **Parameters:**
 
@@ -7078,32 +5627,99 @@ Name | Type |
 
 **Returns:** *Promise‹string[]›*
 
-___
+▸ **zrevrangebyscore**(`key`: KeyType, `max`: number | string, `min`: number | string, `callback`: Callback‹string[]›): *void*
 
-###  zrevrank
+*Inherited from [Redis](_redis_.redis.md).[zrevrangebyscore](_redis_.redis.md#zrevrangebyscore)*
 
-▸ **zrevrank**(`key`: KeyType, `member`: string, `callback`: function): *void*
-
-*Inherited from [Redis](_redis_.redis.md).[zrevrank](_redis_.redis.md#zrevrank)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:428
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **member**: *string*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: number | null): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:497
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | number &#124; null |
+`key` | KeyType |
+`max` | number &#124; string |
+`min` | number &#124; string |
+`callback` | Callback‹string[]› |
+
+**Returns:** *void*
+
+▸ **zrevrangebyscore**(`key`: KeyType, `max`: number | string, `min`: number | string, `withScores`: "WITHSCORES", `callback`: Callback‹string[]›): *void*
+
+*Inherited from [Redis](_redis_.redis.md).[zrevrangebyscore](_redis_.redis.md#zrevrangebyscore)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:498
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`key` | KeyType |
+`max` | number &#124; string |
+`min` | number &#124; string |
+`withScores` | "WITHSCORES" |
+`callback` | Callback‹string[]› |
+
+**Returns:** *void*
+
+▸ **zrevrangebyscore**(`key`: KeyType, `max`: number | string, `min`: number | string, `withScores`: "WITHSCORES", `limit`: "LIMIT", `offset`: number, `count`: number, `callback`: Callback‹string[]›): *void*
+
+*Inherited from [Redis](_redis_.redis.md).[zrevrangebyscore](_redis_.redis.md#zrevrangebyscore)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:505
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`key` | KeyType |
+`max` | number &#124; string |
+`min` | number &#124; string |
+`withScores` | "WITHSCORES" |
+`limit` | "LIMIT" |
+`offset` | number |
+`count` | number |
+`callback` | Callback‹string[]› |
+
+**Returns:** *void*
+
+▸ **zrevrangebyscore**(`key`: KeyType, `max`: number | string, `min`: number | string, `limit`: "LIMIT", `offset`: number, `count`: number, `callback`: Callback‹string[]›): *void*
+
+*Inherited from [Redis](_redis_.redis.md).[zrevrangebyscore](_redis_.redis.md#zrevrangebyscore)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:515
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`key` | KeyType |
+`max` | number &#124; string |
+`min` | number &#124; string |
+`limit` | "LIMIT" |
+`offset` | number |
+`count` | number |
+`callback` | Callback‹string[]› |
+
+**Returns:** *void*
+
+___
+
+###  zrevrank
+
+▸ **zrevrank**(`key`: KeyType, `member`: string, `callback`: Callback‹number | null›): *void*
+
+*Inherited from [Redis](_redis_.redis.md).[zrevrank](_redis_.redis.md#zrevrank)*
+
+Defined in node_modules/@types/ioredis/index.d.ts:537
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`key` | KeyType |
+`member` | string |
+`callback` | Callback‹number &#124; null› |
 
 **Returns:** *void*
 
@@ -7111,7 +5727,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[zrevrank](_redis_.redis.md#zrevrank)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:429
+Defined in node_modules/@types/ioredis/index.d.ts:538
 
 **Parameters:**
 
@@ -7124,31 +5740,11 @@ Name | Type |
 
 ___
 
-###  zscan
-
-▸ **zscan**(`key`: KeyType, `cursor`: number, ...`args`: ValueType[]): *Promise‹[string, string[]]›*
-
-*Inherited from [Redis](_redis_.redis.md).[zscan](_redis_.redis.md#zscan)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:688
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | KeyType |
-`cursor` | number |
-`...args` | ValueType[] |
-
-**Returns:** *Promise‹[string, string[]]›*
-
-___
-
 ###  zscanPromise
 
 ▸ **zscanPromise**(`key`: KeyType, `options?`: ScanStreamOption): *Promise‹string[]›*
 
-*Defined in [redis.ts:142](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L142)*
+*Defined in [redis.ts:142](https://github.com/ehacke/redis/blob/07fa980/redis.ts#L142)*
 
 Wrapper for scanStream that returns a promise
 
@@ -7169,7 +5765,7 @@ ___
 
 *Inherited from [Redis](_redis_.redis.md).[zscanStream](_redis_.redis.md#zscanstream)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:701
+Defined in node_modules/@types/ioredis/index.d.ts:810
 
 **Parameters:**
 
@@ -7184,28 +5780,19 @@ ___
 
 ###  zscore
 
-▸ **zscore**(`key`: KeyType, `member`: string, `callback`: function): *void*
+▸ **zscore**(`key`: KeyType, `member`: string, `callback`: Callback‹string›): *void*
 
 *Inherited from [Redis](_redis_.redis.md).[zscore](_redis_.redis.md#zscore)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:422
-
-**Parameters:**
-
-▪ **key**: *KeyType*
-
-▪ **member**: *string*
-
-▪ **callback**: *function*
-
-▸ (`err`: Error, `res`: string): *void*
+Defined in node_modules/@types/ioredis/index.d.ts:531
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`err` | Error |
-`res` | string |
+`key` | KeyType |
+`member` | string |
+`callback` | Callback‹string› |
 
 **Returns:** *void*
 
@@ -7213,7 +5800,7 @@ Name | Type |
 
 *Inherited from [Redis](_redis_.redis.md).[zscore](_redis_.redis.md#zscore)*
 
-Defined in node_modules/@types/ioredis/index.d.ts:423
+Defined in node_modules/@types/ioredis/index.d.ts:532
 
 **Parameters:**
 
@@ -7224,49 +5811,28 @@ Name | Type |
 
 **Returns:** *Promise‹string›*
 
-___
-
-###  zunionstore
-
-▸ **zunionstore**(`destination`: string, `numkeys`: number, `key`: KeyType, ...`args`: string[]): *Promise‹number›*
-
-*Inherited from [Redis](_redis_.redis.md).[zunionstore](_redis_.redis.md#zunionstore)*
-
-Defined in node_modules/@types/ioredis/index.d.ts:339
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`destination` | string |
-`numkeys` | number |
-`key` | KeyType |
-`...args` | string[] |
-
-**Returns:** *Promise‹number›*
-
 ## Object literals
 
-### `Static` CONSTANTS
+### `Static` `Readonly` CONSTANTS
 
 ### ▪ **CONSTANTS**: *object*
 
-*Defined in [redis.ts:42](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L42)*
+*Defined in [redis.ts:42](https://github.com/ehacke/redis/blob/07fa980/redis.ts#L42)*
 
 ###  DEFAULT_SKEW_MS
 
 • **DEFAULT_SKEW_MS**: *number* = 5
 
-*Defined in [redis.ts:43](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L43)*
+*Defined in [redis.ts:43](https://github.com/ehacke/redis/blob/07fa980/redis.ts#L43)*
 
 ###  SEARCH_FIELD_TYPES
 
 • **SEARCH_FIELD_TYPES**: *[SEARCH_FIELD_TYPES](../enums/_redis_.search_field_types.md)*
 
-*Defined in [redis.ts:44](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L44)*
+*Defined in [redis.ts:44](https://github.com/ehacke/redis/blob/07fa980/redis.ts#L44)*
 
 ###  SEARCH_FIELD_TYPE_VALUES
 
 • **SEARCH_FIELD_TYPE_VALUES**: *[TAG](../enums/_redis_.search_field_types.md#tag) | [TEXT](../enums/_redis_.search_field_types.md#text) | [NUMERIC](../enums/_redis_.search_field_types.md#numeric) | [GEO](../enums/_redis_.search_field_types.md#geo)[]* = Object.values(SEARCH_FIELD_TYPES)
 
-*Defined in [redis.ts:45](https://github.com/ehacke/redis/blob/247b10e/redis.ts#L45)*
+*Defined in [redis.ts:45](https://github.com/ehacke/redis/blob/07fa980/redis.ts#L45)*
