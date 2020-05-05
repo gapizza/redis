@@ -11,9 +11,9 @@
 ### Interfaces
 
 * [CacheInterface](../interfaces/_cache_.cacheinterface.md)
+* [CacheTimestampInterface](../interfaces/_cache_.cachetimestampinterface.md)
 * [ConfigInterface](../interfaces/_cache_.configinterface.md)
 * [ServicesInterface](../interfaces/_cache_.servicesinterface.md)
-* [SetTimeInterface](../interfaces/_cache_.settimeinterface.md)
 
 ### Functions
 
@@ -23,14 +23,14 @@
 
 ### `Const` validateSetTime
 
-▸ **validateSetTime**(`setTime`: [SetTimeInterface](../interfaces/_cache_.settimeinterface.md)): *void*
+▸ **validateSetTime**(`setTime`: [CacheTimestampInterface](../interfaces/_cache_.cachetimestampinterface.md)): *void*
 
-*Defined in [cache.ts:47](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L47)*
+*Defined in [cache.ts:47](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L47)*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`setTime` | [SetTimeInterface](../interfaces/_cache_.settimeinterface.md) |
+`setTime` | [CacheTimestampInterface](../interfaces/_cache_.cachetimestampinterface.md) |
 
 **Returns:** *void*

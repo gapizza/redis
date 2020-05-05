@@ -28,8 +28,8 @@
 * [services](_cache_.cache.md#private-readonly-services)
 * [LIST_PREFIX](_cache_.cache.md#static-readonly-list_prefix)
 * [PREFIX_TERMINATOR](_cache_.cache.md#static-readonly-prefix_terminator)
-* [SET_TIME_SEC_PREFIX](_cache_.cache.md#static-readonly-set_time_sec_prefix)
-* [SET_TIME_US_PREFIX](_cache_.cache.md#static-readonly-set_time_us_prefix)
+* [TIMESTAMP_SEC_PREFIX](_cache_.cache.md#static-readonly-timestamp_sec_prefix)
+* [TIMESTAMP_US_PREFIX](_cache_.cache.md#static-readonly-timestamp_us_prefix)
 
 ### Methods
 
@@ -62,7 +62,7 @@
 
 \+ **new Cache**(`services`: [ServicesInterface](../interfaces/_cache_.servicesinterface.md), `config`: [ConfigInterface](../interfaces/_cache_.configinterface.md)‹T›): *[Cache](_cache_.cache.md)*
 
-*Defined in [cache.ts:66](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L66)*
+*Defined in [cache.ts:66](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L66)*
 
 **Parameters:**
 
@@ -79,7 +79,7 @@ Name | Type | Description |
 
 • **config**: *[ConfigInterface](../interfaces/_cache_.configinterface.md)‹T›*
 
-*Defined in [cache.ts:110](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L110)*
+*Defined in [cache.ts:110](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L110)*
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 • **enabled**: *boolean*
 
-*Defined in [cache.ts:112](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L112)*
+*Defined in [cache.ts:112](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L112)*
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 • **invalidateOnConnection**: *boolean*
 
-*Defined in [cache.ts:114](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L114)*
+*Defined in [cache.ts:114](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L114)*
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 • **services**: *[ServicesInterface](../interfaces/_cache_.servicesinterface.md)*
 
-*Defined in [cache.ts:108](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L108)*
+*Defined in [cache.ts:108](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L108)*
 
 ___
 
@@ -111,7 +111,7 @@ ___
 
 ▪ **LIST_PREFIX**: *"--<<$$LIST$$>>--"* = "--<<$$LIST$$>>--"
 
-*Defined in [cache.ts:62](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L62)*
+*Defined in [cache.ts:62](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L62)*
 
 ___
 
@@ -119,23 +119,23 @@ ___
 
 ▪ **PREFIX_TERMINATOR**: *"--<<$$PRE_TERM$$>>--"* = "--<<$$PRE_TERM$$>>--"
 
-*Defined in [cache.ts:60](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L60)*
+*Defined in [cache.ts:60](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L60)*
 
 ___
 
-### `Static` `Readonly` SET_TIME_SEC_PREFIX
+### `Static` `Readonly` TIMESTAMP_SEC_PREFIX
 
-▪ **SET_TIME_SEC_PREFIX**: *"--<<$$T_SEC$$>>--"* = "--<<$$T_SEC$$>>--"
+▪ **TIMESTAMP_SEC_PREFIX**: *"--<<$$T_SEC$$>>--"* = "--<<$$T_SEC$$>>--"
 
-*Defined in [cache.ts:64](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L64)*
+*Defined in [cache.ts:64](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L64)*
 
 ___
 
-### `Static` `Readonly` SET_TIME_US_PREFIX
+### `Static` `Readonly` TIMESTAMP_US_PREFIX
 
-▪ **SET_TIME_US_PREFIX**: *"--<<$$T_US$$>>--"* = "--<<$$T_US$$>>--"
+▪ **TIMESTAMP_US_PREFIX**: *"--<<$$T_US$$>>--"* = "--<<$$T_US$$>>--"
 
-*Defined in [cache.ts:66](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L66)*
+*Defined in [cache.ts:66](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L66)*
 
 ## Methods
 
@@ -145,7 +145,7 @@ ___
 
 *Implementation of [CacheInterface](../interfaces/_cache_.cacheinterface.md)*
 
-*Defined in [cache.ts:445](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L445)*
+*Defined in [cache.ts:445](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L445)*
 
 Delete value from cache by key
 
@@ -165,7 +165,7 @@ ___
 
 *Implementation of [CacheInterface](../interfaces/_cache_.cacheinterface.md)*
 
-*Defined in [cache.ts:488](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L488)*
+*Defined in [cache.ts:488](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L488)*
 
 Delete list value from cache
 
@@ -181,11 +181,11 @@ ___
 
 ###  delListSafe
 
-▸ **delListSafe**(`key`: string, `setTime`: [SetTimeInterface](../interfaces/_cache_.settimeinterface.md), `overrideTtlSec?`: undefined | number): *Promise‹void›*
+▸ **delListSafe**(`key`: string, `setTime`: [CacheTimestampInterface](../interfaces/_cache_.cachetimestampinterface.md), `overrideTtlSec?`: undefined | number): *Promise‹void›*
 
 *Implementation of [CacheInterface](../interfaces/_cache_.cacheinterface.md)*
 
-*Defined in [cache.ts:465](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L465)*
+*Defined in [cache.ts:465](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L465)*
 
 Delete list value from cache by key
 
@@ -194,7 +194,7 @@ Delete list value from cache by key
 Name | Type |
 ------ | ------ |
 `key` | string |
-`setTime` | [SetTimeInterface](../interfaces/_cache_.settimeinterface.md) |
+`setTime` | [CacheTimestampInterface](../interfaces/_cache_.cachetimestampinterface.md) |
 `overrideTtlSec?` | undefined &#124; number |
 
 **Returns:** *Promise‹void›*
@@ -207,7 +207,7 @@ ___
 
 *Implementation of [CacheInterface](../interfaces/_cache_.cacheinterface.md)*
 
-*Defined in [cache.ts:505](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L505)*
+*Defined in [cache.ts:505](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L505)*
 
 Delete all lists with prefix from cache
 
@@ -217,11 +217,11 @@ ___
 
 ###  delSafe
 
-▸ **delSafe**(`key`: string, `setTime`: [SetTimeInterface](../interfaces/_cache_.settimeinterface.md), `overrideTtlSec?`: undefined | number): *Promise‹void›*
+▸ **delSafe**(`key`: string, `setTime`: [CacheTimestampInterface](../interfaces/_cache_.cachetimestampinterface.md), `overrideTtlSec?`: undefined | number): *Promise‹void›*
 
 *Implementation of [CacheInterface](../interfaces/_cache_.cacheinterface.md)*
 
-*Defined in [cache.ts:422](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L422)*
+*Defined in [cache.ts:422](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L422)*
 
 Safe delete value from cache by key
 
@@ -230,7 +230,7 @@ Safe delete value from cache by key
 Name | Type |
 ------ | ------ |
 `key` | string |
-`setTime` | [SetTimeInterface](../interfaces/_cache_.settimeinterface.md) |
+`setTime` | [CacheTimestampInterface](../interfaces/_cache_.cachetimestampinterface.md) |
 `overrideTtlSec?` | undefined &#124; number |
 
 **Returns:** *Promise‹void›*
@@ -243,7 +243,7 @@ ___
 
 *Implementation of [CacheInterface](../interfaces/_cache_.cacheinterface.md)*
 
-*Defined in [cache.ts:213](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L213)*
+*Defined in [cache.ts:213](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L213)*
 
 **Returns:** *void*
 
@@ -255,7 +255,7 @@ ___
 
 *Implementation of [CacheInterface](../interfaces/_cache_.cacheinterface.md)*
 
-*Defined in [cache.ts:206](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L206)*
+*Defined in [cache.ts:206](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L206)*
 
 **Returns:** *void*
 
@@ -267,7 +267,7 @@ ___
 
 *Implementation of [CacheInterface](../interfaces/_cache_.cacheinterface.md)*
 
-*Defined in [cache.ts:375](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L375)*
+*Defined in [cache.ts:375](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L375)*
 
 Get value from cache by key
 
@@ -285,7 +285,7 @@ ___
 
 ▸ **getKey**(`key`: string): *string*
 
-*Defined in [cache.ts:177](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L177)*
+*Defined in [cache.ts:177](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L177)*
 
 Get prefixed key
 
@@ -305,7 +305,7 @@ ___
 
 *Implementation of [CacheInterface](../interfaces/_cache_.cacheinterface.md)*
 
-*Defined in [cache.ts:394](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L394)*
+*Defined in [cache.ts:394](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L394)*
 
 Get list from cache
 
@@ -323,7 +323,7 @@ ___
 
 ▸ **getListKey**(`key`: string): *string*
 
-*Defined in [cache.ts:186](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L186)*
+*Defined in [cache.ts:186](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L186)*
 
 Get prefixed list key
 
@@ -339,15 +339,15 @@ ___
 
 ###  getTime
 
-▸ **getTime**(): *Promise‹[SetTimeInterface](../interfaces/_cache_.settimeinterface.md)›*
+▸ **getTime**(): *Promise‹[CacheTimestampInterface](../interfaces/_cache_.cachetimestampinterface.md)›*
 
 *Implementation of [CacheInterface](../interfaces/_cache_.cacheinterface.md)*
 
-*Defined in [cache.ts:221](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L221)*
+*Defined in [cache.ts:221](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L221)*
 
 Get time from redis
 
-**Returns:** *Promise‹[SetTimeInterface](../interfaces/_cache_.settimeinterface.md)›*
+**Returns:** *Promise‹[CacheTimestampInterface](../interfaces/_cache_.cachetimestampinterface.md)›*
 
 ___
 
@@ -355,7 +355,7 @@ ___
 
 ▸ **getTimeKeys**(`key`: string): *object*
 
-*Defined in [cache.ts:153](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L153)*
+*Defined in [cache.ts:153](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L153)*
 
 Get setTime keys
 
@@ -367,9 +367,9 @@ Name | Type |
 
 **Returns:** *object*
 
-* **timestampSecondKey**: *string*
-
 * **timestampMicrosecondKey**: *string*
+
+* **timestampSecondKey**: *string*
 
 ___
 
@@ -377,7 +377,7 @@ ___
 
 ▸ **getTimeListKeys**(`key`: string): *object*
 
-*Defined in [cache.ts:165](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L165)*
+*Defined in [cache.ts:165](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L165)*
 
 Get setTime list keys
 
@@ -389,9 +389,9 @@ Name | Type |
 
 **Returns:** *object*
 
-* **timestampSecondKey**: *string*
-
 * **timestampMicrosecondKey**: *string*
+
+* **timestampSecondKey**: *string*
 
 ___
 
@@ -399,7 +399,7 @@ ___
 
 ▸ **getTtlSec**(`overrideTtlSec?`: undefined | number): *number*
 
-*Defined in [cache.ts:195](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L195)*
+*Defined in [cache.ts:195](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L195)*
 
 Get ttl seconds
 
@@ -417,7 +417,7 @@ ___
 
 ▸ **invalidate**(`prefix`: string): *Promise‹void›*
 
-*Defined in [cache.ts:515](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L515)*
+*Defined in [cache.ts:515](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L515)*
 
 Invalidate any entries for this cache
 
@@ -435,7 +435,7 @@ ___
 
 ▸ **invalidateOnReconnection**<**T**>(`result`: T): *Promise‹T | null›*
 
-*Defined in [cache.ts:136](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L136)*
+*Defined in [cache.ts:136](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L136)*
 
 Invalidate on reconnection
 
@@ -459,7 +459,7 @@ ___
 
 *Implementation of [CacheInterface](../interfaces/_cache_.cacheinterface.md)*
 
-*Defined in [cache.ts:275](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L275)*
+*Defined in [cache.ts:275](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L275)*
 
 Set value in cache
 
@@ -481,7 +481,7 @@ ___
 
 *Implementation of [CacheInterface](../interfaces/_cache_.cacheinterface.md)*
 
-*Defined in [cache.ts:345](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L345)*
+*Defined in [cache.ts:345](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L345)*
 
 Set list in cache
 
@@ -499,11 +499,11 @@ ___
 
 ###  setListSafe
 
-▸ **setListSafe**(`key`: string, `instances`: T[], `setTime`: [SetTimeInterface](../interfaces/_cache_.settimeinterface.md), `overrideTtlSec?`: undefined | number): *Promise‹void›*
+▸ **setListSafe**(`key`: string, `instances`: T[], `setTime`: [CacheTimestampInterface](../interfaces/_cache_.cachetimestampinterface.md), `overrideTtlSec?`: undefined | number): *Promise‹void›*
 
 *Implementation of [CacheInterface](../interfaces/_cache_.cacheinterface.md)*
 
-*Defined in [cache.ts:308](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L308)*
+*Defined in [cache.ts:308](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L308)*
 
 Set list in cache if setTime is latest
 
@@ -513,7 +513,7 @@ Name | Type |
 ------ | ------ |
 `key` | string |
 `instances` | T[] |
-`setTime` | [SetTimeInterface](../interfaces/_cache_.settimeinterface.md) |
+`setTime` | [CacheTimestampInterface](../interfaces/_cache_.cachetimestampinterface.md) |
 `overrideTtlSec?` | undefined &#124; number |
 
 **Returns:** *Promise‹void›*
@@ -522,11 +522,11 @@ ___
 
 ###  setSafe
 
-▸ **setSafe**(`key`: string, `instance`: T, `setTime`: [SetTimeInterface](../interfaces/_cache_.settimeinterface.md), `overrideTtlSec?`: undefined | number): *Promise‹void›*
+▸ **setSafe**(`key`: string, `instance`: T, `setTime`: [CacheTimestampInterface](../interfaces/_cache_.cachetimestampinterface.md), `overrideTtlSec?`: undefined | number): *Promise‹void›*
 
 *Implementation of [CacheInterface](../interfaces/_cache_.cacheinterface.md)*
 
-*Defined in [cache.ts:238](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L238)*
+*Defined in [cache.ts:238](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L238)*
 
 Set the cache, but only if the provided times are the latest
 
@@ -536,7 +536,7 @@ Name | Type |
 ------ | ------ |
 `key` | string |
 `instance` | T |
-`setTime` | [SetTimeInterface](../interfaces/_cache_.settimeinterface.md) |
+`setTime` | [CacheTimestampInterface](../interfaces/_cache_.cachetimestampinterface.md) |
 `overrideTtlSec?` | undefined &#124; number |
 
 **Returns:** *Promise‹void›*
@@ -547,7 +547,7 @@ ___
 
 ▸ **suppressConnectionError**(`error`: object): *null*
 
-*Defined in [cache.ts:121](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L121)*
+*Defined in [cache.ts:121](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L121)*
 
 Suppress connection errors
 
