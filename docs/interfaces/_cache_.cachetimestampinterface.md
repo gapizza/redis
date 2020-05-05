@@ -19,7 +19,7 @@
 
 • **microseconds**: *number*
 
-*Defined in [cache.ts:40](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L40)*
+*Defined in [cache.ts:40](https://github.com/ehacke/redis/blob/e965a3d/cache.ts#L40)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **seconds**: *number*
 
-*Defined in [cache.ts:39](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L39)*
+*Defined in [cache.ts:39](https://github.com/ehacke/redis/blob/e965a3d/cache.ts#L39)*

@@ -25,7 +25,7 @@
 
 ▸ **validateSetTime**(`setTime`: [CacheTimestampInterface](../interfaces/_cache_.cachetimestampinterface.md)): *void*
 
-*Defined in [cache.ts:47](https://github.com/ehacke/redis/blob/7144f0c/cache.ts#L47)*
+*Defined in [cache.ts:47](https://github.com/ehacke/redis/blob/e965a3d/cache.ts#L47)*
 
 **Parameters:**
 
