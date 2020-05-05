@@ -3,6 +3,8 @@ import { expect } from 'chai';
 import { config } from 'dotenv';
 import { Cached, Redis } from 'index';
 
+import { SetTimeInterface } from '../cache';
+
 config();
 
 describe('cached integration tests', () => {
@@ -358,5 +360,106 @@ describe('cached integration tests', () => {
 
     await cached.cache.set('foo', 'bar');
     expect(await cached.cache.get('foo')).to.eql('bar');
+  });
+});
+
+describe('safely operate on cache', () => {
+  let redis;
+
+  beforeEach(async () => {
+    redis = new Redis({
+      // eslint-disable-next-line no-process-env
+      host: process.env.REDIS_HOST,
+      // eslint-disable-next-line no-process-env
+      port: process.env.REDIS_PORT,
+    });
+
+    await redis.flushdb();
+  });
+
+  after(async () => {
+    // eslint-disable-next-line no-unused-expressions
+    redis && (await redis.disconnect());
+  });
+
+  it('do not set if old', async () => {
+    const cached = new Cached<string>();
+    cached.configureCache(
+      { redis },
+      {
+        prefix: 'something',
+        ttlSec: 1,
+        parseFromCache: (result) => result,
+        stringifyForCache: (result) => result,
+      }
+    );
+
+    const someKey = 'foobar';
+    expect(await cached.cache.get(someKey)).to.eql(null);
+
+    const firstSetTime: SetTimeInterface = {
+      setTimeSec: 10,
+      setTimeUs: 5,
+    };
+
+    await cached.cache.setSafe(someKey, 'first', firstSetTime);
+    expect(await cached.cache.get(someKey)).to.eql('first');
+
+    const secondSetTime: SetTimeInterface = {
+      setTimeSec: 12,
+      setTimeUs: 5,
+    };
+
+    await cached.cache.setSafe(someKey, 'second', secondSetTime);
+    expect(await cached.cache.get(someKey)).to.eql('second');
+
+    await cached.cache.setSafe(someKey, 'first', firstSetTime);
+    expect(await cached.cache.get(someKey)).to.eql('second');
+  });
+
+  it('del if old, but still update times', async () => {
+    const cached = new Cached<string>();
+    cached.configureCache(
+      { redis },
+      {
+        prefix: 'something',
+        ttlSec: 1,
+        parseFromCache: (result) => result,
+        stringifyForCache: (result) => result,
+      }
+    );
+
+    const someKey = 'foobar';
+    expect(await cached.cache.get(someKey)).to.eql(null);
+
+    const firstSetTime: SetTimeInterface = {
+      setTimeSec: 10,
+      setTimeUs: 5,
+    };
+
+    await cached.cache.setSafe(someKey, 'first', firstSetTime);
+    expect(await cached.cache.get(someKey)).to.eql('first');
+
+    const secondSetTime: SetTimeInterface = {
+      setTimeSec: 12,
+      setTimeUs: 5,
+    };
+
+    await cached.cache.setSafe(someKey, 'second', secondSetTime);
+    expect(await cached.cache.get(someKey)).to.eql('second');
+
+    await cached.cache.delSafe(someKey, firstSetTime);
+    expect(await cached.cache.get(someKey)).to.eql(null);
+
+    const thirdSetTime: SetTimeInterface = {
+      setTimeSec: 16,
+      setTimeUs: 5,
+    };
+
+    await cached.cache.setSafe(someKey, 'first', firstSetTime);
+    expect(await cached.cache.get(someKey)).to.eql(null);
+
+    await cached.cache.setSafe(someKey, 'third', thirdSetTime);
+    expect(await cached.cache.get(someKey)).to.eql('third');
   });
 });

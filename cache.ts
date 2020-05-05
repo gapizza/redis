@@ -1,5 +1,7 @@
 import Bluebird from 'bluebird';
+import fs from 'fs';
 import { isBoolean, isInteger, isObject, isString } from 'lodash';
+import path from 'path';
 
 import { Redis } from './redis';
 
@@ -19,14 +21,35 @@ export interface CacheInterface<T> {
   enable(): void;
   disable(): void;
   set(key: string, instance: T, overrideTtlSec?: number): Promise<void>;
+  setSafe(key: string, instance: T, setTime: SetTimeInterface, overrideTtlSec?: number): Promise<void>;
   setList(key: string, instances: T[], overrideTtlSec?: number): Promise<void>;
+  setListSafe(key: string, instances: T[], setTime: SetTimeInterface, overrideTtlSec?: number): Promise<void>;
   get(key: string): Promise<T | null>;
   getList(key: string): Promise<T[] | null>;
   del(key: string): Promise<void>;
+  delSafe(key: string, setTime: SetTimeInterface, overrideTtlSec?: number): Promise<void>;
   delList(key: string): Promise<void>;
+  delListSafe(key: string, setTime: SetTimeInterface, overrideTtlSec?: number): Promise<void>;
   delLists(): Promise<void>;
   invalidate(prefix?): Promise<void>;
+  getTime(): Promise<SetTimeInterface>;
 }
+
+export interface SetTimeInterface {
+  setTimeSec: number;
+  setTimeUs: number;
+}
+
+/**
+ * @param {SetTimeInterface} setTime
+ * @returns {void}
+ */
+const validateSetTime = (setTime: SetTimeInterface): void => {
+  if (setTime.setTimeSec < 0) throw new Error('setTimeSec must be positive');
+  if (setTime.setTimeUs < 0) throw new Error('setTimeUs must be positive');
+  // eslint-disable-next-line no-magic-numbers
+  if (setTime.setTimeUs > 1000000) throw new Error('setTimeUs must be in microseconds');
+};
 
 /**
  * @class
@@ -37,6 +60,10 @@ export class Cache<T> implements CacheInterface<T> {
   static readonly PREFIX_TERMINATOR = '--<<$$PRE_TERM$$>>--';
 
   static readonly LIST_PREFIX = '--<<$$LIST$$>>--';
+
+  static readonly SET_TIME_SEC_PREFIX = '--<<$$T_SEC$$>>--';
+
+  static readonly SET_TIME_US_PREFIX = '--<<$$T_US$$>>--';
 
   /**
    * @param {ServicesInterface} services
@@ -67,6 +94,15 @@ export class Cache<T> implements CacheInterface<T> {
     };
     this.invalidateOnConnection = false;
     this.enabled = true;
+
+    this.services.redis.defineCommand('setSafe', {
+      numberOfKeys: 3,
+      lua: fs.readFileSync(path.join(__dirname, './setSafe.lua'), 'utf8'),
+    });
+    this.services.redis.defineCommand('delSafe', {
+      numberOfKeys: 3,
+      lua: fs.readFileSync(path.join(__dirname, './delSafe.lua'), 'utf8'),
+    });
   }
 
   private readonly services: ServicesInterface;
@@ -110,6 +146,61 @@ export class Cache<T> implements CacheInterface<T> {
   }
 
   /**
+   * Get setTime keys
+   * @param {string} key
+   * @returns {{}}
+   */
+  getTimeKeys(key: string): { setTimeSecKey: string; setTimeUsKey: string } {
+    return {
+      setTimeSecKey: `${this.config.prefix}${Cache.SET_TIME_SEC_PREFIX}${key}`,
+      setTimeUsKey: `${this.config.prefix}${Cache.SET_TIME_US_PREFIX}${key}`,
+    };
+  }
+
+  /**
+   * Get setTime list keys
+   * @param {string} key
+   * @returns {{}}
+   */
+  getTimeListKeys(key: string): { setTimeSecKey: string; setTimeUsKey: string } {
+    return {
+      setTimeSecKey: `${this.config.prefix}${Cache.LIST_PREFIX}${Cache.SET_TIME_SEC_PREFIX}${key}`,
+      setTimeUsKey: `${this.config.prefix}${Cache.LIST_PREFIX}${Cache.SET_TIME_US_PREFIX}${key}`,
+    };
+  }
+
+  /**
+   * Get prefixed key
+   * @param {string} key
+   * @returns {string}
+   */
+  getKey(key: string): string {
+    return `${this.config.prefix}${key}`;
+  }
+
+  /**
+   * Get prefixed list key
+   * @param {string} key
+   * @returns {string}
+   */
+  getListKey(key: string): string {
+    return `${this.config.prefix}${Cache.LIST_PREFIX}${key}`;
+  }
+
+  /**
+   * Get ttl seconds
+   * @param {number} overrideTtlSec
+   * @returns {number}
+   */
+  getTtlSec(overrideTtlSec?: number): number {
+    if (overrideTtlSec && (!isInteger(overrideTtlSec) || overrideTtlSec <= 0)) {
+      throw new Error('overrideTtlSec must be an integer gte 0');
+    }
+
+    return overrideTtlSec && isInteger(overrideTtlSec) ? overrideTtlSec : this.config.ttlSec;
+  }
+
+  /**
    * @returns {void}
    */
   enable(): void {
@@ -121,6 +212,57 @@ export class Cache<T> implements CacheInterface<T> {
    */
   disable(): void {
     this.enabled = false;
+  }
+
+  /**
+   * Get time from redis
+   * @returns {Promise<SetTimeInterface>}
+   */
+  async getTime(): Promise<SetTimeInterface> {
+    const result = await this.services.redis.time();
+    const [setTimeSec, setTimeUs] = result;
+    return {
+      setTimeSec: parseInt(setTimeSec, 10),
+      setTimeUs: parseInt(setTimeUs, 10),
+    };
+  }
+
+  /**
+   * Set the cache, but only if the provided times are the latest
+   * @param {string} key
+   * @param {T} instance
+   * @param {SetTimeInterface} setTime
+   * @param {number} overrideTtlSec
+   * @returns {Promise<void>}
+   */
+  async setSafe(key: string, instance: T, setTime: SetTimeInterface, overrideTtlSec?: number): Promise<void> {
+    if (!this.enabled) return;
+
+    validateSetTime(setTime);
+
+    if (!isString(key) || key.length === 0) {
+      throw new Error('key must be a string with length');
+    }
+
+    if (instance === null) {
+      await this.delSafe(key, setTime, overrideTtlSec);
+      return;
+    }
+
+    const value = await this.config.stringifyForCache(instance);
+
+    if (!isString(value) || value.length === 0) {
+      await this.delSafe(key, setTime, overrideTtlSec);
+      return;
+    }
+
+    const { setTimeSecKey, setTimeUsKey } = this.getTimeKeys(key);
+    const { setTimeSec, setTimeUs } = setTime;
+
+    await (this.services.redis as any)
+      .setSafe(this.getKey(key), setTimeSecKey, setTimeUsKey, value, this.getTtlSec(overrideTtlSec), setTimeSec, setTimeUs)
+      .then((result) => this.invalidateOnReconnection(result))
+      .catch((error) => this.suppressConnectionError(error));
   }
 
   /**
@@ -149,14 +291,46 @@ export class Cache<T> implements CacheInterface<T> {
       return;
     }
 
-    if (overrideTtlSec && (!isInteger(overrideTtlSec) || overrideTtlSec <= 0)) {
-      throw new Error('overrideTtlSec must be an integer gte 0');
+    await this.services.redis
+      .setex(this.getKey(key), this.getTtlSec(overrideTtlSec), value)
+      .then((result) => this.invalidateOnReconnection(result))
+      .catch((error) => this.suppressConnectionError(error));
+  }
+
+  /**
+   * Set list in cache if setTime is latest
+   * @param {string} key
+   * @param {T[]} instances
+   * @param {SetTimeInterface} setTime
+   * @param {number} [overrideTtlSec]
+   * @returns {Promise<void>}
+   */
+  async setListSafe(key: string, instances: T[], setTime: SetTimeInterface, overrideTtlSec?: number) {
+    if (!this.enabled) return;
+
+    validateSetTime(setTime);
+
+    if (instances.length === 0) {
+      await this.delListSafe(key, setTime, overrideTtlSec);
+      return;
     }
 
-    const ttl = overrideTtlSec && isInteger(overrideTtlSec) ? overrideTtlSec : this.config.ttlSec;
+    const stringifiedInstances = await Bluebird.filter(instances, (instance) => !!instance)
+      .map((instance) => this.config.stringifyForCache(instance))
+      .filter((instance) => !!instance);
 
-    await this.services.redis
-      .setex(`${this.config.prefix}${key}`, ttl, value)
+    if (stringifiedInstances.length === 0) {
+      await this.delListSafe(key, setTime, overrideTtlSec);
+      return;
+    }
+
+    const value = JSON.stringify(stringifiedInstances);
+
+    const { setTimeSecKey, setTimeUsKey } = this.getTimeListKeys(key);
+    const { setTimeSec, setTimeUs } = setTime;
+
+    await (this.services.redis as any)
+      .setSafe(this.getKey(key), setTimeSecKey, setTimeUsKey, value, this.getTtlSec(overrideTtlSec), setTimeSec, setTimeUs)
       .then((result) => this.invalidateOnReconnection(result))
       .catch((error) => this.suppressConnectionError(error));
   }
@@ -187,14 +361,8 @@ export class Cache<T> implements CacheInterface<T> {
 
     const value = JSON.stringify(stringifiedInstances);
 
-    if (overrideTtlSec && (!isInteger(overrideTtlSec) || overrideTtlSec <= 0)) {
-      throw new Error('overrideTtlSec must be an integer gte 0');
-    }
-
-    const ttl = overrideTtlSec && isInteger(overrideTtlSec) ? overrideTtlSec : this.config.ttlSec;
-
     await this.services.redis
-      .setex(`${this.config.prefix}${Cache.LIST_PREFIX}${key}`, ttl, value)
+      .setex(this.getListKey(key), this.getTtlSec(overrideTtlSec), value)
       .then((result) => this.invalidateOnReconnection(result))
       .catch((error) => this.suppressConnectionError(error));
   }
@@ -212,7 +380,7 @@ export class Cache<T> implements CacheInterface<T> {
     }
 
     return this.services.redis
-      .get(`${this.config.prefix}${key}`)
+      .get(this.getKey(key))
       .then((result) => this.invalidateOnReconnection(result))
       .then((result) => (result ? this.config.parseFromCache(result) : null))
       .catch((error) => this.suppressConnectionError(error));
@@ -231,7 +399,7 @@ export class Cache<T> implements CacheInterface<T> {
     }
 
     const value = await this.services.redis
-      .get(`${this.config.prefix}${Cache.LIST_PREFIX}${key}`)
+      .get(this.getListKey(key))
       .then((result) => this.invalidateOnReconnection(result))
       .catch((error) => this.suppressConnectionError(error));
 
@@ -242,6 +410,31 @@ export class Cache<T> implements CacheInterface<T> {
     if (stringifiedInstances.length === 0) return [];
 
     return Bluebird.map(stringifiedInstances, (stringified) => this.config.parseFromCache(stringified));
+  }
+
+  /**
+   * Safe delete value from cache by key
+   * @param {string} key
+   * @param {SetTimeInterface} setTime
+   * @param {number} overrideTtlSec
+   * @returns {Promise<void>}
+   */
+  async delSafe(key: string, setTime: SetTimeInterface, overrideTtlSec?: number): Promise<void> {
+    if (!this.enabled) return;
+
+    validateSetTime(setTime);
+
+    if (!isString(key) || key.length === 0) {
+      throw new Error('key must be a string with length');
+    }
+
+    const { setTimeSecKey, setTimeUsKey } = this.getTimeKeys(key);
+    const { setTimeSec, setTimeUs } = setTime;
+
+    await (this.services.redis as any)
+      .delSafe(this.getKey(key), setTimeSecKey, setTimeUsKey, this.getTtlSec(overrideTtlSec), setTimeSec, setTimeUs)
+      .then((result) => this.invalidateOnReconnection(result))
+      .catch((error) => this.suppressConnectionError(error));
   }
 
   /**
@@ -257,7 +450,32 @@ export class Cache<T> implements CacheInterface<T> {
     }
 
     await this.services.redis
-      .del(`${this.config.prefix}${key}`)
+      .del(this.getKey(key))
+      .then((result) => this.invalidateOnReconnection(result))
+      .catch((error) => this.suppressConnectionError(error));
+  }
+
+  /**
+   * Delete list value from cache by key
+   * @param {string} key
+   * @param {SetTimeInterface} setTime
+   * @param {number} overrideTtlSec
+   * @returns {Promise<void>}
+   */
+  async delListSafe(key: string, setTime: SetTimeInterface, overrideTtlSec?: number): Promise<void> {
+    if (!this.enabled) return;
+
+    validateSetTime(setTime);
+
+    if (!isString(key) || key.length === 0) {
+      throw new Error('key must be a string with length');
+    }
+
+    const { setTimeSecKey, setTimeUsKey } = this.getTimeListKeys(key);
+    const { setTimeSec, setTimeUs } = setTime;
+
+    await (this.services.redis as any)
+      .delSafe(this.getKey(key), setTimeSecKey, setTimeUsKey, this.getTtlSec(overrideTtlSec), setTimeSec, setTimeUs)
       .then((result) => this.invalidateOnReconnection(result))
       .catch((error) => this.suppressConnectionError(error));
   }
@@ -275,7 +493,7 @@ export class Cache<T> implements CacheInterface<T> {
     }
 
     await this.services.redis
-      .del(`${this.config.prefix}${Cache.LIST_PREFIX}${key}`)
+      .del(this.getListKey(key))
       .then((result) => this.invalidateOnReconnection(result))
       .catch((error) => this.suppressConnectionError(error));
   }

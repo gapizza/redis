@@ -1,4 +1,4 @@
-import { Cache, CacheInterface } from './cache';
+import { Cache, CacheInterface, SetTimeInterface } from './cache';
 import { Redis } from './redis';
 
 interface ServicesInterface {
@@ -18,7 +18,13 @@ interface ConfigInterface<T> {
 class NoCache<T> implements CacheInterface<T> {
   async del(): Promise<void> {}
 
+  async delSafe(): Promise<void> {}
+
   async delList(): Promise<void> {
+    return undefined;
+  }
+
+  async delListSafe(): Promise<void> {
     return undefined;
   }
 
@@ -42,7 +48,18 @@ class NoCache<T> implements CacheInterface<T> {
 
   async set(): Promise<void> {}
 
+  async setSafe(): Promise<void> {}
+
   async setList(): Promise<void> {}
+
+  async setListSafe(): Promise<void> {}
+
+  async getTime(): Promise<SetTimeInterface> {
+    return {
+      setTimeSec: 0,
+      setTimeUs: 0,
+    };
+  }
 }
 
 /* eslint-enable class-methods-use-this, require-jsdoc, no-empty-function, @typescript-eslint/no-empty-function */
