@@ -1,4 +1,4 @@
-import { Cache, CacheInterface, SetTimeInterface } from './cache';
+import { Cache, CacheInterface, CacheTimestampInterface } from './cache';
 import { Redis } from './redis';
 
 interface ServicesInterface {
@@ -54,10 +54,10 @@ class NoCache<T> implements CacheInterface<T> {
 
   async setListSafe(): Promise<void> {}
 
-  async getTime(): Promise<SetTimeInterface> {
+  async getTime(): Promise<CacheTimestampInterface> {
     return {
-      setTimeSec: 0,
-      setTimeUs: 0,
+      seconds: 0,
+      microseconds: 0,
     };
   }
 }

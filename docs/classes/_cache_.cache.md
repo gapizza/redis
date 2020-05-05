@@ -367,9 +367,9 @@ Name | Type |
 
 **Returns:** *object*
 
-* **setTimeSecKey**: *string*
+* **timestampSecondKey**: *string*
 
-* **setTimeUsKey**: *string*
+* **timestampMicrosecondKey**: *string*
 
 ___
 
@@ -389,9 +389,9 @@ Name | Type |
 
 **Returns:** *object*
 
-* **setTimeSecKey**: *string*
+* **timestampSecondKey**: *string*
 
-* **setTimeUsKey**: *string*
+* **timestampMicrosecondKey**: *string*
 
 ___
 

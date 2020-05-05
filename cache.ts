@@ -21,34 +21,34 @@ export interface CacheInterface<T> {
   enable(): void;
   disable(): void;
   set(key: string, instance: T, overrideTtlSec?: number): Promise<void>;
-  setSafe(key: string, instance: T, setTime: SetTimeInterface, overrideTtlSec?: number): Promise<void>;
+  setSafe(key: string, instance: T, setTime: CacheTimestampInterface, overrideTtlSec?: number): Promise<void>;
   setList(key: string, instances: T[], overrideTtlSec?: number): Promise<void>;
-  setListSafe(key: string, instances: T[], setTime: SetTimeInterface, overrideTtlSec?: number): Promise<void>;
+  setListSafe(key: string, instances: T[], setTime: CacheTimestampInterface, overrideTtlSec?: number): Promise<void>;
   get(key: string): Promise<T | null>;
   getList(key: string): Promise<T[] | null>;
   del(key: string): Promise<void>;
-  delSafe(key: string, setTime: SetTimeInterface, overrideTtlSec?: number): Promise<void>;
+  delSafe(key: string, setTime: CacheTimestampInterface, overrideTtlSec?: number): Promise<void>;
   delList(key: string): Promise<void>;
-  delListSafe(key: string, setTime: SetTimeInterface, overrideTtlSec?: number): Promise<void>;
+  delListSafe(key: string, setTime: CacheTimestampInterface, overrideTtlSec?: number): Promise<void>;
   delLists(): Promise<void>;
   invalidate(prefix?): Promise<void>;
-  getTime(): Promise<SetTimeInterface>;
+  getTime(): Promise<CacheTimestampInterface>;
 }
 
-export interface SetTimeInterface {
-  setTimeSec: number;
-  setTimeUs: number;
+export interface CacheTimestampInterface {
+  seconds: number;
+  microseconds: number;
 }
 
 /**
- * @param {SetTimeInterface} setTime
+ * @param {CacheTimestampInterface} setTime
  * @returns {void}
  */
-const validateSetTime = (setTime: SetTimeInterface): void => {
-  if (setTime.setTimeSec < 0) throw new Error('setTimeSec must be positive');
-  if (setTime.setTimeUs < 0) throw new Error('setTimeUs must be positive');
+const validateSetTime = (setTime: CacheTimestampInterface): void => {
+  if (setTime.seconds < 0) throw new Error('seconds must be positive');
+  if (setTime.microseconds < 0) throw new Error('microseconds must be positive');
   // eslint-disable-next-line no-magic-numbers
-  if (setTime.setTimeUs > 1000000) throw new Error('setTimeUs must be in microseconds');
+  if (setTime.microseconds > 1000000) throw new Error('microseconds must be in microseconds');
 };
 
 /**
@@ -61,9 +61,9 @@ export class Cache<T> implements CacheInterface<T> {
 
   static readonly LIST_PREFIX = '--<<$$LIST$$>>--';
 
-  static readonly SET_TIME_SEC_PREFIX = '--<<$$T_SEC$$>>--';
+  static readonly TIMESTAMP_SEC_PREFIX = '--<<$$T_SEC$$>>--';
 
-  static readonly SET_TIME_US_PREFIX = '--<<$$T_US$$>>--';
+  static readonly TIMESTAMP_US_PREFIX = '--<<$$T_US$$>>--';
 
   /**
    * @param {ServicesInterface} services
@@ -150,10 +150,10 @@ export class Cache<T> implements CacheInterface<T> {
    * @param {string} key
    * @returns {{}}
    */
-  getTimeKeys(key: string): { setTimeSecKey: string; setTimeUsKey: string } {
+  getTimeKeys(key: string): { timestampSecondKey: string; timestampMicrosecondKey: string } {
     return {
-      setTimeSecKey: `${this.config.prefix}${Cache.SET_TIME_SEC_PREFIX}${key}`,
-      setTimeUsKey: `${this.config.prefix}${Cache.SET_TIME_US_PREFIX}${key}`,
+      timestampSecondKey: `${this.config.prefix}${Cache.TIMESTAMP_SEC_PREFIX}${key}`,
+      timestampMicrosecondKey: `${this.config.prefix}${Cache.TIMESTAMP_US_PREFIX}${key}`,
     };
   }
 
@@ -162,10 +162,10 @@ export class Cache<T> implements CacheInterface<T> {
    * @param {string} key
    * @returns {{}}
    */
-  getTimeListKeys(key: string): { setTimeSecKey: string; setTimeUsKey: string } {
+  getTimeListKeys(key: string): { timestampSecondKey: string; timestampMicrosecondKey: string } {
     return {
-      setTimeSecKey: `${this.config.prefix}${Cache.LIST_PREFIX}${Cache.SET_TIME_SEC_PREFIX}${key}`,
-      setTimeUsKey: `${this.config.prefix}${Cache.LIST_PREFIX}${Cache.SET_TIME_US_PREFIX}${key}`,
+      timestampSecondKey: `${this.config.prefix}${Cache.LIST_PREFIX}${Cache.TIMESTAMP_SEC_PREFIX}${key}`,
+      timestampMicrosecondKey: `${this.config.prefix}${Cache.LIST_PREFIX}${Cache.TIMESTAMP_US_PREFIX}${key}`,
     };
   }
 
@@ -216,14 +216,14 @@ export class Cache<T> implements CacheInterface<T> {
 
   /**
    * Get time from redis
-   * @returns {Promise<SetTimeInterface>}
+   * @returns {Promise<CacheTimestampInterface>}
    */
-  async getTime(): Promise<SetTimeInterface> {
+  async getTime(): Promise<CacheTimestampInterface> {
     const result = await this.services.redis.time();
-    const [setTimeSec, setTimeUs] = result;
+    const [timestampSec, timestampUs] = result;
     return {
-      setTimeSec: parseInt(setTimeSec, 10),
-      setTimeUs: parseInt(setTimeUs, 10),
+      seconds: parseInt(timestampSec, 10),
+      microseconds: parseInt(timestampUs, 10),
     };
   }
 
@@ -231,11 +231,11 @@ export class Cache<T> implements CacheInterface<T> {
    * Set the cache, but only if the provided times are the latest
    * @param {string} key
    * @param {T} instance
-   * @param {SetTimeInterface} setTime
+   * @param {CacheTimestampInterface} setTime
    * @param {number} overrideTtlSec
    * @returns {Promise<void>}
    */
-  async setSafe(key: string, instance: T, setTime: SetTimeInterface, overrideTtlSec?: number): Promise<void> {
+  async setSafe(key: string, instance: T, setTime: CacheTimestampInterface, overrideTtlSec?: number): Promise<void> {
     if (!this.enabled) return;
 
     validateSetTime(setTime);
@@ -256,11 +256,11 @@ export class Cache<T> implements CacheInterface<T> {
       return;
     }
 
-    const { setTimeSecKey, setTimeUsKey } = this.getTimeKeys(key);
-    const { setTimeSec, setTimeUs } = setTime;
+    const { timestampSecondKey, timestampMicrosecondKey } = this.getTimeKeys(key);
+    const { seconds, microseconds } = setTime;
 
     await (this.services.redis as any)
-      .setSafe(this.getKey(key), setTimeSecKey, setTimeUsKey, value, this.getTtlSec(overrideTtlSec), setTimeSec, setTimeUs)
+      .setSafe(this.getKey(key), timestampSecondKey, timestampMicrosecondKey, value, this.getTtlSec(overrideTtlSec), seconds, microseconds)
       .then((result) => this.invalidateOnReconnection(result))
       .catch((error) => this.suppressConnectionError(error));
   }
@@ -301,11 +301,11 @@ export class Cache<T> implements CacheInterface<T> {
    * Set list in cache if setTime is latest
    * @param {string} key
    * @param {T[]} instances
-   * @param {SetTimeInterface} setTime
+   * @param {CacheTimestampInterface} setTime
    * @param {number} [overrideTtlSec]
    * @returns {Promise<void>}
    */
-  async setListSafe(key: string, instances: T[], setTime: SetTimeInterface, overrideTtlSec?: number) {
+  async setListSafe(key: string, instances: T[], setTime: CacheTimestampInterface, overrideTtlSec?: number) {
     if (!this.enabled) return;
 
     validateSetTime(setTime);
@@ -326,11 +326,11 @@ export class Cache<T> implements CacheInterface<T> {
 
     const value = JSON.stringify(stringifiedInstances);
 
-    const { setTimeSecKey, setTimeUsKey } = this.getTimeListKeys(key);
-    const { setTimeSec, setTimeUs } = setTime;
+    const { timestampSecondKey, timestampMicrosecondKey } = this.getTimeListKeys(key);
+    const { seconds, microseconds } = setTime;
 
     await (this.services.redis as any)
-      .setSafe(this.getKey(key), setTimeSecKey, setTimeUsKey, value, this.getTtlSec(overrideTtlSec), setTimeSec, setTimeUs)
+      .setSafe(this.getKey(key), timestampSecondKey, timestampMicrosecondKey, value, this.getTtlSec(overrideTtlSec), seconds, microseconds)
       .then((result) => this.invalidateOnReconnection(result))
       .catch((error) => this.suppressConnectionError(error));
   }
@@ -415,11 +415,11 @@ export class Cache<T> implements CacheInterface<T> {
   /**
    * Safe delete value from cache by key
    * @param {string} key
-   * @param {SetTimeInterface} setTime
+   * @param {CacheTimestampInterface} setTime
    * @param {number} overrideTtlSec
    * @returns {Promise<void>}
    */
-  async delSafe(key: string, setTime: SetTimeInterface, overrideTtlSec?: number): Promise<void> {
+  async delSafe(key: string, setTime: CacheTimestampInterface, overrideTtlSec?: number): Promise<void> {
     if (!this.enabled) return;
 
     validateSetTime(setTime);
@@ -428,11 +428,11 @@ export class Cache<T> implements CacheInterface<T> {
       throw new Error('key must be a string with length');
     }
 
-    const { setTimeSecKey, setTimeUsKey } = this.getTimeKeys(key);
-    const { setTimeSec, setTimeUs } = setTime;
+    const { timestampSecondKey, timestampMicrosecondKey } = this.getTimeKeys(key);
+    const { seconds, microseconds } = setTime;
 
     await (this.services.redis as any)
-      .delSafe(this.getKey(key), setTimeSecKey, setTimeUsKey, this.getTtlSec(overrideTtlSec), setTimeSec, setTimeUs)
+      .delSafe(this.getKey(key), timestampSecondKey, timestampMicrosecondKey, this.getTtlSec(overrideTtlSec), seconds, microseconds)
       .then((result) => this.invalidateOnReconnection(result))
       .catch((error) => this.suppressConnectionError(error));
   }
@@ -458,11 +458,11 @@ export class Cache<T> implements CacheInterface<T> {
   /**
    * Delete list value from cache by key
    * @param {string} key
-   * @param {SetTimeInterface} setTime
+   * @param {CacheTimestampInterface} setTime
    * @param {number} overrideTtlSec
    * @returns {Promise<void>}
    */
-  async delListSafe(key: string, setTime: SetTimeInterface, overrideTtlSec?: number): Promise<void> {
+  async delListSafe(key: string, setTime: CacheTimestampInterface, overrideTtlSec?: number): Promise<void> {
     if (!this.enabled) return;
 
     validateSetTime(setTime);
@@ -471,11 +471,11 @@ export class Cache<T> implements CacheInterface<T> {
       throw new Error('key must be a string with length');
     }
 
-    const { setTimeSecKey, setTimeUsKey } = this.getTimeListKeys(key);
-    const { setTimeSec, setTimeUs } = setTime;
+    const { timestampSecondKey, timestampMicrosecondKey } = this.getTimeListKeys(key);
+    const { seconds, microseconds } = setTime;
 
     await (this.services.redis as any)
-      .delSafe(this.getKey(key), setTimeSecKey, setTimeUsKey, this.getTtlSec(overrideTtlSec), setTimeSec, setTimeUs)
+      .delSafe(this.getKey(key), timestampSecondKey, timestampMicrosecondKey, this.getTtlSec(overrideTtlSec), seconds, microseconds)
       .then((result) => this.invalidateOnReconnection(result))
       .catch((error) => this.suppressConnectionError(error));
   }

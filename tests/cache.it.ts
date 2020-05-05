@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { config } from 'dotenv';
 import { Cached, Redis } from 'index';
 
-import { SetTimeInterface } from '../cache';
+import { CacheTimestampInterface } from '../cache';
 
 config();
 
@@ -397,17 +397,17 @@ describe('safely operate on cache', () => {
     const someKey = 'foobar';
     expect(await cached.cache.get(someKey)).to.eql(null);
 
-    const firstSetTime: SetTimeInterface = {
-      setTimeSec: 10,
-      setTimeUs: 5,
+    const firstSetTime: CacheTimestampInterface = {
+      seconds: 10,
+      microseconds: 5,
     };
 
     await cached.cache.setSafe(someKey, 'first', firstSetTime);
     expect(await cached.cache.get(someKey)).to.eql('first');
 
-    const secondSetTime: SetTimeInterface = {
-      setTimeSec: 12,
-      setTimeUs: 5,
+    const secondSetTime: CacheTimestampInterface = {
+      seconds: 12,
+      microseconds: 5,
     };
 
     await cached.cache.setSafe(someKey, 'second', secondSetTime);
@@ -432,17 +432,17 @@ describe('safely operate on cache', () => {
     const someKey = 'foobar';
     expect(await cached.cache.get(someKey)).to.eql(null);
 
-    const firstSetTime: SetTimeInterface = {
-      setTimeSec: 10,
-      setTimeUs: 5,
+    const firstSetTime: CacheTimestampInterface = {
+      seconds: 10,
+      microseconds: 5,
     };
 
     await cached.cache.setSafe(someKey, 'first', firstSetTime);
     expect(await cached.cache.get(someKey)).to.eql('first');
 
-    const secondSetTime: SetTimeInterface = {
-      setTimeSec: 12,
-      setTimeUs: 5,
+    const secondSetTime: CacheTimestampInterface = {
+      seconds: 12,
+      microseconds: 5,
     };
 
     await cached.cache.setSafe(someKey, 'second', secondSetTime);
@@ -451,9 +451,9 @@ describe('safely operate on cache', () => {
     await cached.cache.delSafe(someKey, firstSetTime);
     expect(await cached.cache.get(someKey)).to.eql(null);
 
-    const thirdSetTime: SetTimeInterface = {
-      setTimeSec: 16,
-      setTimeUs: 5,
+    const thirdSetTime: CacheTimestampInterface = {
+      seconds: 16,
+      microseconds: 5,
     };
 
     await cached.cache.setSafe(someKey, 'first', firstSetTime);

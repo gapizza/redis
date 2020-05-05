@@ -10,21 +10,21 @@
 
 ### Properties
 
-* [setTimeSec](_cache_.settimeinterface.md#settimesec)
-* [setTimeUs](_cache_.settimeinterface.md#settimeus)
+* [timestampSec](_cache_.settimeinterface.md#timestampSec)
+* [timestampUs](_cache_.settimeinterface.md#timestampUs)
 
 ## Properties
 
-###  setTimeSec
+###  timestampSec
 
-• **setTimeSec**: *number*
+• **timestampSec**: *number*
 
 *Defined in [cache.ts:39](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L39)*
 
 ___
 
-###  setTimeUs
+###  timestampUs
 
-• **setTimeUs**: *number*
+• **timestampUs**: *number*
 
 *Defined in [cache.ts:40](https://github.com/ehacke/redis/blob/07fa980/cache.ts#L40)*
