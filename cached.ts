@@ -76,6 +76,7 @@ export class Cached<T> {
 
   /**
    * Initialize cache configuration
+   *
    * @param {ServicesInterface} services
    * @param {ConfigInterface} config
    * @returns {void}
@@ -86,6 +87,7 @@ export class Cached<T> {
 
   /**
    * Cache getter
+   *
    * @returns {CacheInterface<T>}
    */
   get cache(): CacheInterface<T> {

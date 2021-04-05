@@ -2,8 +2,7 @@ import Bluebird from 'bluebird';
 import IORedis, { KeyType, ScanStreamOption } from 'ioredis';
 import Redlock from 'redlock';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-// @ts-ignore
+// @ts-expect-error override the Promise implementation for IORedis
 IORedis.Promise = Bluebird;
 
 enum SEARCH_FIELD_TYPES {
@@ -15,6 +14,7 @@ enum SEARCH_FIELD_TYPES {
 
 /**
  * Process the returned array from a transaction, throwing errors if any exist
+ *
  * @param {object[]} results
  * @returns {object[]}
  */
@@ -61,10 +61,12 @@ export class Redis extends IORedis {
 
   readonly redlock: Redlock;
 
+  // eslint-disable-next-line no-undef
   readonly debounced: { [k: string]: NodeJS.Timeout };
 
   /**
    * Acquire lock in Redis
+   *
    * @param {string} key
    * @param {number} ttl
    * @returns {Promise<Lock|null>}
@@ -101,8 +103,10 @@ export class Redis extends IORedis {
       });
   }
 
+  /* eslint-disable unicorn/no-object-as-default-parameter */
   /**
    * Get redlock instance
+   *
    * @link https://www.npmjs.com/package/redlock
    * @param {object} [config={ retryCount: 5 }]
    * @returns {Redlock}
@@ -110,9 +114,11 @@ export class Redis extends IORedis {
   createRedlock(config: Redlock.Options = { retryCount: 0 }): Redlock {
     return new Redlock([this], config);
   }
+  /* eslint-enable unicorn/no-object-as-default-parameter */
 
   /**
    * Wrapper for scanStream that returns a promise
+   *
    * @param {ScanStreamOption} options
    * @returns {Promise<string[]>}
    */
@@ -135,6 +141,7 @@ export class Redis extends IORedis {
 
   /**
    * Wrapper for scanStream that returns a promise
+   *
    * @param {KeyType} key
    * @param {ScanStreamOption} options
    * @returns {Promise<string[]>}
@@ -159,13 +166,14 @@ export class Redis extends IORedis {
 
   /**
    * Debounce a callback using Redis and setTimeout locally
+   *
    * @param {Function} callback
    * @param {string} key
    * @param {number} timeoutMs
    * @param {number} [skewMs=5]
    * @returns {Promise<void>}
    */
-  async debounce(callback: Function, key: string, timeoutMs: number, skewMs = Redis.CONSTANTS.DEFAULT_SKEW_MS): Promise<any> {
+  async debounce(callback: () => void | Promise<void>, key: string, timeoutMs: number, skewMs = Redis.CONSTANTS.DEFAULT_SKEW_MS): Promise<any> {
     if (this.debounced[key]) {
       clearTimeout(this.debounced[key]);
       delete this.debounced[key];
@@ -173,8 +181,7 @@ export class Redis extends IORedis {
 
     const transaction = this.multi()
       .pttl(key)
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
+      // @ts-expect-error this typing is not correct
       .set(key, 'true', 'NX', 'PX', timeoutMs);
 
     const [expiryMs, setResult] = processMultiResults(await transaction.exec()) as [number, number];

@@ -27,7 +27,7 @@ describe('integration tests', () => {
     let calls = 0;
     const totalCalls = 100;
 
-    const times = [...new Array(totalCalls).keys()];
+    const times = [...Array.from({ length: totalCalls }).keys()];
     const timeoutMs = 500;
     await Promise.map(
       times,
