@@ -1,12 +1,12 @@
-[@ehacke/redis](README.md)
+@gapizza/redis
 
-# @ehacke/redis
+# @gapizza/redis
 
-## Index
+## Table of contents
 
 ### Modules
 
-* ["cache"](modules/_cache_.md)
-* ["cached"](modules/_cached_.md)
-* ["index"](modules/_index_.md)
-* ["redis"](modules/_redis_.md)
+- [cache](modules/cache.md)
+- [cached](modules/cached.md)
+- [redis](modules/redis.md)
+- [tests/redis.it](modules/tests_redis_it.md)
