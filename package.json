@@ -22,7 +22,7 @@
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^12.1.1",
     "@gapizza/commitlint-config": "^1.0.1",
-    "@gapizza/eslint-config-ts": "^1.2.1",
+    "@gapizza/eslint-config-ts": "^1.2.3",
     "@gapizza/prettier-config": "^1.0.1",
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/chai-as-promised": "^7.1.4",
@@ -53,6 +53,9 @@
     "typedoc-plugin-markdown": "^3.8.0",
     "typescript": "^4.2.4",
     "uuid": "^8.3.2"
+  },
+  "engines": {
+    "node": ">=16"
   },
   "files": [
     "dist/**/*.{js,ts,lua}",
