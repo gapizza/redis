@@ -4,9 +4,6 @@
 
 ## Table of contents
 
-### Modules
+### Classes
 
-- [cache](modules/cache.md)
-- [cached](modules/cached.md)
-- [redis](modules/redis.md)
-- [tests/redis.it](modules/tests_redis_it.md)
+- [Cached](classes/cached.md)
