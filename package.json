@@ -113,6 +113,7 @@
     "docs": "typedoc --plugin typedoc-plugin-markdown --readme none --exclude \"tests/**/*.+(unit|it).+(ts|js)\"",
     "integration": "nyc mocha --recursive -r source-map-support/register -r ts-node/register -r tsconfig-paths/register --use_strict --exit \"tests/**/*.it.+(ts|js)\"",
     "lint": "fixpack && prettier-eslint --write && eslint --fix \"**/*.{js,ts}\"",
+    "lint:ci": "eslint \"**/*.{js,ts}\"",
     "major": "npm version major && npm publish",
     "minor": "npm version minor && npm publish",
     "patch": "npm version patch && npm publish",
@@ -121,6 +122,7 @@
     "prepublishOnly": "npm run build",
     "preversion": "npm run lint && npm run test",
     "test": "npm run docker:up && nyc mocha --recursive -r source-map-support/register -r ts-node/register -r tsconfig-paths/register --use_strict --exit \"tests/**/*.+(unit|it).+(ts|js)\"",
+    "test:ci": "nyc mocha --recursive -r source-map-support/register -r ts-node/register -r tsconfig-paths/register --use_strict --exit \"tests/**/*.+(unit|it).+(ts|js)\"",
     "unit": "nyc mocha --recursive -r source-map-support/register -r ts-node/register -r tsconfig-paths/register --use_strict --exit \"tests/**/*.unit.+(ts|js)\""
   },
   "types": "dist/index.d.ts"
