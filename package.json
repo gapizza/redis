@@ -86,6 +86,7 @@
     "url": "git+https://github.com/gapizza/redis.git"
   },
   "scripts": {
+    "beta": "npm run update:packageVersion && ./scripts/publish-beta.sh",
     "build": "rm -rf ./dist && tsc -p tsconfig.build.json && cp *.lua dist/",
     "docker:down": "COMPOSE_PROJECT_NAME=local docker-compose down --remove-orphans",
     "docker:restart": "npm run docker:down && npm run docker:up",
@@ -101,9 +102,11 @@
     "prepare": "fixpack && husky install",
     "prepublishOnly": "npm run build",
     "preversion": "npm run lint && npm run test",
+    "tag": "git stash && git tag v\"$(npm view @gapizza/redis version)\" && git push origin --tags",
     "test": "npm run docker:up && c8 mocha --recursive -r source-map-support/register -r ts-node/register -r tsconfig-paths/register --use_strict --exit \"tests/**/*.+(unit|it).+(ts|js)\"",
     "test:ci": "c8 mocha --recursive -r source-map-support/register -r ts-node/register -r tsconfig-paths/register --use_strict --exit \"tests/**/*.+(unit|it).+(ts|js)\"",
-    "unit": "c8 mocha --recursive -r source-map-support/register -r ts-node/register -r tsconfig-paths/register --use_strict --exit \"tests/**/*.unit.+(ts|js)\""
+    "unit": "c8 mocha --recursive -r source-map-support/register -r ts-node/register -r tsconfig-paths/register --use_strict --exit \"tests/**/*.unit.+(ts|js)\"",
+    "update:packageVersion": "cat package.json | jq \".version = \\\"$(npm view @gapizza/redis version)\\\"\" > package.json"
   },
   "type": "module",
   "types": "dist/index.d.ts"
