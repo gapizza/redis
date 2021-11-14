@@ -1,8 +1,6 @@
-[@gapizza/redis](../README.md) / [cache](../modules/cache.md) / Cache
+[@gapizza/redis](../README.md) / Cache
 
 # Class: Cache<T\>
-
-[cache](../modules/cache.md).Cache
 
 ## Type parameters
 
@@ -12,49 +10,49 @@
 
 ## Implements
 
-- [`CacheInterface`](../interfaces/cache.CacheInterface.md)<`T`\>
+- [`CacheInterface`](../interfaces/CacheInterface.md)<`T`\>
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](cache.Cache.md#constructor)
+- [constructor](Cache.md#constructor)
 
 ### Properties
 
-- [config](cache.Cache.md#config)
-- [enabled](cache.Cache.md#enabled)
-- [invalidateOnConnection](cache.Cache.md#invalidateonconnection)
-- [services](cache.Cache.md#services)
-- [LIST\_PREFIX](cache.Cache.md#list_prefix)
-- [PREFIX\_TERMINATOR](cache.Cache.md#prefix_terminator)
-- [TIMESTAMP\_SEC\_PREFIX](cache.Cache.md#timestamp_sec_prefix)
-- [TIMESTAMP\_US\_PREFIX](cache.Cache.md#timestamp_us_prefix)
+- [config](Cache.md#config)
+- [enabled](Cache.md#enabled)
+- [invalidateOnConnection](Cache.md#invalidateonconnection)
+- [services](Cache.md#services)
+- [LIST\_PREFIX](Cache.md#list_prefix)
+- [PREFIX\_TERMINATOR](Cache.md#prefix_terminator)
+- [TIMESTAMP\_SEC\_PREFIX](Cache.md#timestamp_sec_prefix)
+- [TIMESTAMP\_US\_PREFIX](Cache.md#timestamp_us_prefix)
 
 ### Methods
 
-- [del](cache.Cache.md#del)
-- [delList](cache.Cache.md#dellist)
-- [delListSafe](cache.Cache.md#dellistsafe)
-- [delLists](cache.Cache.md#dellists)
-- [delSafe](cache.Cache.md#delsafe)
-- [disable](cache.Cache.md#disable)
-- [enable](cache.Cache.md#enable)
-- [get](cache.Cache.md#get)
-- [getKey](cache.Cache.md#getkey)
-- [getList](cache.Cache.md#getlist)
-- [getListKey](cache.Cache.md#getlistkey)
-- [getTime](cache.Cache.md#gettime)
-- [getTimeKeys](cache.Cache.md#gettimekeys)
-- [getTimeListKeys](cache.Cache.md#gettimelistkeys)
-- [getTtlSec](cache.Cache.md#getttlsec)
-- [invalidate](cache.Cache.md#invalidate)
-- [invalidateOnReconnection](cache.Cache.md#invalidateonreconnection)
-- [set](cache.Cache.md#set)
-- [setList](cache.Cache.md#setlist)
-- [setListSafe](cache.Cache.md#setlistsafe)
-- [setSafe](cache.Cache.md#setsafe)
-- [suppressConnectionError](cache.Cache.md#suppressconnectionerror)
+- [del](Cache.md#del)
+- [delList](Cache.md#dellist)
+- [delListSafe](Cache.md#dellistsafe)
+- [delLists](Cache.md#dellists)
+- [delSafe](Cache.md#delsafe)
+- [disable](Cache.md#disable)
+- [enable](Cache.md#enable)
+- [get](Cache.md#get)
+- [getKey](Cache.md#getkey)
+- [getList](Cache.md#getlist)
+- [getListKey](Cache.md#getlistkey)
+- [getTime](Cache.md#gettime)
+- [getTimeKeys](Cache.md#gettimekeys)
+- [getTimeListKeys](Cache.md#gettimelistkeys)
+- [getTtlSec](Cache.md#getttlsec)
+- [invalidate](Cache.md#invalidate)
+- [invalidateOnReconnection](Cache.md#invalidateonreconnection)
+- [set](Cache.md#set)
+- [setList](Cache.md#setlist)
+- [setListSafe](Cache.md#setlistsafe)
+- [setSafe](Cache.md#setsafe)
+- [suppressConnectionError](Cache.md#suppressconnectionerror)
 
 ## Constructors
 
@@ -77,7 +75,7 @@
 
 #### Defined in
 
-[cache.ts:72](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L72)
+[cache.ts:77](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L77)
 
 ## Properties
 
@@ -87,7 +85,7 @@
 
 #### Defined in
 
-[cache.ts:110](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L110)
+[cache.ts:115](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L115)
 
 ___
 
@@ -97,7 +95,7 @@ ___
 
 #### Defined in
 
-[cache.ts:112](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L112)
+[cache.ts:117](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L117)
 
 ___
 
@@ -107,7 +105,7 @@ ___
 
 #### Defined in
 
-[cache.ts:114](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L114)
+[cache.ts:119](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L119)
 
 ___
 
@@ -117,7 +115,7 @@ ___
 
 #### Defined in
 
-[cache.ts:108](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L108)
+[cache.ts:113](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L113)
 
 ___
 
@@ -127,7 +125,7 @@ ___
 
 #### Defined in
 
-[cache.ts:62](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L62)
+[cache.ts:67](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L67)
 
 ___
 
@@ -137,7 +135,7 @@ ___
 
 #### Defined in
 
-[cache.ts:60](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L60)
+[cache.ts:65](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L65)
 
 ___
 
@@ -147,7 +145,7 @@ ___
 
 #### Defined in
 
-[cache.ts:64](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L64)
+[cache.ts:69](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L69)
 
 ___
 
@@ -157,7 +155,7 @@ ___
 
 #### Defined in
 
-[cache.ts:66](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L66)
+[cache.ts:71](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L71)
 
 ## Methods
 
@@ -179,11 +177,11 @@ Delete value from cache by key
 
 #### Implementation of
 
-[CacheInterface](../interfaces/cache.CacheInterface.md).[del](../interfaces/cache.CacheInterface.md#del)
+[CacheInterface](../interfaces/CacheInterface.md).[del](../interfaces/CacheInterface.md#del)
 
 #### Defined in
 
-[cache.ts:462](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L462)
+[cache.ts:467](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L467)
 
 ___
 
@@ -205,11 +203,11 @@ Delete list value from cache
 
 #### Implementation of
 
-[CacheInterface](../interfaces/cache.CacheInterface.md).[delList](../interfaces/cache.CacheInterface.md#dellist)
+[CacheInterface](../interfaces/CacheInterface.md).[delList](../interfaces/CacheInterface.md#dellist)
 
 #### Defined in
 
-[cache.ts:507](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L507)
+[cache.ts:512](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L512)
 
 ___
 
@@ -224,7 +222,7 @@ Delete list value from cache by key
 | Name | Type |
 | :------ | :------ |
 | `key` | `string` |
-| `setTime` | [`CacheTimestampInterface`](../interfaces/cache.CacheTimestampInterface.md) |
+| `setTime` | [`CacheTimestampInterface`](../interfaces/CacheTimestampInterface.md) |
 | `overrideTtlSec?` | `number` |
 
 #### Returns
@@ -233,11 +231,11 @@ Delete list value from cache by key
 
 #### Implementation of
 
-[CacheInterface](../interfaces/cache.CacheInterface.md).[delListSafe](../interfaces/cache.CacheInterface.md#dellistsafe)
+[CacheInterface](../interfaces/CacheInterface.md).[delListSafe](../interfaces/CacheInterface.md#dellistsafe)
 
 #### Defined in
 
-[cache.ts:483](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L483)
+[cache.ts:488](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L488)
 
 ___
 
@@ -253,11 +251,11 @@ Delete all lists with prefix from cache
 
 #### Implementation of
 
-[CacheInterface](../interfaces/cache.CacheInterface.md).[delLists](../interfaces/cache.CacheInterface.md#dellists)
+[CacheInterface](../interfaces/CacheInterface.md).[delLists](../interfaces/CacheInterface.md#dellists)
 
 #### Defined in
 
-[cache.ts:525](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L525)
+[cache.ts:530](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L530)
 
 ___
 
@@ -272,7 +270,7 @@ Safe delete value from cache by key
 | Name | Type |
 | :------ | :------ |
 | `key` | `string` |
-| `setTime` | [`CacheTimestampInterface`](../interfaces/cache.CacheTimestampInterface.md) |
+| `setTime` | [`CacheTimestampInterface`](../interfaces/CacheTimestampInterface.md) |
 | `overrideTtlSec?` | `number` |
 
 #### Returns
@@ -281,11 +279,11 @@ Safe delete value from cache by key
 
 #### Implementation of
 
-[CacheInterface](../interfaces/cache.CacheInterface.md).[delSafe](../interfaces/cache.CacheInterface.md#delsafe)
+[CacheInterface](../interfaces/CacheInterface.md).[delSafe](../interfaces/CacheInterface.md#delsafe)
 
 #### Defined in
 
-[cache.ts:438](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L438)
+[cache.ts:443](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L443)
 
 ___
 
@@ -299,11 +297,11 @@ ___
 
 #### Implementation of
 
-[CacheInterface](../interfaces/cache.CacheInterface.md).[disable](../interfaces/cache.CacheInterface.md#disable)
+[CacheInterface](../interfaces/CacheInterface.md).[disable](../interfaces/CacheInterface.md#disable)
 
 #### Defined in
 
-[cache.ts:221](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L221)
+[cache.ts:226](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L226)
 
 ___
 
@@ -317,11 +315,11 @@ ___
 
 #### Implementation of
 
-[CacheInterface](../interfaces/cache.CacheInterface.md).[enable](../interfaces/cache.CacheInterface.md#enable)
+[CacheInterface](../interfaces/CacheInterface.md).[enable](../interfaces/CacheInterface.md#enable)
 
 #### Defined in
 
-[cache.ts:214](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L214)
+[cache.ts:219](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L219)
 
 ___
 
@@ -343,11 +341,11 @@ Get value from cache by key
 
 #### Implementation of
 
-[CacheInterface](../interfaces/cache.CacheInterface.md).[get](../interfaces/cache.CacheInterface.md#get)
+[CacheInterface](../interfaces/CacheInterface.md).[get](../interfaces/CacheInterface.md#get)
 
 #### Defined in
 
-[cache.ts:389](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L389)
+[cache.ts:394](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L394)
 
 ___
 
@@ -369,7 +367,7 @@ Get prefixed key
 
 #### Defined in
 
-[cache.ts:183](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L183)
+[cache.ts:188](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L188)
 
 ___
 
@@ -391,11 +389,11 @@ Get list from cache
 
 #### Implementation of
 
-[CacheInterface](../interfaces/cache.CacheInterface.md).[getList](../interfaces/cache.CacheInterface.md#getlist)
+[CacheInterface](../interfaces/CacheInterface.md).[getList](../interfaces/CacheInterface.md#getlist)
 
 #### Defined in
 
-[cache.ts:409](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L409)
+[cache.ts:414](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L414)
 
 ___
 
@@ -417,27 +415,27 @@ Get prefixed list key
 
 #### Defined in
 
-[cache.ts:193](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L193)
+[cache.ts:198](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L198)
 
 ___
 
 ### getTime
 
-▸ **getTime**(): `Promise`<[`CacheTimestampInterface`](../interfaces/cache.CacheTimestampInterface.md)\>
+▸ **getTime**(): `Promise`<[`CacheTimestampInterface`](../interfaces/CacheTimestampInterface.md)\>
 
 Get time from redis
 
 #### Returns
 
-`Promise`<[`CacheTimestampInterface`](../interfaces/cache.CacheTimestampInterface.md)\>
+`Promise`<[`CacheTimestampInterface`](../interfaces/CacheTimestampInterface.md)\>
 
 #### Implementation of
 
-[CacheInterface](../interfaces/cache.CacheInterface.md).[getTime](../interfaces/cache.CacheInterface.md#gettime)
+[CacheInterface](../interfaces/CacheInterface.md).[getTime](../interfaces/CacheInterface.md#gettime)
 
 #### Defined in
 
-[cache.ts:230](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L230)
+[cache.ts:235](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L235)
 
 ___
 
@@ -464,7 +462,7 @@ Get setTime keys
 
 #### Defined in
 
-[cache.ts:157](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L157)
+[cache.ts:162](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L162)
 
 ___
 
@@ -491,7 +489,7 @@ Get setTime list keys
 
 #### Defined in
 
-[cache.ts:170](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L170)
+[cache.ts:175](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L175)
 
 ___
 
@@ -513,7 +511,7 @@ Get ttl seconds
 
 #### Defined in
 
-[cache.ts:203](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L203)
+[cache.ts:208](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L208)
 
 ___
 
@@ -535,11 +533,11 @@ Invalidate any entries for this cache
 
 #### Implementation of
 
-[CacheInterface](../interfaces/cache.CacheInterface.md).[invalidate](../interfaces/cache.CacheInterface.md#invalidate)
+[CacheInterface](../interfaces/CacheInterface.md).[invalidate](../interfaces/CacheInterface.md#invalidate)
 
 #### Defined in
 
-[cache.ts:536](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L536)
+[cache.ts:541](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L541)
 
 ___
 
@@ -567,7 +565,7 @@ Invalidate on reconnection
 
 #### Defined in
 
-[cache.ts:139](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L139)
+[cache.ts:144](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L144)
 
 ___
 
@@ -591,11 +589,11 @@ Set value in cache
 
 #### Implementation of
 
-[CacheInterface](../interfaces/cache.CacheInterface.md).[set](../interfaces/cache.CacheInterface.md#set)
+[CacheInterface](../interfaces/CacheInterface.md).[set](../interfaces/CacheInterface.md#set)
 
 #### Defined in
 
-[cache.ts:286](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L286)
+[cache.ts:291](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L291)
 
 ___
 
@@ -619,11 +617,11 @@ Set list in cache
 
 #### Implementation of
 
-[CacheInterface](../interfaces/cache.CacheInterface.md).[setList](../interfaces/cache.CacheInterface.md#setlist)
+[CacheInterface](../interfaces/CacheInterface.md).[setList](../interfaces/CacheInterface.md#setlist)
 
 #### Defined in
 
-[cache.ts:358](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L358)
+[cache.ts:363](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L363)
 
 ___
 
@@ -639,7 +637,7 @@ Set list in cache if setTime is latest
 | :------ | :------ |
 | `key` | `string` |
 | `instances` | `T`[] |
-| `setTime` | [`CacheTimestampInterface`](../interfaces/cache.CacheTimestampInterface.md) |
+| `setTime` | [`CacheTimestampInterface`](../interfaces/CacheTimestampInterface.md) |
 | `overrideTtlSec?` | `number` |
 
 #### Returns
@@ -648,11 +646,11 @@ Set list in cache if setTime is latest
 
 #### Implementation of
 
-[CacheInterface](../interfaces/cache.CacheInterface.md).[setListSafe](../interfaces/cache.CacheInterface.md#setlistsafe)
+[CacheInterface](../interfaces/CacheInterface.md).[setListSafe](../interfaces/CacheInterface.md#setlistsafe)
 
 #### Defined in
 
-[cache.ts:320](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L320)
+[cache.ts:325](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L325)
 
 ___
 
@@ -668,7 +666,7 @@ Set the cache, but only if the provided times are the latest
 | :------ | :------ |
 | `key` | `string` |
 | `instance` | `T` |
-| `setTime` | [`CacheTimestampInterface`](../interfaces/cache.CacheTimestampInterface.md) |
+| `setTime` | [`CacheTimestampInterface`](../interfaces/CacheTimestampInterface.md) |
 | `overrideTtlSec?` | `number` |
 
 #### Returns
@@ -677,11 +675,11 @@ Set the cache, but only if the provided times are the latest
 
 #### Implementation of
 
-[CacheInterface](../interfaces/cache.CacheInterface.md).[setSafe](../interfaces/cache.CacheInterface.md#setsafe)
+[CacheInterface](../interfaces/CacheInterface.md).[setSafe](../interfaces/CacheInterface.md#setsafe)
 
 #### Defined in
 
-[cache.ts:248](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L248)
+[cache.ts:253](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L253)
 
 ___
 
@@ -704,4 +702,4 @@ Suppress connection errors
 
 #### Defined in
 
-[cache.ts:123](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L123)
+[cache.ts:128](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L128)

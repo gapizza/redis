@@ -4,7 +4,11 @@
 
 ## Table of contents
 
-### Modules
+### Classes
 
-- [cache](modules/cache.md)
-- [redis](modules/redis.md)
+- [Cache](classes/Cache.md)
+
+### Interfaces
+
+- [CacheInterface](interfaces/CacheInterface.md)
+- [CacheTimestampInterface](interfaces/CacheTimestampInterface.md)

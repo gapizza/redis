@@ -1,8 +1,6 @@
-[@gapizza/redis](../README.md) / [cache](../modules/cache.md) / CacheInterface
+[@gapizza/redis](../README.md) / CacheInterface
 
 # Interface: CacheInterface<T\>
-
-[cache](../modules/cache.md).CacheInterface
 
 ## Type parameters
 
@@ -12,27 +10,27 @@
 
 ## Implemented by
 
-- [`Cache`](../classes/cache.Cache.md)
+- [`Cache`](../classes/Cache.md)
 
 ## Table of contents
 
 ### Methods
 
-- [del](cache.CacheInterface.md#del)
-- [delList](cache.CacheInterface.md#dellist)
-- [delListSafe](cache.CacheInterface.md#dellistsafe)
-- [delLists](cache.CacheInterface.md#dellists)
-- [delSafe](cache.CacheInterface.md#delsafe)
-- [disable](cache.CacheInterface.md#disable)
-- [enable](cache.CacheInterface.md#enable)
-- [get](cache.CacheInterface.md#get)
-- [getList](cache.CacheInterface.md#getlist)
-- [getTime](cache.CacheInterface.md#gettime)
-- [invalidate](cache.CacheInterface.md#invalidate)
-- [set](cache.CacheInterface.md#set)
-- [setList](cache.CacheInterface.md#setlist)
-- [setListSafe](cache.CacheInterface.md#setlistsafe)
-- [setSafe](cache.CacheInterface.md#setsafe)
+- [del](CacheInterface.md#del)
+- [delList](CacheInterface.md#dellist)
+- [delListSafe](CacheInterface.md#dellistsafe)
+- [delLists](CacheInterface.md#dellists)
+- [delSafe](CacheInterface.md#delsafe)
+- [disable](CacheInterface.md#disable)
+- [enable](CacheInterface.md#enable)
+- [get](CacheInterface.md#get)
+- [getList](CacheInterface.md#getlist)
+- [getTime](CacheInterface.md#gettime)
+- [invalidate](CacheInterface.md#invalidate)
+- [set](CacheInterface.md#set)
+- [setList](CacheInterface.md#setlist)
+- [setListSafe](CacheInterface.md#setlistsafe)
+- [setSafe](CacheInterface.md#setsafe)
 
 ## Methods
 
@@ -52,7 +50,7 @@
 
 #### Defined in
 
-[cache.ts:29](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L29)
+[cache.ts:34](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L34)
 
 ___
 
@@ -72,7 +70,7 @@ ___
 
 #### Defined in
 
-[cache.ts:31](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L31)
+[cache.ts:36](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L36)
 
 ___
 
@@ -85,7 +83,7 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `key` | `string` |
-| `setTime` | [`CacheTimestampInterface`](cache.CacheTimestampInterface.md) |
+| `setTime` | [`CacheTimestampInterface`](CacheTimestampInterface.md) |
 | `overrideTtlSec?` | `number` |
 
 #### Returns
@@ -94,7 +92,7 @@ ___
 
 #### Defined in
 
-[cache.ts:32](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L32)
+[cache.ts:37](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L37)
 
 ___
 
@@ -108,7 +106,7 @@ ___
 
 #### Defined in
 
-[cache.ts:33](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L33)
+[cache.ts:38](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L38)
 
 ___
 
@@ -121,7 +119,7 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `key` | `string` |
-| `setTime` | [`CacheTimestampInterface`](cache.CacheTimestampInterface.md) |
+| `setTime` | [`CacheTimestampInterface`](CacheTimestampInterface.md) |
 | `overrideTtlSec?` | `number` |
 
 #### Returns
@@ -130,7 +128,7 @@ ___
 
 #### Defined in
 
-[cache.ts:30](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L30)
+[cache.ts:35](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L35)
 
 ___
 
@@ -144,7 +142,7 @@ ___
 
 #### Defined in
 
-[cache.ts:22](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L22)
+[cache.ts:27](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L27)
 
 ___
 
@@ -158,7 +156,7 @@ ___
 
 #### Defined in
 
-[cache.ts:21](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L21)
+[cache.ts:26](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L26)
 
 ___
 
@@ -178,7 +176,7 @@ ___
 
 #### Defined in
 
-[cache.ts:27](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L27)
+[cache.ts:32](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L32)
 
 ___
 
@@ -198,21 +196,21 @@ ___
 
 #### Defined in
 
-[cache.ts:28](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L28)
+[cache.ts:33](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L33)
 
 ___
 
 ### getTime
 
-▸ **getTime**(): `Promise`<[`CacheTimestampInterface`](cache.CacheTimestampInterface.md)\>
+▸ **getTime**(): `Promise`<[`CacheTimestampInterface`](CacheTimestampInterface.md)\>
 
 #### Returns
 
-`Promise`<[`CacheTimestampInterface`](cache.CacheTimestampInterface.md)\>
+`Promise`<[`CacheTimestampInterface`](CacheTimestampInterface.md)\>
 
 #### Defined in
 
-[cache.ts:35](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L35)
+[cache.ts:40](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L40)
 
 ___
 
@@ -232,7 +230,7 @@ ___
 
 #### Defined in
 
-[cache.ts:34](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L34)
+[cache.ts:39](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L39)
 
 ___
 
@@ -254,7 +252,7 @@ ___
 
 #### Defined in
 
-[cache.ts:23](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L23)
+[cache.ts:28](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L28)
 
 ___
 
@@ -276,7 +274,7 @@ ___
 
 #### Defined in
 
-[cache.ts:25](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L25)
+[cache.ts:30](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L30)
 
 ___
 
@@ -290,7 +288,7 @@ ___
 | :------ | :------ |
 | `key` | `string` |
 | `instances` | `T`[] |
-| `setTime` | [`CacheTimestampInterface`](cache.CacheTimestampInterface.md) |
+| `setTime` | [`CacheTimestampInterface`](CacheTimestampInterface.md) |
 | `overrideTtlSec?` | `number` |
 
 #### Returns
@@ -299,7 +297,7 @@ ___
 
 #### Defined in
 
-[cache.ts:26](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L26)
+[cache.ts:31](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L31)
 
 ___
 
@@ -313,7 +311,7 @@ ___
 | :------ | :------ |
 | `key` | `string` |
 | `instance` | `T` |
-| `setTime` | [`CacheTimestampInterface`](cache.CacheTimestampInterface.md) |
+| `setTime` | [`CacheTimestampInterface`](CacheTimestampInterface.md) |
 | `overrideTtlSec?` | `number` |
 
 #### Returns
@@ -322,4 +320,4 @@ ___
 
 #### Defined in
 
-[cache.ts:24](https://github.com/gapizza/redis/blob/2a117db/cache.ts#L24)
+[cache.ts:29](https://github.com/gapizza/redis/blob/1b97b81/cache.ts#L29)
