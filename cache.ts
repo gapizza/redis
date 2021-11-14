@@ -1,6 +1,6 @@
 import Bluebird from 'bluebird';
 import fs from 'fs';
-import { isBoolean, isInteger, isObject, isString } from 'lodash';
+import { isBoolean, isInteger, isObject, isString } from 'lodash-es';
 import path from 'path';
 
 import { Redis } from './redis';
@@ -48,7 +48,7 @@ const validateSetTime = (setTime: CacheTimestampInterface): void => {
   if (setTime.seconds < 0) throw new Error('seconds must be positive');
   if (setTime.microseconds < 0) throw new Error('microseconds must be positive');
   // eslint-disable-next-line no-magic-numbers
-  if (setTime.microseconds > 1000000) throw new Error('microseconds must be in microseconds');
+  if (setTime.microseconds > 1_000_000) throw new Error('microseconds must be in microseconds');
 };
 
 /**
@@ -97,11 +97,11 @@ export class Cache<T> implements CacheInterface<T> {
 
     this.services.redis.defineCommand('setSafe', {
       numberOfKeys: 3,
-      lua: fs.readFileSync(path.join(__dirname, './setSafe.lua'), 'utf8'),
+      lua: fs.readFileSync(path.join(path.resolve(), './setSafe.lua'), 'utf8'),
     });
     this.services.redis.defineCommand('delSafe', {
       numberOfKeys: 3,
-      lua: fs.readFileSync(path.join(__dirname, './delSafe.lua'), 'utf8'),
+      lua: fs.readFileSync(path.join(path.resolve(), './delSafe.lua'), 'utf8'),
     });
   }
 
@@ -317,7 +317,7 @@ export class Cache<T> implements CacheInterface<T> {
    * @param {number} [overrideTtlSec]
    * @returns {Promise<void>}
    */
-  async setListSafe(key: string, instances: T[], setTime: CacheTimestampInterface, overrideTtlSec?: number) {
+  async setListSafe(key: string, instances: T[], setTime: CacheTimestampInterface, overrideTtlSec?: number): Promise<void> {
     if (!this.enabled) return;
 
     validateSetTime(setTime);
@@ -363,7 +363,7 @@ export class Cache<T> implements CacheInterface<T> {
       return;
     }
 
-    const stringifiedInstances = await Bluebird.filter(instances, (instance) => !!instance)
+    const stringifiedInstances = await Bluebird.filter(instances, (instance: T): boolean => !!instance)
       .map((instance) => this.config.stringifyForCache(instance))
       .filter((instance) => !!instance);
 
