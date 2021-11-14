@@ -2,8 +2,13 @@ import Bluebird from 'bluebird';
 import fs from 'fs';
 import { isBoolean, isInteger, isObject, isString } from 'lodash-es';
 import path from 'path';
-
+import { fileURLToPath } from 'url';
 import { Redis } from './redis';
+
+const { dirname } = path;
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 interface ServicesInterface {
   redis: Redis;
@@ -97,11 +102,11 @@ export class Cache<T> implements CacheInterface<T> {
 
     this.services.redis.defineCommand('setSafe', {
       numberOfKeys: 3,
-      lua: fs.readFileSync(path.join(path.resolve(), './setSafe.lua'), 'utf8'),
+      lua: fs.readFileSync(path.join(__dirname, './setSafe.lua'), 'utf8'),
     });
     this.services.redis.defineCommand('delSafe', {
       numberOfKeys: 3,
-      lua: fs.readFileSync(path.join(path.resolve(), './delSafe.lua'), 'utf8'),
+      lua: fs.readFileSync(path.join(__dirname, './delSafe.lua'), 'utf8'),
     });
   }
 
