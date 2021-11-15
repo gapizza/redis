@@ -21,9 +21,9 @@
   "devDependencies": {
     "@commitlint/cli": "^14.1.0",
     "@commitlint/config-conventional": "^14.1.0",
-    "@gapizza/commitlint-config": "^1.0.3-beta.25f39a2.0",
-    "@gapizza/eslint-config-ts": "^3.0.8-beta.382a26c.0",
-    "@gapizza/prettier-config": "^1.0.3-beta.2ca6c33.0",
+    "@gapizza/commitlint-config": "^2.0.0",
+    "@gapizza/eslint-config-ts": "^4.0.0",
+    "@gapizza/prettier-config": "^2.0.0",
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/chai-as-promised": "^7.1.4",
     "@types/expect": "^24.3.0",
@@ -49,8 +49,8 @@
     "prettier": "^2.4.1",
     "prettier-eslint-cli": "^5.0.1",
     "ts-node": "^10.4.0",
-    "typedoc": "^0.22.8",
-    "typedoc-plugin-markdown": "^3.11.5",
+    "typedoc": "^0.22.9",
+    "typedoc-plugin-markdown": "^3.11.6",
     "typescript": "^4.4.4",
     "uuid": "^8.3.2"
   },
