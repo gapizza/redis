@@ -1,9 +1,14 @@
 import Bluebird from 'bluebird';
 import fs from 'fs';
-import { isBoolean, isInteger, isObject, isString } from 'lodash';
+import { isBoolean, isInteger, isObject, isString } from 'lodash-es';
 import path from 'path';
-
+import { fileURLToPath } from 'url';
 import { Redis } from './redis';
+
+const { dirname } = path;
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 interface ServicesInterface {
   redis: Redis;
@@ -48,7 +53,7 @@ const validateSetTime = (setTime: CacheTimestampInterface): void => {
   if (setTime.seconds < 0) throw new Error('seconds must be positive');
   if (setTime.microseconds < 0) throw new Error('microseconds must be positive');
   // eslint-disable-next-line no-magic-numbers
-  if (setTime.microseconds > 1000000) throw new Error('microseconds must be in microseconds');
+  if (setTime.microseconds > 1_000_000) throw new Error('microseconds must be in microseconds');
 };
 
 /**
@@ -317,7 +322,7 @@ export class Cache<T> implements CacheInterface<T> {
    * @param {number} [overrideTtlSec]
    * @returns {Promise<void>}
    */
-  async setListSafe(key: string, instances: T[], setTime: CacheTimestampInterface, overrideTtlSec?: number) {
+  async setListSafe(key: string, instances: T[], setTime: CacheTimestampInterface, overrideTtlSec?: number): Promise<void> {
     if (!this.enabled) return;
 
     validateSetTime(setTime);
@@ -363,7 +368,7 @@ export class Cache<T> implements CacheInterface<T> {
       return;
     }
 
-    const stringifiedInstances = await Bluebird.filter(instances, (instance) => !!instance)
+    const stringifiedInstances = await Bluebird.filter(instances, (instance: T): boolean => !!instance)
       .map((instance) => this.config.stringifyForCache(instance))
       .filter((instance) => !!instance);
 

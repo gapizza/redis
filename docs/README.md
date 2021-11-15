@@ -6,4 +6,9 @@
 
 ### Classes
 
-- [Cached](classes/cached.md)
+- [Cache](classes/Cache.md)
+
+### Interfaces
+
+- [CacheInterface](interfaces/CacheInterface.md)
+- [CacheTimestampInterface](interfaces/CacheTimestampInterface.md)

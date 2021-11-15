@@ -18,7 +18,7 @@ enum SEARCH_FIELD_TYPES {
  * @param {object[]} results
  * @returns {object[]}
  */
-export function processMultiResults(results: (string | null | number)[][]): (string | null | number)[] {
+export const processMultiResults = (results: (string | null | number)[][]): (string | null | number)[] => {
   const ERR_INDEX = 0;
   const RESULT_INDEX = 1;
 
@@ -33,7 +33,7 @@ export function processMultiResults(results: (string | null | number)[][]): (str
 
     return result[RESULT_INDEX];
   });
-}
+};
 
 /**
  * @class
@@ -48,7 +48,7 @@ export class Redis extends IORedis {
   /**
    * @param {{}} args
    */
-  constructor(...args) {
+  constructor(...args: any[]) {
     super(...args);
 
     this.NAME = 'redis';
@@ -80,10 +80,10 @@ export class Redis extends IORedis {
           unlock: async () => {
             try {
               await redlock.unlock();
-            } catch (error) {
-              if (error.message.includes('Unable to fully release the lock on resource')) {
+            } catch (error: any) {
+              if (error?.message?.includes('Unable to fully release the lock on resource')) {
                 // eslint-disable-next-line no-console
-                console.error(error.message);
+                console.error(error?.message);
                 // eslint-disable-next-line no-console
                 console.error('Above error is likely caused by the lock expiring before unlock');
                 return;
@@ -128,7 +128,6 @@ export class Redis extends IORedis {
       const keys = [] as string[];
 
       stream.on('data', (resultKeys) => {
-        // eslint-disable-next-line no-restricted-syntax
         for (const element of resultKeys) {
           keys.push(element);
         }
@@ -151,9 +150,7 @@ export class Redis extends IORedis {
       const stream = this.zscanStream(key, options);
       const keys = [] as string[];
 
-      // eslint-disable-next-line sonarjs/no-identical-functions
       stream.on('data', (resultKeys) => {
-        // eslint-disable-next-line no-restricted-syntax
         for (const element of resultKeys) {
           keys.push(element);
         }
